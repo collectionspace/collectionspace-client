@@ -22,11 +22,13 @@ module CollectionSpace
     # can pass block to act on each page of results
     def all(path, options = {}, &block)
       all = []
-      result = request('GET', path, options)
-      raise RequestError.new result.status if result.status_code != 200 or result.parsed['abstract_common_list'].nil?
+      list_type, list_item = get_list_types(path)
 
-      total = result.parsed['abstract_common_list']['totalItems'].to_i
-      items = result.parsed['abstract_common_list']['itemsInPage'].to_i
+      result = request('GET', path, options)
+      raise RequestError.new result.status if result.status_code != 200 or result.parsed[list_type].nil?
+
+      total = result.parsed[list_type]['totalItems'].to_i
+      items = result.parsed[list_type]['itemsInPage'].to_i
       return all if total == 0
 
       pages = (total / config.page_size) + 1
@@ -34,7 +36,7 @@ module CollectionSpace
         options[:query][:pgNum] = i
         result     = request('GET', path, options)
         raise RequestError.new result.status if result.status_code != 200
-        list_items = result.parsed['abstract_common_list']['list_item']
+        list_items = result.parsed[list_type][list_item]
         list_items = [ list_items ] if items == 1
         list_items.each { |item| yield item if block_given? }
         all.concat list_items
@@ -73,6 +75,20 @@ module CollectionSpace
 
     def strip_refname(refname)
       refname.match(/('.*')/)[0].delete("'")
+    end
+
+    private
+
+    def get_list_types(path)
+      list_type, list_item = nil
+      if path == 'relations'
+        list_type = 'relations_common_list'
+        list_item = 'relation_list_item'
+      else
+        list_type = 'abstract_common_list'
+        list_item = 'list_item'
+      end
+      return list_type, list_item
     end
 
   end
