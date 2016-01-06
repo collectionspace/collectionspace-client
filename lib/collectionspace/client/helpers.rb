@@ -1,5 +1,21 @@
 module CollectionSpace
 
+  # http://www.garrettqmartin.com/2015/02/03/finding-deeply-nested-hash-keys/
+  module DeepFind
+    def deep_find(obj, key, nested_key = nil)
+      return obj[key] if obj.respond_to?(:key?) && obj.key?(key)
+      if obj.is_a? Enumerable
+        found = nil
+        obj.find { |*a| found = deep_find(a.last, key) }
+        if nested_key
+          deep_find(found, nested_key)
+        else
+          found
+        end
+      end
+    end
+  end
+
   module Helpers
 
     # get ALL records at path by paging through record set
@@ -53,6 +69,10 @@ module CollectionSpace
       query_string = "#{query.type}:#{query.field} #{query.expression}"
       options = options.merge({ query: { as: query_string } })
       request "GET", query.path, options
+    end
+
+    def strip_refname(refname)
+      refname.match(/('.*')/)[0].delete("'")
     end
 
   end

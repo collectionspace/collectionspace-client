@@ -1,6 +1,7 @@
 module CollectionSpace
 
   class Client
+    include DeepFind
     include Helpers
     attr_reader :config
 
