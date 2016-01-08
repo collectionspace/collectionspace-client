@@ -81,6 +81,26 @@ module CollectionSpace
       refname.match(/('.*')/)[0].delete("'")
     end
 
+    # parsed record and map to get restructured object
+    def to_object(record, attribute_map)
+      attributes = {}
+      attribute_map.each do |map|
+        if map["with"]
+          as = deep_find(record, map["key"], map["nested_key"])
+          values = []
+          if as.is_a? Array
+            values = as.map { |a| strip_refname( deep_find(a, map["with"]) ) }
+          elsif as.is_a? Hash and as[ map["with"] ]
+            values = as[ map["with"] ].is_a?(Array) ? as[ map["with"] ].map { |a| strip_refname(a) } : [ strip_refname(as[ map["with"] ]) ]
+          end
+          attributes[map["field"]] = values
+        else
+          attributes[map["field"]] = deep_find(record, map["key"], map["nested_key"])
+        end
+      end
+      attributes
+    end
+
     private
 
     def get_list_types(path)
