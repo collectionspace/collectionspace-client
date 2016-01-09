@@ -68,12 +68,12 @@ module CollectionSpace
     end
 
     def search(query, options = {})
-      query_string, options = prepare_query(query, options)
+      options = prepare_query(query, options)
       request "GET", query.path, options
     end
 
     def search_all(query, options = {}, &block)
-      query_string, options = prepare_query(query, options)
+      options = prepare_query(query, options)
       all query.path, options, &block
     end
 
@@ -118,7 +118,7 @@ module CollectionSpace
     def prepare_query(query, options = {})
       query_string = "#{query.type}:#{query.field} #{query.expression}"
       options      = options.merge({ query: { as: query_string } })
-      return query_string, options
+      options
     end
 
   end
