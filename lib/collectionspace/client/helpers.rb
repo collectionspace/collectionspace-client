@@ -78,13 +78,15 @@ module CollectionSpace
     end
 
     def strip_refname(refname)
-      refname.match(/('.*')/)[0].delete("'")
+      stripped = refname.match(/('.*')/)[0].delete("'") rescue ''
+      stripped
     end
 
     # parsed record and map to get restructured object
-    def to_object(record, attribute_map)
+    def to_object(record, attribute_map, stringify_keys = false)
       attributes = {}
       attribute_map.each do |map|
+        map = map.inject({}) { |memo,(k,v)| memo[k.to_s] = v; memo} if stringify_keys
         if map["with"]
           as = deep_find(record, map["key"], map["nested_key"])
           values = []
