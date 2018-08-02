@@ -4,7 +4,7 @@ require 'vcr'
 require 'webmock/rspec'
 
 # GLOBAL VALUES FOR SPECS
-DEFAULT_BASE_URI = "http://demo.collectionspace.org:8180/cspace-services"
+DEFAULT_BASE_URI = "https://core.collectionspace.org/cspace-services"
 CUSTOM_BASE_URI  = "https://cspace.lyrasis.org/cspace-services"
 
 VCR.configure do |c|

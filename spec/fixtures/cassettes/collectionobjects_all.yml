@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://admin%40core.collectionspace.org:Administrator@demo.collectionspace.org:8180/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
+    uri: https://core.collectionspace.org/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
@@ -31,11 +31,11 @@ http_interactions:
         Vase</title><objectNumber>IN2015.1</objectNumber></list-item><list-item><csid>08cecf74-c2bf-42dd-b65c</csid><uri>/collectionobjects/08cecf74-c2bf-42dd-b65c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(08cecf74-c2bf-42dd-b65c)'IN2015.8'</refName><updatedAt>2015-12-17T15:19:57.760Z</updatedAt><workflowState>project</workflowState><title>Blue
         Monday</title><objectNumber>IN2015.8</objectNumber><responsibleDepartment>decorative-arts</responsibleDepartment></list-item><list-item><csid>e2a688be-08cd-42b1-bde5</csid><uri>/collectionobjects/e2a688be-08cd-42b1-bde5</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(e2a688be-08cd-42b1-bde5)'IN2015.5'</refName><updatedAt>2015-12-15T15:14:24.148Z</updatedAt><workflowState>project</workflowState><title>Journey</title><objectNumber>IN2015.5</objectNumber></list-item><list-item><csid>1663d24c-817b-433e-b5e6</csid><uri>/collectionobjects/1663d24c-817b-433e-b5e6</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(1663d24c-817b-433e-b5e6)'IN2015.4'</refName><updatedAt>2015-12-11T17:01:29.651Z</updatedAt><workflowState>project</workflowState><title>Long
         Day's Journey</title><objectNumber>IN2015.4</objectNumber></list-item></ns2:abstract-common-list>
-    http_version: 
+    http_version:
   recorded_at: Sat, 26 Dec 2015 05:02:20 GMT
 - request:
     method: get
-    uri: http://admin%40core.collectionspace.org:Administrator@demo.collectionspace.org:8180/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
+    uri: https://core.collectionspace.org/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
@@ -64,11 +64,11 @@ http_interactions:
         Vase</title><objectNumber>IN2015.1</objectNumber></list-item><list-item><csid>08cecf74-c2bf-42dd-b65c</csid><uri>/collectionobjects/08cecf74-c2bf-42dd-b65c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(08cecf74-c2bf-42dd-b65c)'IN2015.8'</refName><updatedAt>2015-12-17T15:19:57.760Z</updatedAt><workflowState>project</workflowState><title>Blue
         Monday</title><objectNumber>IN2015.8</objectNumber><responsibleDepartment>decorative-arts</responsibleDepartment></list-item><list-item><csid>e2a688be-08cd-42b1-bde5</csid><uri>/collectionobjects/e2a688be-08cd-42b1-bde5</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(e2a688be-08cd-42b1-bde5)'IN2015.5'</refName><updatedAt>2015-12-15T15:14:24.148Z</updatedAt><workflowState>project</workflowState><title>Journey</title><objectNumber>IN2015.5</objectNumber></list-item><list-item><csid>1663d24c-817b-433e-b5e6</csid><uri>/collectionobjects/1663d24c-817b-433e-b5e6</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(1663d24c-817b-433e-b5e6)'IN2015.4'</refName><updatedAt>2015-12-11T17:01:29.651Z</updatedAt><workflowState>project</workflowState><title>Long
         Day's Journey</title><objectNumber>IN2015.4</objectNumber></list-item></ns2:abstract-common-list>
-    http_version: 
+    http_version:
   recorded_at: Sat, 26 Dec 2015 05:02:20 GMT
 - request:
     method: get
-    uri: http://admin%40core.collectionspace.org:Administrator@demo.collectionspace.org:8180/cspace-services/collectionobjects?pgNum=0&pgSz=50&wf_deleted=false
+    uri: https://core.collectionspace.org/cspace-services/collectionobjects?pgNum=0&pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
@@ -97,6 +97,6 @@ http_interactions:
         Vase</title><objectNumber>IN2015.1</objectNumber></list-item><list-item><csid>08cecf74-c2bf-42dd-b65c</csid><uri>/collectionobjects/08cecf74-c2bf-42dd-b65c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(08cecf74-c2bf-42dd-b65c)'IN2015.8'</refName><updatedAt>2015-12-17T15:19:57.760Z</updatedAt><workflowState>project</workflowState><title>Blue
         Monday</title><objectNumber>IN2015.8</objectNumber><responsibleDepartment>decorative-arts</responsibleDepartment></list-item><list-item><csid>e2a688be-08cd-42b1-bde5</csid><uri>/collectionobjects/e2a688be-08cd-42b1-bde5</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(e2a688be-08cd-42b1-bde5)'IN2015.5'</refName><updatedAt>2015-12-15T15:14:24.148Z</updatedAt><workflowState>project</workflowState><title>Journey</title><objectNumber>IN2015.5</objectNumber></list-item><list-item><csid>1663d24c-817b-433e-b5e6</csid><uri>/collectionobjects/1663d24c-817b-433e-b5e6</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(1663d24c-817b-433e-b5e6)'IN2015.4'</refName><updatedAt>2015-12-11T17:01:29.651Z</updatedAt><workflowState>project</workflowState><title>Long
         Day's Journey</title><objectNumber>IN2015.4</objectNumber></list-item></ns2:abstract-common-list>
-    http_version: 
+    http_version:
   recorded_at: Sat, 26 Dec 2015 05:02:21 GMT
 recorded_with: VCR 3.0.1

@@ -4,7 +4,7 @@ module CollectionSpace
 
     def defaults
       {
-        base_uri: "http://demo.collectionspace.org:8180/cspace-services",
+        base_uri: "https://core.collectionspace.org/cspace-services",
         username: "admin@core.collectionspace.org",
         password: "Administrator",
         page_size: 50,
