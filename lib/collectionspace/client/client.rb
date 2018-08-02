@@ -16,12 +16,12 @@ module CollectionSpace
 
     # additional_options: { query: { foo: 'bar' } }
     def post(path, payload, additional_options = {})
-      raise PayloadError.new if Nokogiri::XML(payload).errors.any?
+      raise PayloadError.new, Nokogiri::XML(payload).errors if Nokogiri::XML(payload).errors.any?
       request 'POST', path, { body: payload }.merge(additional_options)
     end
 
     def put(path, payload)
-      raise PayloadError.new if Nokogiri::XML(payload).errors.any?
+      raise PayloadError.new, Nokogiri::XML(payload).errors if Nokogiri::XML(payload).errors.any?
       request 'PUT', path, { body: payload }
     end
 
