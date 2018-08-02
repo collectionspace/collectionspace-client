@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://demo.collectionspace.org/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
+    uri: https://core.collectionspace.org/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
@@ -35,7 +35,7 @@ http_interactions:
   recorded_at: Sat, 26 Dec 2015 05:02:19 GMT
 - request:
     method: get
-    uri: http://demo.collectionspace.org/cspace-services/collectionobjects?pgSz=1&wf_deleted=false
+    uri: https://core.collectionspace.org/cspace-services/collectionobjects?pgSz=1&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
