@@ -23,7 +23,7 @@ module CollectionSpace
     def initialize(config, method = "GET", path = "", options = {})
       @config  = config
       @method  = method.downcase.to_sym
-      @path    = path
+      @path    = path.gsub(/^\//, '')
 
       @auth = {
         username: config.username,
