@@ -81,7 +81,7 @@ Publishing
 Bump version in `lib/collectionspace/client/version.rb` then:
 
 ```bash
-VERSION=0.1.3
+VERSION=0.1.4
 gem build collectionspace-client
 gem push collectionspace-client-$VERSION.gem
 git tag v$VERSION
