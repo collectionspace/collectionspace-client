@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://demo.collectionspace.org:8180/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
+    uri: http://demo.collectionspace.org/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
@@ -35,7 +35,7 @@ http_interactions:
   recorded_at: Sat, 26 Dec 2015 05:02:20 GMT
 - request:
     method: get
-    uri: http://demo.collectionspace.org:8180/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
+    uri: http://demo.collectionspace.org/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
@@ -68,7 +68,7 @@ http_interactions:
   recorded_at: Sat, 26 Dec 2015 05:02:20 GMT
 - request:
     method: get
-    uri: http://demo.collectionspace.org:8180/cspace-services/collectionobjects?pgNum=0&pgSz=50&wf_deleted=false
+    uri: http://demo.collectionspace.org/cspace-services/collectionobjects?pgNum=0&pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://demo.collectionspace.org:8180/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
+    uri: http://demo.collectionspace.org/cspace-services/collectionobjects?pgSz=50&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
