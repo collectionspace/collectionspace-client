@@ -75,6 +75,16 @@ To run the tests:
 bundle exec rake
 ```
 
+Publishing
+---
+
+Bump version in `lib/collectionspace/client/version.rb` then:
+
+```bash
+gem build collectionspace-client
+gem push collectionspace-client-$VERSION.gem
+```
+
 Contributing
 ---
 
