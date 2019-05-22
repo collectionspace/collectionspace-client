@@ -6,8 +6,9 @@ require 'collectionspace/client'
 client = CollectionSpace::Client.new
 client.config.throttle = 1
 
-client.all('vocabularies') do |item|
+client.all('vocabularies').each do |item|
   uri = item["uri"]
+  puts "Checking vocabulary: #{uri}"
   if client.count("#{uri}/items") == 0
     puts "Purging empty vocabulary:\t#{item['displayName']} (#{item['csid']})"
     # YOU WOULD UNCOMMENT THIS TO ACTUALLY PERFORM THE PURGE ...

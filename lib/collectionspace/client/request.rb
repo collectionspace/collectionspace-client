@@ -21,9 +21,9 @@ module CollectionSpace
     end
 
     def initialize(config, method = "GET", path = "", options = {})
-      @config  = config
-      @method  = method.downcase.to_sym
-      @path    = path.gsub(/^\//, '')
+      @config = config
+      @method = method.downcase.to_sym
+      @path   = path.gsub(/^\//, '')
 
       @auth = {
         username: config.username,

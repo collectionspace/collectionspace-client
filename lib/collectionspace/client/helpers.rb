@@ -19,29 +19,23 @@ module CollectionSpace
   module Helpers
 
     # get ALL records at path by paging through record set
-    # can pass block to act on each page of results
-    def all(path, options = {}, &block)
-      all = []
+    def all(path, options = {})
       list_type, list_item = get_list_types(path)
+      Enumerator.new do |yielder|
+        page = 0
+        loop do
+          result = request('GET', path, options.merge(query: { pgNum: page }))
+          raise StopIteration unless result.parsed[list_type].key?('itemsInPage')
 
-      result = request('GET', path, options)
-      raise RequestError.new result.status if result.status_code != 200 or result.parsed[list_type].nil?
+          items = result.parsed[list_type]['itemsInPage'].to_i
+          raise StopIteration if items == 0
 
-      total = result.parsed[list_type]['totalItems'].to_i
-      items = result.parsed[list_type]['itemsInPage'].to_i
-      return all if total == 0
-
-      pages = (total / config.page_size) + 1
-      (0 .. pages - 1).each do |i|
-        options[:query][:pgNum] = i
-        result     = request('GET', path, options)
-        raise RequestError.new result.status if result.status_code != 200
-        list_items = result.parsed[list_type][list_item]
-        list_items = [ list_items ] if items == 1
-        list_items.each { |item| yield item if block_given? }
-        all.concat list_items
-      end
-      all
+          list_items = result.parsed[list_type][list_item]
+          list_items = [list_items] if items == 1
+          list_items.each { |item| yielder << item }
+          page += 1
+        end
+      end.lazy
     end
 
     def count(path)

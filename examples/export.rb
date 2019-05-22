@@ -21,7 +21,7 @@ client = CollectionSpace::Client.new
 client.config.throttle = 1
 
 # GET ALL CATALOGING RECORDS AND DUMP THE XML IF UPDATED SINCE 3 DAYS AGO
-client.all('collectionobjects') do |item|
+client.all('collectionobjects').each do |item|
   updated = Date.parse item["updatedAt"]
   if updated > Date.parse(14.days.ago.to_s)
     collectionobject = client.get item["uri"]

@@ -13,12 +13,8 @@ if response.status_code == 200
   ap response.xml
 end
 
-# GET ALL ACQUISITIONS AND PRINT TO CONSOLE
-acquisitions = client.all('acquisitions')
-ap acquisitions
-
 # GET ALL INTAKE RECORDS AND PROCESS PER PAGE (INSTEAD OF WAITING FOR ALL)
-client.all('intakes') do |item|
+client.all('media').each do |item|
   uri    = item["uri"]
   intake = client.get uri
   ap intake.parsed
