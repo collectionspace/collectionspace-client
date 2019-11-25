@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document name="collectionobjects">
+  <ns2:collectionobjects_common xmlns:ns2="http://collectionspace.org/services/collectionobject" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <objectNumber>CLIENT.001</objectNumber>
+    <numberOfObjects>1</numberOfObjects>
+  </ns2:collectionobjects_common>
+</document>
