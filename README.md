@@ -1,10 +1,8 @@
-CollectionSpace Client
-===
+# CollectionSpace Client
 
 CollectionSpace API client.
 
-Installation
----
+## Installation
 
 Add this line to your application's Gemfile:
 
@@ -12,54 +10,13 @@ Add this line to your application's Gemfile:
 gem 'collectionspace-client'
 ```
 
-And then execute:
+And then execute `bundle install`, or install it yourself as: `gem install collectionspace-client`.
 
-    $ bundle install
+## Usage
 
-Or install it yourself as:
+See the sample scripts within the [examples](examples/) directory.
 
-    $ gem install collectionspace-client
-
-Usage
----
-
-Basic usage:
-
-```ruby
-require 'collectionspace/client'
-
-config = CollectionSpace::Configuration.new({
-  base_uri: "https://cspace.muesum.org/cspace-services",
-  username: "admin@cspace.muesum.org",
-  password: "Administrator",
-})
-
-client = CollectionSpace::Client.new(config)
-
-result = client.post_blob_uri "http://cspace.muesum.org/assets/mueseum.png"
-
-raise "=(" if result.status_code != 201
-
-search_args = {
-  path: "blobs",
-  type: "blobs_common",
-  field: "name",
-  expression: "ILIKE '%museum.png%'",
-}
-
-query = CollectionSpace::Search.new.from_hash search_args
-
-result = client.search(query)
-
-if result.status_code == 200
-  ap result.parsed['abstract_common_list']
-end
-```
-
-See the sample scripts within the `examples` directory for more.
-
-Development
----
+## Development
 
 To run the examples:
 
@@ -75,8 +32,7 @@ To run the tests:
 bundle exec rake
 ```
 
-Publishing
----
+## Publishing
 
 Bump version in `lib/collectionspace/client/version.rb` then:
 
@@ -88,13 +44,11 @@ git tag v$VERSION
 git push --tags
 ```
 
-Contributing
----
+## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/lyrasis/collectionspace-client.
 
-License
----
+## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
