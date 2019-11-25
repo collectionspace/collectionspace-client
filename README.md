@@ -37,7 +37,7 @@ bundle exec rake
 Bump version in `lib/collectionspace/client/version.rb` then:
 
 ```bash
-VERSION=0.1.5
+VERSION=0.1.6
 gem build collectionspace-client
 gem push collectionspace-client-$VERSION.gem
 git tag v$VERSION
@@ -46,7 +46,7 @@ git push --tags
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/lyrasis/collectionspace-client.
+Bug reports and pull requests are welcome on GitHub at https://github.com/collectionspace/collectionspace-client.
 
 ## License
 
