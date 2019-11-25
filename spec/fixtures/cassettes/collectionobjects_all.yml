@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=KnYWnXa/NhgOutaGX4gJ+1K28ZGry1rCulOKa1RgfdJQA/J3eRPXKoIsPXISjXbYH/5QesCO+81SGsyrg16PbM2AoLZtpxUSv1t7syIGFeHvw6Tyke0K+kH581xl;
+      - AWSALB=p+MrbtuceZe9cPrOm1fc5s+/QuF/ifL+xTWLqbvb3zh2//hL/+v8MjEbEyXmKIj7ApeSoJZo5s9rLeUsGvJOtaAiFb2UEcz+nfq5ad12rS480Nwtnvei6BmriLMV;
         Expires=Mon, 02 Dec 2019 16:24:06 GMT; Path=/
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -45,7 +45,7 @@ http_interactions:
   recorded_at: Mon, 25 Nov 2019 16:24:06 GMT
 - request:
     method: get
-    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects?pgSz=1&wf_deleted=false
+    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects?pgNum=0&pgSz=25&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
@@ -62,11 +62,11 @@ http_interactions:
       Content-Type:
       - application/xml
       Content-Length:
-      - '720'
+      - '2411'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=CHA0ehtPMjKjuZtnkgCGQOyhk3TIb0B9vOTnuKLZBJQcJA9fluHR52/2V5NaiNb+zqGRIvsNdgQUi7/403C9tR/DLLsdTIfkd5+GaW8+U1yI8coH4CoycGCPHnSL;
+      - AWSALB=MZXEHCRQ1PqLK4woeblyb42Zegp2a2kRUlhSQQjunRjq7KuA9u67JGa64GmPEjUlJnLsQhw5Nyh0r4osUVbq9epk8hH1+MRzgdGKp/5OI5AUOH/srnlmuttKKfYY;
         Expires=Mon, 02 Dec 2019 16:24:06 GMT; Path=/
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
@@ -83,7 +83,50 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>1</pageSize><itemsInPage>1</itemsInPage><totalItems>6</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned><list-item><csid>c9662b4c-79ba-47d0-aa64</csid><uri>/collectionobjects/c9662b4c-79ba-47d0-aa64</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(c9662b4c-79ba-47d0-aa64)'DTS.6'</refName><updatedAt>2019-11-25T16:11:24.159Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.6</objectNumber></list-item></ns2:abstract-common-list>
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>6</itemsInPage><totalItems>6</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned><list-item><csid>c9662b4c-79ba-47d0-aa64</csid><uri>/collectionobjects/c9662b4c-79ba-47d0-aa64</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(c9662b4c-79ba-47d0-aa64)'DTS.6'</refName><updatedAt>2019-11-25T16:11:24.159Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.6</objectNumber></list-item><list-item><csid>89ff952d-9c9f-4b70-8809</csid><uri>/collectionobjects/89ff952d-9c9f-4b70-8809</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(89ff952d-9c9f-4b70-8809)'DTS.5'</refName><updatedAt>2019-11-25T16:11:10.417Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.5</objectNumber></list-item><list-item><csid>4839d856-704e-4a53-bd2c</csid><uri>/collectionobjects/4839d856-704e-4a53-bd2c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(4839d856-704e-4a53-bd2c)'DTS.4'</refName><updatedAt>2019-11-25T16:11:04.620Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.4</objectNumber></list-item><list-item><csid>143ec0d4-f4c5-4f1a-9687</csid><uri>/collectionobjects/143ec0d4-f4c5-4f1a-9687</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(143ec0d4-f4c5-4f1a-9687)'DTS.3'</refName><updatedAt>2019-11-25T16:10:59.101Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.3</objectNumber></list-item><list-item><csid>503e15f6-2c90-4f3c-8aca</csid><uri>/collectionobjects/503e15f6-2c90-4f3c-8aca</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(503e15f6-2c90-4f3c-8aca)'DTS.2'</refName><updatedAt>2019-11-25T16:10:53.938Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.2</objectNumber></list-item><list-item><csid>21494f56-1d13-4f47-a8ae</csid><uri>/collectionobjects/21494f56-1d13-4f47-a8ae</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(21494f56-1d13-4f47-a8ae)'DTS.1'</refName><updatedAt>2019-11-25T16:10:44.801Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.1</objectNumber></list-item></ns2:abstract-common-list>
     http_version: 
   recorded_at: Mon, 25 Nov 2019 16:24:06 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects?pgNum=1&pgSz=25&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 25 Nov 2019 16:24:07 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '383'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=pPrN9ky9sHQJpTGO2I32pjNF83JTCSf6m0uvFp+MXr7f5V9N4adgtMIrxsrMj/7zvbedz7GNx9lOcO2xdWK8lPCSdvvMdM8X55wcR/Mf8rtzWOYLyXZJS3kpu+Ep;
+        Expires=Mon, 02 Dec 2019 16:24:07 GMT; Path=/
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>1</pageNum><pageSize>25</pageSize><itemsInPage>0</itemsInPage><totalItems>6</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned></ns2:abstract-common-list>
+    http_version: 
+  recorded_at: Mon, 25 Nov 2019 16:24:07 GMT
 recorded_with: VCR 3.0.3

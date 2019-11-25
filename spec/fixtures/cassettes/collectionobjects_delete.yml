@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects/b45563b9-ca9f-47e0-9c01?pgSz=25&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 25 Nov 2019 23:00:30 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=/rI1LcQYLmSSkW/9jHe9UuNn8pZeZ54XO1y8qnM0ncyxbnQoJmE0vis7c6sklsYLZR+UD4xUtaFRj6q4np6EhI2tAmftUVO74CHIKGeZkikE0XFt0983kTwQ9uUy;
+        Expires=Mon, 02 Dec 2019 23:00:30 GMT; Path=/
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Mon, 25 Nov 2019 23:00:30 GMT
+recorded_with: VCR 3.0.3
