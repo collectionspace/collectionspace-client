@@ -1,12 +1,14 @@
 module CollectionSpace
-
+  # CollectionSpace client
   class Client
-    include DeepFind
     include Helpers
     attr_reader :config
 
     def initialize(config = Configuration.new)
-      raise "Invalid configuration object" unless config.kind_of? CollectionSpace::Configuration
+      unless config.is_a? CollectionSpace::Configuration
+        raise CollectionSpace::ArgumentError, 'Invalid configuration object'
+      end
+
       @config = config
     end
 
@@ -14,15 +16,14 @@ module CollectionSpace
       request 'GET', path, options
     end
 
-    # additional_options: { query: { foo: 'bar' } }
-    def post(path, payload, additional_options = {})
-      raise PayloadError.new, Nokogiri::XML(payload).errors if Nokogiri::XML(payload).errors.any?
-      request 'POST', path, { body: payload }.merge(additional_options)
+    def post(path, payload, options = {})
+      check_payload(payload)
+      request 'POST', path, { body: payload }.merge(options)
     end
 
     def put(path, payload)
-      raise PayloadError.new, Nokogiri::XML(payload).errors if Nokogiri::XML(payload).errors.any?
-      request 'PUT', path, { body: payload }
+      check_payload(payload)
+      request 'PUT', path, body: payload
     end
 
     def delete(path)
@@ -31,12 +32,14 @@ module CollectionSpace
 
     private
 
-    def request(method, path, options = {})
-      sleep config.throttle
-      result = Request.new(config, method, path, options).execute
-      Response.new result
+    def check_payload(payload)
+      errors = Nokogiri::XML(payload).errors
+      raise CollectionSpace::PayloadError, errors if errors.any?
     end
 
+    def request(method, path, options = {})
+      sleep config.throttle
+      Response.new(Request.new(config, method, path, options).execute)
+    end
   end
-
 end

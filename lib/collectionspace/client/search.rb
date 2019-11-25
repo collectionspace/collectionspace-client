@@ -1,10 +1,13 @@
 module CollectionSpace
-
+  # CollectionSpace search
   class Search
     attr_accessor :path, :type, :field, :expression
 
     def initialize(path: nil, type: nil, field: nil, expression: nil)
-      @path, @type, @field, @expression = path, type, field, expression
+      @path       = path
+      @type       = type
+      @field      = field
+      @expression = expression
     end
 
     def from_hash(query)
@@ -13,7 +16,5 @@ module CollectionSpace
       end
       self
     end
-
   end
-
 end
