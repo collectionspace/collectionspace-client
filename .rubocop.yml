@@ -1,0 +1,8 @@
+# .rubocop.yml
+AllCops:
+  Exclude:
+    - '*.gemspec'
+    - '*.rake'
+Metrics/BlockLength:
+  Exclude:
+    - !ruby/regexp /_spec.rb/
