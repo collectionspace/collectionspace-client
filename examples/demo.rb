@@ -9,14 +9,12 @@ client = CollectionSpace::Client.new(
     password: 'Administrator'
   )
 )
-client.config.throttle = 1
 
 # GET REQUEST FOR CONDITIONCHECK RECORDS AND PRINT THE PARSED RESPONSE AND XML
 response = client.get('conditionchecks')
 ap response.parsed if response.result.success?
 
-# GET ALL INTAKE RECORDS AND PROCESS PER PAGE (INSTEAD OF WAITING FOR ALL)
-client.all('personauthorities').each do |item|
-  i = client.get item['uri']
-  ap i.parsed
+# GET ALL PERSON RECORDS AND PROCESS PER PAGE (INSTEAD OF WAITING FOR ALL)
+client.all('personauthorities/urn:cspace:name(person)/items').each do |item|
+  puts item
 end
