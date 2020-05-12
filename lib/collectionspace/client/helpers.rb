@@ -28,11 +28,10 @@ module CollectionSpace
     end
 
     def get_list_types(path)
-      if path == 'relations'
-        %w[relations_common_list relation_list_item]
-      else
-        %w[abstract_common_list list_item]
-      end
+      {
+        'accounts' => %w[accounts_common_list account_list_item],
+        'relations' => %w[relations_common_list relation_list_item],
+      }.fetch(path, %w[abstract_common_list list_item])
     end
 
     def prepare_query(query, options = {})

@@ -49,7 +49,7 @@ describe CollectionSpace::Client do
           results << r
         end
         expect(response.status_code).to eq(200)
-        expect(results.size).to eq 6
+        expect(results.size).to eq 164
       end
     end
   end
