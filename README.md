@@ -37,7 +37,7 @@ bundle exec rake
 Bump version in `lib/collectionspace/client/version.rb` then:
 
 ```bash
-VERSION=0.2.0
+VERSION=0.3.0
 git add .
 git commit -m "Bump version: v${VERSION}"
 git push origin master
