@@ -34,14 +34,16 @@ module CollectionSpace
       }.fetch(path, %w[abstract_common_list list_item])
     end
 
-    def prepare_query(query, options = {})
-      query_string = "#{query.type}:#{query.field} #{query.expression}"
-      options.merge(query: { as: query_string })
+    def search(query, params = {})
+      options = prepare_query(query, params)
+      request 'GET', query.path, options
     end
 
-    def search(query, options = {})
-      options = prepare_query(query, options)
-      request 'GET', query.path, options
+    private
+
+    def prepare_query(query, params = {})
+      query_string = "#{query.type}:#{query.field} #{query.expression}"
+      { query: { as: query_string }.merge(params) }
     end
   end
 end

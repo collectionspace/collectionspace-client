@@ -14,8 +14,11 @@ search_args = {
   path: 'groups',
   type: 'groups_common',
   field: 'title',
-  expression: "ILIKE '%DTS 001%'"
+  expression: "ILIKE '%D%'"
 }
 
-response = client.search(CollectionSpace::Search.new.from_hash(search_args))
+response = client.search(
+  CollectionSpace::Search.new.from_hash(search_args),
+  { sortBy: 'collectionspace_core:updatedAt DESC' }
+)
 ap response.parsed['abstract_common_list'] if response.result.success?
