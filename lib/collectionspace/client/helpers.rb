@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CollectionSpace
   # Helper methods for client requests
   module Helpers
@@ -9,9 +11,7 @@ module CollectionSpace
 
       Enumerator::Lazy.new(0...iterations) do |yielder, i|
         response = request('GET', path, options.merge(query: { pgNum: i }))
-        unless response.result.success?
-          raise CollectionSpace::RequestError, response.result.body
-        end
+        raise CollectionSpace::RequestError, response.result.body unless response.result.success?
 
         items_in_page = response.parsed[list_type].fetch('itemsInPage', 0).to_i
         list_items = items_in_page.positive? ? response.parsed[list_type][list_item] : []
@@ -30,7 +30,7 @@ module CollectionSpace
     def get_list_types(path)
       {
         'accounts' => %w[accounts_common_list account_list_item],
-        'relations' => %w[relations_common_list relation_list_item],
+        'relations' => %w[relations_common_list relation_list_item]
       }.fetch(path, %w[abstract_common_list list_item])
     end
 

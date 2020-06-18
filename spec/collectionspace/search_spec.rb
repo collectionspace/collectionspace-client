@@ -1,12 +1,16 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe CollectionSpace::Search do
-  let(:search_args) {{
-    path: 'groups',
-    type: 'groups_common',
-    field: 'title',
-    expression: "ILIKE '%D%'"
-  }}
+  let(:search_args) do
+    {
+      path: 'groups',
+      type: 'groups_common',
+      field: 'title',
+      expression: "ILIKE '%D%'"
+    }
+  end
   it 'can construct search from a hash' do
     search = CollectionSpace::Search.new(search_args)
     expect(search.path).to eq(search_args[:path])
@@ -24,7 +28,7 @@ describe CollectionSpace::Search do
     )
     expect(client).to have_received(:request).with(
       'GET', 'groups', {
-        query: {as: "groups_common:title ILIKE '%D%'", sortBy: 'collectionspace_core:updatedAt DESC'}
+        query: { as: "groups_common:title ILIKE '%D%'", sortBy: 'collectionspace_core:updatedAt DESC' }
       }
     )
   end

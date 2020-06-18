@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CollectionSpace
   # CollectionSpace request
   class Request
