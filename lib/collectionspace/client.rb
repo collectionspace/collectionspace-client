@@ -12,6 +12,7 @@ require 'collectionspace/client/configuration'
 require 'collectionspace/client/request'
 require 'collectionspace/client/response'
 require 'collectionspace/client/search'
+require 'collectionspace/client/service'
 require 'collectionspace/client/version'
 
 module CollectionSpace

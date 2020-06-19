@@ -4,13 +4,13 @@ CollectionSpace API client.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (replace `$VERSION` with an available tag):
 
 ```ruby
-gem 'collectionspace-client'
+gem 'collectionspace-client', tag: $VERSION, git: 'https://github.com/collectionspace/collectionspace-client.git'
 ```
 
-And then execute `bundle install`, or install it yourself as: `gem install collectionspace-client`.
+And then execute `bundle install`.
 
 ## Usage
 
@@ -30,21 +30,6 @@ To run the tests:
 
 ```bash
 bundle exec rake
-```
-
-## Publishing
-
-Bump version in `lib/collectionspace/client/version.rb` then:
-
-```bash
-VERSION=0.3.0
-git add .
-git commit -m "Bump version: v${VERSION}"
-git push origin master
-git tag v$VERSION
-git push --tags
-gem build collectionspace-client
-gem push collectionspace-client-$VERSION.gem
 ```
 
 ## Contributing

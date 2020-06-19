@@ -24,7 +24,22 @@ module CollectionSpace
     def count(path)
       list_type, = get_list_types(path)
       response   = request('GET', path, query: { pgNum: 0, pgSz: 1 })
-      response.parsed[list_type]['totalItems'].to_i if response.result.success?
+      raise CollectionSpace::RequestError, response.result.body unless response.result.success?
+
+      response.parsed[list_type]['totalItems'].to_i
+    end
+
+    def find(type:, subtype: nil, value:, field: nil, schema: 'common', sort: nil)
+      service = CollectionSpace::Service.get(type: type, subtype: subtype)
+      field ||= service[:identifier]
+      sort ||= 'collectionspace_core:updatedAt DESC'
+      search_args = CollectionSpace::Search.new.from_hash({
+                                                            path: service[:path],
+                                                            namespace: "#{service[:ns_prefix]}_#{schema}",
+                                                            field: field,
+                                                            expression: "= '#{value}'"
+                                                          })
+      search(search_args, sortBy: sort)
     end
 
     def get_list_types(path)
@@ -42,7 +57,7 @@ module CollectionSpace
     private
 
     def prepare_query(query, params = {})
-      query_string = "#{query.type}:#{query.field} #{query.expression}"
+      query_string = "#{query.namespace}:#{query.field} #{query.expression}"
       { query: { as: query_string }.merge(params) }
     end
   end
