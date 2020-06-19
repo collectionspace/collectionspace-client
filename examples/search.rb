@@ -14,7 +14,7 @@ client = CollectionSpace::Client.new(config)
 
 search_args = {
   path: 'groups',
-  type: 'groups_common',
+  namespace: 'groups_common',
   field: 'title',
   expression: "ILIKE '%D%'"
 }
@@ -22,5 +22,16 @@ search_args = {
 response = client.search(
   CollectionSpace::Search.new.from_hash(search_args),
   { sortBy: 'collectionspace_core:updatedAt DESC' }
+)
+ap response.parsed['abstract_common_list'] if response.result.success?
+
+response = client.find(type: 'collectionobjects', value: 'QA TEST 001')
+ap response.parsed['abstract_common_list'] if response.result.success?
+
+response = client.find(
+  type: 'placeauthorities',
+  subtype: 'place',
+  value: 'California',
+  field: CollectionSpace::Service.get(type: 'placeauthorities')[:term]
 )
 ap response.parsed['abstract_common_list'] if response.result.success?

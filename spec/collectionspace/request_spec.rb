@@ -10,7 +10,7 @@ describe CollectionSpace::Request do
   let(:search) do
     {
       path: 'collectionobjects',
-      type: 'collectionobjects_common',
+      namespace: 'collectionobjects_common',
       field: 'objectNumber',
       expression: "= 'CLIENT.002'"
     }
@@ -37,7 +37,7 @@ describe CollectionSpace::Request do
     end
   end
 
-  it 'can search for a collectiomobject' do
+  it 'can search for a collectionobject' do
     VCR.use_cassette('collectionobjects_search') do
       response = client.search(CollectionSpace::Search.new.from_hash(search))
       total    = response.parsed['abstract_common_list']['totalItems'].to_i

@@ -3,11 +3,11 @@
 module CollectionSpace
   # CollectionSpace search
   class Search
-    attr_accessor :path, :type, :field, :expression
+    attr_accessor :path, :namespace, :field, :expression
 
-    def initialize(path: nil, type: nil, field: nil, expression: nil)
+    def initialize(path: nil, namespace: nil, field: nil, expression: nil)
       @path       = path
-      @type       = type
+      @namespace  = namespace
       @field      = field
       @expression = expression
     end

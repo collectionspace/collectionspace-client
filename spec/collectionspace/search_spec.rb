@@ -6,7 +6,7 @@ describe CollectionSpace::Search do
   let(:search_args) do
     {
       path: 'groups',
-      type: 'groups_common',
+      namespace: 'groups_common',
       field: 'title',
       expression: "ILIKE '%D%'"
     }
@@ -14,7 +14,7 @@ describe CollectionSpace::Search do
   it 'can construct search from a hash' do
     search = CollectionSpace::Search.new(search_args)
     expect(search.path).to eq(search_args[:path])
-    expect(search.type).to eq(search_args[:type])
+    expect(search.namespace).to eq(search_args[:namespace])
     expect(search.field).to eq(search_args[:field])
     expect(search.expression).to eq(search_args[:expression])
   end
