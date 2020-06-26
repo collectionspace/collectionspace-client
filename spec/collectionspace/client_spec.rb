@@ -54,5 +54,12 @@ describe CollectionSpace::Client do
         expect(results.size).to eq 164
       end
     end
+
+    it 'can retrieve services' do
+      service = client.service(type: 'collectionobjects')
+      expect(service[:identifier]).to eq 'objectNumber'
+      expect(service[:path]).to eq 'collectionobjects'
+      expect(service[:term]).to be_nil
+    end
   end
 end

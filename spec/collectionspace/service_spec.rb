@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe CollectionSpace::Service do
-  it 'can retrieve service details' do
+  it 'can retrieve service details directly' do
     service = CollectionSpace::Service.get(type: 'collectionobjects')
     expect(service[:identifier]).to eq 'objectNumber'
     expect(service[:path]).to eq 'collectionobjects'

@@ -54,6 +54,10 @@ module CollectionSpace
       request 'GET', query.path, options
     end
 
+    def service(type:, subtype: '')
+      CollectionSpace::Service.get(type: type, subtype: subtype)
+    end
+
     private
 
     def prepare_query(query, params = {})
