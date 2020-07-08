@@ -11,7 +11,9 @@ module CollectionSpace
 
       Enumerator::Lazy.new(0...iterations) do |yielder, i|
         response = request('GET', path, options.merge(query: { pgNum: i }))
-        raise CollectionSpace::RequestError, response.result.body unless response.result.success?
+        unless response.result.success?
+          raise CollectionSpace::RequestError, response.result.body
+        end
 
         items_in_page = response.parsed[list_type].fetch('itemsInPage', 0).to_i
         list_items = items_in_page.positive? ? response.parsed[list_type][list_item] : []
@@ -24,7 +26,9 @@ module CollectionSpace
     def count(path)
       list_type, = get_list_types(path)
       response   = request('GET', path, query: { pgNum: 0, pgSz: 1 })
-      raise CollectionSpace::RequestError, response.result.body unless response.result.success?
+      unless response.result.success?
+        raise CollectionSpace::RequestError, response.result.body
+      end
 
       response.parsed[list_type]['totalItems'].to_i
     end
@@ -33,12 +37,12 @@ module CollectionSpace
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:identifier]
       sort ||= 'collectionspace_core:updatedAt DESC'
-      search_args = CollectionSpace::Search.new.from_hash({
-                                                            path: service[:path],
-                                                            namespace: "#{service[:ns_prefix]}_#{schema}",
-                                                            field: field,
-                                                            expression: "= '#{value}'"
-                                                          })
+      search_args = CollectionSpace::Search.new.from_hash(
+        path: service[:path],
+        namespace: "#{service[:ns_prefix]}_#{schema}",
+        field: field,
+        expression: "= '#{value}'"
+      )
       search(search_args, sortBy: sort)
     end
 

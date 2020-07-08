@@ -19,19 +19,31 @@ search_args = {
   expression: "ILIKE '%D%'"
 }
 
+puts 'Search: %D'
 response = client.search(
   CollectionSpace::Search.new.from_hash(search_args),
   { sortBy: 'collectionspace_core:updatedAt DESC' }
 )
 ap response.parsed['abstract_common_list'] if response.result.success?
 
+puts "Search: QA TEST 001"
 response = client.find(type: 'collectionobjects', value: 'QA TEST 001')
 ap response.parsed['abstract_common_list'] if response.result.success?
 
-response = client.find(
-  type: 'placeauthorities',
-  subtype: 'place',
-  value: 'California',
-  field: CollectionSpace::Service.get(type: 'placeauthorities')[:term]
-)
-ap response.parsed['abstract_common_list'] if response.result.success?
+[
+  {type: 'placeauthorities', subtype: 'place', value: 'California'},
+  {type: 'placeauthorities', subtype: 'place', value: 'Death Valley'},
+  {type: 'placeauthorities', subtype: 'place', value: 'Hamilton!, Ohio'},
+  {type: 'placeauthorities', subtype: 'place', value: '姫路城'},
+  {type: 'personauthorities', subtype: 'person', value: 'Morris, Perry(Pete)'},
+  {type: 'personauthorities', subtype: 'person', value: 'Clark, H. Pol & Mary Gambo'},
+].each do |term|
+  puts "Search: #{term[:value]}"
+  response = client.find(
+    type: term[:type],
+    subtype: term[:subtype],
+    value: term[:value],
+    field: CollectionSpace::Service.get(type: term[:type])[:term]
+  )
+  ap response.parsed['abstract_common_list'] if response.result.success?
+end
