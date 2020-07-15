@@ -41,7 +41,7 @@ module CollectionSpace
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: "= '#{value}'"
+        expression: "= '#{value.gsub(/\'/, '\\\\\'')}'"
       )
       search(search_args, sortBy: sort)
     end
