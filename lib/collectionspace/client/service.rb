@@ -142,7 +142,7 @@ module CollectionSpace
           identifier: 'shortIdentifier',
           ns_prefix: 'taxon',
           path: "taxonomyauthority/urn:cspace:name(#{subtype})/items",
-          term: "place#{TERM_SUFFIX}"
+          term: "taxon#{TERM_SUFFIX}"
         },
         'uoc' => {
           identifier: 'referenceNumber',
