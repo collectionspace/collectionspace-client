@@ -33,6 +33,17 @@ module CollectionSpace
       response.parsed[list_type]['totalItems'].to_i
     end
 
+    # get the tenant domain from a system required top level authority (person)
+    def domain
+      path = 'personauthorities'
+      response = request('GET', path, query: { pgNum: 0, pgSz: 1 })
+      unless response.result.success?
+        raise CollectionSpace::RequestError, response.result.body
+      end
+      refname = response.parsed.dig(*get_list_types(path), 'refName')
+      CollectionSpace::RefName.parse(refname)[:domain]
+    end
+
     def find(type:, subtype: nil, value:, field: nil, schema: 'common', sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:identifier]

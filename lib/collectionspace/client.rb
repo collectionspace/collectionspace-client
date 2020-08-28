@@ -9,6 +9,7 @@ require 'collectionspace/client/helpers'
 
 require 'collectionspace/client/client'
 require 'collectionspace/client/configuration'
+require 'collectionspace/client/refname'
 require 'collectionspace/client/request'
 require 'collectionspace/client/response'
 require 'collectionspace/client/search'
