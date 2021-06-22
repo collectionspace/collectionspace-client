@@ -60,6 +60,12 @@ module CollectionSpace
           path: 'groups',
           term: nil
         },
+        'insurances' => {
+          identifier: 'insuranceIndemnityReferenceNumber',
+          ns_prefix: 'insurances',
+          path: 'insurances',
+          term: nil
+        },
         'intakes' => {
           identifier: 'entryNumber',
           ns_prefix: 'intakes',
@@ -132,6 +138,18 @@ module CollectionSpace
           path: "placeauthorities/urn:cspace:name(#{subtype})/items",
           term: "place#{TERM_SUFFIX}"
         },
+        'pottags' => {
+          identifier: 'potTagNumber',
+          ns_prefix: 'pottags',
+          path: 'pottags',
+          term: nil
+        },
+        'propagations' => {
+          identifier: 'propNumber',
+          ns_prefix: 'propagations',
+          path: 'propagations',
+          term: nil
+        },
         'relations' => {
           identifier: 'csid',
           ns_prefix: 'relations',
@@ -143,6 +161,12 @@ module CollectionSpace
           ns_prefix: 'taxon',
           path: "taxonomyauthority/urn:cspace:name(#{subtype})/items",
           term: "taxon#{TERM_SUFFIX}"
+        },
+        'transports' => {
+          identifier: 'transportReferenceNumber',
+          ns_prefix: 'transports',
+          path: 'transports',
+          term: nil
         },
         'uoc' => {
           identifier: 'referenceNumber',
