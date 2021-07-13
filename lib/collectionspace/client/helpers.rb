@@ -11,9 +11,7 @@ module CollectionSpace
 
       Enumerator::Lazy.new(0...iterations) do |yielder, i|
         response = request('GET', path, options.merge(query: { pgNum: i }))
-        unless response.result.success?
-          raise CollectionSpace::RequestError, response.result.body
-        end
+        raise CollectionSpace::RequestError, response.result.body unless response.result.success?
 
         items_in_page = response.parsed[list_type].fetch('itemsInPage', 0).to_i
         list_items = items_in_page.positive? ? response.parsed[list_type][list_item] : []
@@ -26,9 +24,7 @@ module CollectionSpace
     def count(path)
       list_type, = get_list_types(path)
       response   = request('GET', path, query: { pgNum: 0, pgSz: 1 })
-      unless response.result.success?
-        raise CollectionSpace::RequestError, response.result.body
-      end
+      raise CollectionSpace::RequestError, response.result.body unless response.result.success?
 
       response.parsed[list_type]['totalItems'].to_i
     end
@@ -37,9 +33,8 @@ module CollectionSpace
     def domain
       path = 'personauthorities'
       response = request('GET', path, query: { pgNum: 0, pgSz: 1 })
-      unless response.result.success?
-        raise CollectionSpace::RequestError, response.result.body
-      end
+      raise CollectionSpace::RequestError, response.result.body unless response.result.success?
+
       refname = response.parsed.dig(*get_list_types(path), 'refName')
       CollectionSpace::RefName.parse(refname)[:domain]
     end

@@ -33,6 +33,6 @@ describe CollectionSpace::Helpers do
         success?: true
       )
     )
-    expect(client.domain).to eq("core.collectionspace.org")
+    expect(client.domain).to eq('core.collectionspace.org')
   end
 end

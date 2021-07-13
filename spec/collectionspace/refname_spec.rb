@@ -18,39 +18,39 @@ describe CollectionSpace::RefName do
 
   it 'can parse a top level authority refname' do
     expect(CollectionSpace::RefName.parse(refname_authority)).to eq({
-      domain: 'core.collectionspace.org',
-      type: 'personauthorities',
-      subtype: 'person',
-    })
+                                                                      domain: 'core.collectionspace.org',
+                                                                      type: 'personauthorities',
+                                                                      subtype: 'person'
+                                                                    })
   end
 
   it 'can parse an authority term refname' do
     expect(CollectionSpace::RefName.parse(refname_person)).to eq({
-      domain: 'core.collectionspace.org',
-      type: 'personauthorities',
-      subtype: 'person',
-      identifier: '1234561562130996026',
-      label: '123456'
-    })
+                                                                   domain: 'core.collectionspace.org',
+                                                                   type: 'personauthorities',
+                                                                   subtype: 'person',
+                                                                   identifier: '1234561562130996026',
+                                                                   label: '123456'
+                                                                 })
   end
 
   it 'can parse an authority term with colon' do
     expect(CollectionSpace::RefName.parse(refname_with_colon_in_name)).to eq({
-      domain: 'core.collectionspace.org',
-      type: 'locationauthorities',
-      subtype: 'location',
-      identifier: 'AR1U1Shelf14078111602',
-      label: 'A:R1:U1:Shelf 1'
-    })
+                                                                               domain: 'core.collectionspace.org',
+                                                                               type: 'locationauthorities',
+                                                                               subtype: 'location',
+                                                                               identifier: 'AR1U1Shelf14078111602',
+                                                                               label: 'A:R1:U1:Shelf 1'
+                                                                             })
   end
 
   it 'can parse an authority term with parens' do
     expect(CollectionSpace::RefName.parse(refname_with_parens)).to eq({
-      domain: 'core.collectionspace.org',
-      type: 'conceptauthorities',
-      subtype: 'concept',
-      identifier: 'JMAlexanderCompanyAtlantaGa1028284796',
-      label: 'J.M. Alexander & Company (Atlanta, Ga.)'
-    })
+                                                                        domain: 'core.collectionspace.org',
+                                                                        type: 'conceptauthorities',
+                                                                        subtype: 'concept',
+                                                                        identifier: 'JMAlexanderCompanyAtlantaGa1028284796',
+                                                                        label: 'J.M. Alexander & Company (Atlanta, Ga.)'
+                                                                      })
   end
 end
