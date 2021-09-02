@@ -43,7 +43,7 @@ module CollectionSpace
     # find authority/vocab term by type, subtype, and refname
     def find(type:, subtype: nil, value:, field: nil, schema: 'common', sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
-      field = service[:term]
+      field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
       field ||= service[:identifier]
       sort ||= 'collectionspace_core:updatedAt DESC'
       search_args = CollectionSpace::Search.new.from_hash(
