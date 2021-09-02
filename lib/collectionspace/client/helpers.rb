@@ -39,8 +39,11 @@ module CollectionSpace
       CollectionSpace::RefName.parse(refname)[:domain]
     end
 
+    # find procedure or object by type and id
+    # find authority/vocab term by type, subtype, and refname
     def find(type:, subtype: nil, value:, field: nil, schema: 'common', sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
+      field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
       field ||= service[:identifier]
       sort ||= 'collectionspace_core:updatedAt DESC'
       search_args = CollectionSpace::Search.new.from_hash(
@@ -50,6 +53,10 @@ module CollectionSpace
         expression: "= '#{value.gsub(/\'/, '\\\\\'')}'"
       )
       search(search_args, sortBy: sort)
+    end
+
+    def find_relation(subject_csid:, object_csid:)
+      get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid })
     end
 
     def get_list_types(path)

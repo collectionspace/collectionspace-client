@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe CollectionSpace::Request do
   let(:client) { default_client }
-  let(:object_uri) { 'collectionobjects/b45563b9-ca9f-47e0-9c01' }
+  let(:object_uri) { 'collectionobjects/67e88be5-a498-4922-a90c' }
   let(:post_payload) { fixture('collectionobject.xml') }
   let(:put_payload) { fixture('collectionobject_update.xml') }
   let(:search) do

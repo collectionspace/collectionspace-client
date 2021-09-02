@@ -7,6 +7,12 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
       Authorization:
       - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
   response:
@@ -15,16 +21,18 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 25 Nov 2019 16:24:06 GMT
+      - Thu, 02 Sep 2021 14:35:06 GMT
       Content-Type:
       - application/xml
-      Content-Length:
-      - '2411'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=tCqjfrtoFMFUmNAQngpHag4Znir1I1b7tOI0d/PMGwDonJ7JARpNDZZ6mXglig8H+0UzwnbPz7Momu+eeZZ3A3whFxQYB0Xt5tt7jjrOpKOD96u4qrPIdrs2YPJY;
-        Expires=Mon, 02 Dec 2019 16:24:06 GMT; Path=/
+      - AWSALB=jyXzLvGQpxH8ExlY0YxpllkHb8jtuxGdhvYex/WxAYaSeGqlwm4RU4JXmlv2+Uw6gSchMY4rJXFEbRpvqrQ2cp3cTQbKKetXznlIIXbo5fPrwOOmj0fq6NF9Zma1;
+        Expires=Thu, 09 Sep 2021 14:35:05 GMT; Path=/
+      - AWSALBCORS=jyXzLvGQpxH8ExlY0YxpllkHb8jtuxGdhvYex/WxAYaSeGqlwm4RU4JXmlv2+Uw6gSchMY4rJXFEbRpvqrQ2cp3cTQbKKetXznlIIXbo5fPrwOOmj0fq6NF9Zma1;
+        Expires=Thu, 09 Sep 2021 14:35:05 GMT; Path=/; SameSite=None; Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -40,7 +48,48 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>6</itemsInPage><totalItems>6</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned><list-item><csid>c9662b4c-79ba-47d0-aa64</csid><uri>/collectionobjects/c9662b4c-79ba-47d0-aa64</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(c9662b4c-79ba-47d0-aa64)'DTS.6'</refName><updatedAt>2019-11-25T16:11:24.159Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.6</objectNumber></list-item><list-item><csid>89ff952d-9c9f-4b70-8809</csid><uri>/collectionobjects/89ff952d-9c9f-4b70-8809</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(89ff952d-9c9f-4b70-8809)'DTS.5'</refName><updatedAt>2019-11-25T16:11:10.417Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.5</objectNumber></list-item><list-item><csid>4839d856-704e-4a53-bd2c</csid><uri>/collectionobjects/4839d856-704e-4a53-bd2c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(4839d856-704e-4a53-bd2c)'DTS.4'</refName><updatedAt>2019-11-25T16:11:04.620Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.4</objectNumber></list-item><list-item><csid>143ec0d4-f4c5-4f1a-9687</csid><uri>/collectionobjects/143ec0d4-f4c5-4f1a-9687</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(143ec0d4-f4c5-4f1a-9687)'DTS.3'</refName><updatedAt>2019-11-25T16:10:59.101Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.3</objectNumber></list-item><list-item><csid>503e15f6-2c90-4f3c-8aca</csid><uri>/collectionobjects/503e15f6-2c90-4f3c-8aca</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(503e15f6-2c90-4f3c-8aca)'DTS.2'</refName><updatedAt>2019-11-25T16:10:53.938Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.2</objectNumber></list-item><list-item><csid>21494f56-1d13-4f47-a8ae</csid><uri>/collectionobjects/21494f56-1d13-4f47-a8ae</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(21494f56-1d13-4f47-a8ae)'DTS.1'</refName><updatedAt>2019-11-25T16:10:44.801Z</updatedAt><workflowState>project</workflowState><objectNumber>DTS.1</objectNumber></list-item></ns2:abstract-common-list>
-    http_version: 
-  recorded_at: Mon, 25 Nov 2019 16:24:06 GMT
-recorded_with: VCR 3.0.3
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>25</itemsInPage><totalItems>1320</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned><list-item><csid>67e88be5-a498-4922-a90c</csid><uri>/collectionobjects/67e88be5-a498-4922-a90c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(67e88be5-a498-4922-a90c)'CLIENT.002'</refName><updatedAt>2021-09-02T14:33:08.860Z</updatedAt><workflowState>project</workflowState><objectNumber>CLIENT.002</objectNumber></list-item><list-item><csid>428bd5a8-9a58-4671-be40</csid><uri>/collectionobjects/428bd5a8-9a58-4671-be40</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(428bd5a8-9a58-4671-be40)'CLIENT.001'</refName><updatedAt>2021-09-02T14:32:34.460Z</updatedAt><workflowState>project</workflowState><objectNumber>CLIENT.001</objectNumber></list-item><list-item><csid>95c1b35d-c4d8-4e4e-ac51</csid><uri>/collectionobjects/95c1b35d-c4d8-4e4e-ac51</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(95c1b35d-c4d8-4e4e-ac51)'CLIENT.001'</refName><updatedAt>2021-09-02T14:31:20.215Z</updatedAt><workflowState>project</workflowState><objectNumber>CLIENT.001</objectNumber></list-item><list-item><csid>dd664ac1-5111-416b-b80b</csid><uri>/collectionobjects/dd664ac1-5111-416b-b80b</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(dd664ac1-5111-416b-b80b)'CLIENT.001'</refName><updatedAt>2021-09-02T14:19:48.834Z</updatedAt><workflowState>project</workflowState><objectNumber>CLIENT.001</objectNumber></list-item><list-item><csid>e2d95580-340c-4a4f-a523</csid><uri>/collectionobjects/e2d95580-340c-4a4f-a523</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(e2d95580-340c-4a4f-a523)'Hierarchy
+        Test 1001'</refName><updatedAt>2021-09-01T17:33:36.618Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 1001</objectNumber></list-item><list-item><csid>57703a85-11eb-4b73-a4cb</csid><uri>/collectionobjects/57703a85-11eb-4b73-a4cb</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(57703a85-11eb-4b73-a4cb)'Hierarchy
+        Test 1000'</refName><updatedAt>2021-09-01T17:33:36.003Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 1000</objectNumber></list-item><list-item><csid>23f81722-ffbd-48f5-a76f</csid><uri>/collectionobjects/23f81722-ffbd-48f5-a76f</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(23f81722-ffbd-48f5-a76f)'Hierarchy
+        Test 0999'</refName><updatedAt>2021-09-01T17:33:35.435Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0999</objectNumber></list-item><list-item><csid>b9cbc125-64ab-4810-a6f6</csid><uri>/collectionobjects/b9cbc125-64ab-4810-a6f6</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(b9cbc125-64ab-4810-a6f6)'Hierarchy
+        Test 0998'</refName><updatedAt>2021-09-01T17:33:34.845Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0998</objectNumber></list-item><list-item><csid>79c783aa-c225-456f-b69d</csid><uri>/collectionobjects/79c783aa-c225-456f-b69d</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(79c783aa-c225-456f-b69d)'Hierarchy
+        Test 0997'</refName><updatedAt>2021-09-01T17:33:34.257Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0997</objectNumber></list-item><list-item><csid>1b9c1fb7-a84d-4ece-adb2</csid><uri>/collectionobjects/1b9c1fb7-a84d-4ece-adb2</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(1b9c1fb7-a84d-4ece-adb2)'Hierarchy
+        Test 0996'</refName><updatedAt>2021-09-01T17:33:33.652Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0996</objectNumber></list-item><list-item><csid>f3edb73f-cfe6-40cb-b419</csid><uri>/collectionobjects/f3edb73f-cfe6-40cb-b419</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(f3edb73f-cfe6-40cb-b419)'Hierarchy
+        Test 0995'</refName><updatedAt>2021-09-01T17:33:33.069Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0995</objectNumber></list-item><list-item><csid>0f9156b8-603b-4f37-97d1</csid><uri>/collectionobjects/0f9156b8-603b-4f37-97d1</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(0f9156b8-603b-4f37-97d1)'Hierarchy
+        Test 0994'</refName><updatedAt>2021-09-01T17:33:32.483Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0994</objectNumber></list-item><list-item><csid>6c4fe7d5-8d9a-4e9d-834b</csid><uri>/collectionobjects/6c4fe7d5-8d9a-4e9d-834b</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(6c4fe7d5-8d9a-4e9d-834b)'Hierarchy
+        Test 0993'</refName><updatedAt>2021-09-01T17:33:31.908Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0993</objectNumber></list-item><list-item><csid>90e3b590-b713-4a99-992c</csid><uri>/collectionobjects/90e3b590-b713-4a99-992c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(90e3b590-b713-4a99-992c)'Hierarchy
+        Test 0992'</refName><updatedAt>2021-09-01T17:33:31.299Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0992</objectNumber></list-item><list-item><csid>18f8950e-b2a7-4550-916f</csid><uri>/collectionobjects/18f8950e-b2a7-4550-916f</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(18f8950e-b2a7-4550-916f)'Hierarchy
+        Test 0991'</refName><updatedAt>2021-09-01T17:33:30.707Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0991</objectNumber></list-item><list-item><csid>1e30326c-628f-4de3-b59e</csid><uri>/collectionobjects/1e30326c-628f-4de3-b59e</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(1e30326c-628f-4de3-b59e)'Hierarchy
+        Test 0990'</refName><updatedAt>2021-09-01T17:33:30.117Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0990</objectNumber></list-item><list-item><csid>5b96cf76-3e5b-46c1-bb2d</csid><uri>/collectionobjects/5b96cf76-3e5b-46c1-bb2d</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(5b96cf76-3e5b-46c1-bb2d)'Hierarchy
+        Test 0989'</refName><updatedAt>2021-09-01T17:33:29.560Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0989</objectNumber></list-item><list-item><csid>102dec11-4480-406c-b00c</csid><uri>/collectionobjects/102dec11-4480-406c-b00c</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(102dec11-4480-406c-b00c)'Hierarchy
+        Test 0988'</refName><updatedAt>2021-09-01T17:33:29.012Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0988</objectNumber></list-item><list-item><csid>a4a1fc4f-a0e5-417b-91ca</csid><uri>/collectionobjects/a4a1fc4f-a0e5-417b-91ca</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(a4a1fc4f-a0e5-417b-91ca)'Hierarchy
+        Test 0987'</refName><updatedAt>2021-09-01T17:33:28.430Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0987</objectNumber></list-item><list-item><csid>02635e31-636a-4456-bf0d</csid><uri>/collectionobjects/02635e31-636a-4456-bf0d</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(02635e31-636a-4456-bf0d)'Hierarchy
+        Test 0986'</refName><updatedAt>2021-09-01T17:33:27.838Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0986</objectNumber></list-item><list-item><csid>c0351320-d148-4236-8a88</csid><uri>/collectionobjects/c0351320-d148-4236-8a88</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(c0351320-d148-4236-8a88)'Hierarchy
+        Test 0985'</refName><updatedAt>2021-09-01T17:33:27.243Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0985</objectNumber></list-item><list-item><csid>09ebcf0a-7643-448c-abe6</csid><uri>/collectionobjects/09ebcf0a-7643-448c-abe6</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(09ebcf0a-7643-448c-abe6)'Hierarchy
+        Test 0984'</refName><updatedAt>2021-09-01T17:33:26.696Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0984</objectNumber></list-item><list-item><csid>622adb6a-d79a-4497-bd83</csid><uri>/collectionobjects/622adb6a-d79a-4497-bd83</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(622adb6a-d79a-4497-bd83)'Hierarchy
+        Test 0983'</refName><updatedAt>2021-09-01T17:33:26.119Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0983</objectNumber></list-item><list-item><csid>0a628f72-20bb-4c3a-af6a</csid><uri>/collectionobjects/0a628f72-20bb-4c3a-af6a</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(0a628f72-20bb-4c3a-af6a)'Hierarchy
+        Test 0982'</refName><updatedAt>2021-09-01T17:33:25.554Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0982</objectNumber></list-item><list-item><csid>4fbf63db-7df7-4cf3-b1bc</csid><uri>/collectionobjects/4fbf63db-7df7-4cf3-b1bc</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(4fbf63db-7df7-4cf3-b1bc)'Hierarchy
+        Test 0981'</refName><updatedAt>2021-09-01T17:33:24.978Z</updatedAt><workflowState>project</workflowState><objectNumber>Hierarchy
+        Test 0981</objectNumber></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 02 Sep 2021 14:35:06 GMT
+recorded_with: VCR 6.0.0

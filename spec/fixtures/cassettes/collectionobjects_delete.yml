@@ -2,11 +2,17 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects/b45563b9-ca9f-47e0-9c01?pgSz=25&wf_deleted=false
+    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects/67e88be5-a498-4922-a90c?pgSz=25&wf_deleted=false
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
       Authorization:
       - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
   response:
@@ -15,14 +21,16 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 25 Nov 2019 23:00:30 GMT
+      - Thu, 02 Sep 2021 14:35:10 GMT
       Content-Length:
       - '0'
       Connection:
       - keep-alive
       Set-Cookie:
-      - AWSALB=/rI1LcQYLmSSkW/9jHe9UuNn8pZeZ54XO1y8qnM0ncyxbnQoJmE0vis7c6sklsYLZR+UD4xUtaFRj6q4np6EhI2tAmftUVO74CHIKGeZkikE0XFt0983kTwQ9uUy;
-        Expires=Mon, 02 Dec 2019 23:00:30 GMT; Path=/
+      - AWSALB=+5G73x4CxuHns8P0pv5sEvfVRBTQvrTRLZelr11ofxsXgIK9JUDt5iw4BovA//FZbqOrGlPBvwO7KUFsuGT+tf7IvBfz3KgGiZPHiywsPCERtjFxSLP6n1t6jIC/;
+        Expires=Thu, 09 Sep 2021 14:35:10 GMT; Path=/
+      - AWSALBCORS=+5G73x4CxuHns8P0pv5sEvfVRBTQvrTRLZelr11ofxsXgIK9JUDt5iw4BovA//FZbqOrGlPBvwO7KUFsuGT+tf7IvBfz3KgGiZPHiywsPCERtjFxSLP6n1t6jIC/;
+        Expires=Thu, 09 Sep 2021 14:35:10 GMT; Path=/; SameSite=None; Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -38,6 +46,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version:
-  recorded_at: Mon, 25 Nov 2019 23:00:30 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 02 Sep 2021 14:35:10 GMT
+recorded_with: VCR 6.0.0

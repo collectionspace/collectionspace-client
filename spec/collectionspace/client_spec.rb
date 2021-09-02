@@ -13,7 +13,10 @@ describe CollectionSpace::Client do
     end
 
     it 'will raise an error if supplied configuration is of invalid type' do
-      expect { CollectionSpace::Client.new(base_uri: base) }.to raise_error
+      expect { CollectionSpace::Client.new(base_uri: base) }.to raise_error(
+        CollectionSpace::ArgumentError,
+        'Invalid configuration object'
+      )
     end
 
     it 'will allow a configuration object to be provided' do

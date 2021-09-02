@@ -2,10 +2,16 @@
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'collectionspace/client'
+require 'pry'
 require 'vcr'
 require 'webmock/rspec'
 
+RSpec.configure do |config|
+  config.example_status_persistence_file_path = '.rspec_status'
+end
+
 VCR.configure do |c|
+  c.allow_http_connections_when_no_cassette = true
   c.cassette_library_dir = 'spec/fixtures/cassettes'
   c.hook_into :webmock
   c.default_cassette_options = { record: :once }
