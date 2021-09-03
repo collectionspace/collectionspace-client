@@ -65,28 +65,32 @@ describe CollectionSpace::Helpers do
     context 'with authority term' do
       it 'finds as expected' do
         args = [
-          { type: 'placeauthorities', subtype: 'place', value: 'California' },
-          { type: 'placeauthorities', subtype: 'place', value: 'Death Valley' },
-          { type: 'placeauthorities', subtype: 'place', value: 'Hamilton!, Ohio' },
-          { type: 'placeauthorities', subtype: 'place', value: '姫路城' },
-          { type: 'placeauthorities', subtype: 'place', value: "No'Where" },
-          { type: 'personauthorities', subtype: 'person', value: 'Morris, Perry(Pete)' },
-          { type: 'personauthorities', subtype: 'person', value: 'Clark, H. Pol & Mary Gambo' },
-          { type: 'orgauthorities', subtype: 'organization', value: "Smith's Appletree Garager" },
-          { type: 'orgauthorities', subtype: 'organization', value: 'The "Grand" Canyon' }
+          # { type: 'placeauthorities', subtype: 'place', value: 'California' },
+          # { type: 'placeauthorities', subtype: 'place', value: 'Death Valley' },
+          # { type: 'placeauthorities', subtype: 'place', value: 'Hamilton!, Ohio' },
+          # { type: 'placeauthorities', subtype: 'place', value: '姫路城' },
+          # { type: 'placeauthorities', subtype: 'place', value: "No'Where" },
+          # { type: 'personauthorities', subtype: 'person', value: 'Morris, Perry(Pete)' },
+          # { type: 'personauthorities', subtype: 'person', value: 'Clark, H. Pol & Mary Gambo' },
+          # { type: 'orgauthorities', subtype: 'organization', value: "Smith's Appletree Garager" },
+          # { type: 'orgauthorities', subtype: 'organization', value: 'The "Grand" Canyon' },
+          { type: 'conceptauthorities', subtype: 'concept', value: 'Goats' },
+          #{ type: 'conceptauthorities', subtype: 'concept', value: 'QA TEST Concept 1' }
         ]
         results = args.map { |arg| client.find(arg) }
                       .map { |resp| resp.parsed['abstract_common_list']['list_item']['uri'] }
         expected = [
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/c9d34920-1782-49ed-a0c3',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/4745b7b1-cc7a-458e-9742',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/a0f4ba2a-07cb-4647-a884',
-          '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df',
-          '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975',
-          '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b',
-          '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405',
+          # '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed',
+          # '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a',
+          # '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/c9d34920-1782-49ed-a0c3',
+          # '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/4745b7b1-cc7a-458e-9742',
+          # '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/a0f4ba2a-07cb-4647-a884',
+          # '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df',
+          # '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975',
+          # '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b',
+          # '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405',
+          '/conceptauthorities/7022dcc2-2f66-4cb8-b768/items/237f23c0-50a9-43bd-bb11',
+          #'/conceptauthorities/7022dcc2-2f66-4cb8-b768/items/06659851-bbed-47ab-910d'
         ]
         expect(results).to eq(expected)
       end
