@@ -18,6 +18,12 @@ require 'collectionspace/client/version'
 
 module CollectionSpace
   class ArgumentError < StandardError; end
+
+  class DuplicateIdFound < StandardError; end
+
+  class NotFoundError < StandardError; end
+
   class PayloadError  < StandardError; end
+
   class RequestError  < StandardError; end
 end

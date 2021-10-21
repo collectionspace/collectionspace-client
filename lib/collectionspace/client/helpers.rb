@@ -41,7 +41,7 @@ module CollectionSpace
 
     # find procedure or object by type and id
     # find authority/vocab term by type, subtype, and refname
-    def find(type:, subtype: nil, value:, field: nil, schema: 'common', sort: nil)
+    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
       field ||= service[:identifier]
@@ -50,7 +50,7 @@ module CollectionSpace
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: "= '#{value.gsub(/\'/, '\\\\\'')}'"
+        expression: "= '#{value.gsub(/'/, '\\\\\'')}'"
       )
       search(search_args, sortBy: sort)
     end
@@ -64,6 +64,35 @@ module CollectionSpace
         'accounts' => %w[accounts_common_list account_list_item],
         'relations' => %w[relations_common_list relation_list_item]
       }.fetch(path, %w[abstract_common_list list_item])
+    end
+
+    def reset_media_blob(id, url)
+      raise CollectionSpace::ArgumentError, "Not a valid url #{url}" unless URI.parse(url).instance_of? URI::HTTPS
+
+      response = find(type: 'media', value: id, field: 'identificationNumber')
+      raise CollectionSpace::RequestError, response.result.body unless response.result.success?
+
+      found = response.parsed
+      total = found['abstract_common_list']['totalItems'].to_i
+      raise CollectionSpace::NotFoundError, "Media #{id} not found" if total.zero?
+      raise CollectionSpace::DuplicateIdFound, "Found multiple media records for #{id}" unless total == 1
+
+      media_uri = found['abstract_common_list']['list_item']['uri']
+      blob_csid = found['abstract_common_list']['list_item']['blobCsid']
+
+      delete("/blobs/#{blob_csid}") if blob_csid
+
+      # TODO: media_common can be empty?
+      media_payload = <<-XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <document name="media">
+        <ns2:media_common xmlns:ns2="http://collectionspace.org/services/media" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <identificationNumber>#{id}</identificationNumber>
+        </ns2:media_common>
+      </document>
+      XML
+
+      put(media_uri, media_payload.lstrip, query: { 'blobUri' => url })
     end
 
     def search(query, params = {})

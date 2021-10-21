@@ -118,4 +118,43 @@ describe CollectionSpace::Helpers do
       end
     end
   end
+
+  describe '#reset_media_blob' do
+    let(:client) { default_client }
+    context 'with an invalid url' do
+      let(:id) { 'DTS.1' }
+      let(:url) { 'not_a_url' }
+      it 'will report an argument error' do
+        expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::ArgumentError)
+      end
+    end
+
+    context 'with no matching media record' do
+      let(:id) { 'DTS.does_not_exist' }
+      let(:url) { 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png' }
+      it 'will report a not found error' do
+        expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::NotFoundError)
+      end
+    end
+
+    context 'with multiple matching media records' do
+      let(:id) { 'DTS.dupes' }
+      let(:url) { 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png' }
+      it 'will report a duplicate id error' do
+        expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::DuplicateIdFound)
+      end
+    end
+
+    context 'with a matching media record' do
+      let(:id) { 'DTS.1' }
+      let(:url) { 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png' }
+      it 'will reset the media blob record' do
+        response  = client.find(type: 'media', value: id, field: 'identificationNumber')
+        blob_csid = response.parsed['abstract_common_list']['list_item']['blobCsid']
+        response  = client.reset_media_blob(id, url)
+        expect(response.result.success?).to be true
+        expect(response.parsed['document']['media_common']['blobCsid']).to_not eq blob_csid
+      end
+    end
+  end
 end
