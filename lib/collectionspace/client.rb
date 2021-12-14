@@ -6,6 +6,7 @@ require 'uri'
 
 # mixins required first
 require 'collectionspace/client/helpers'
+require 'collectionspace/client/template'
 
 require 'collectionspace/client/client'
 require 'collectionspace/client/configuration'

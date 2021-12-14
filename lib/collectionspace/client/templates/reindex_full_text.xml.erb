@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<document name="batch">
+  <ns2:batch_common xmlns:ns2="http://collectionspace.org/services/batch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <name>Reindex Full Text</name>
+    <notes>Recomputes the indexed full text of all or specified records.</notes>
+    <className>org.collectionspace.services.batch.nuxeo.ReindexFullTextBatchJob</className>
+    <supportsNoContext>true</supportsNoContext>
+    <supportsSingleDoc>true</supportsSingleDoc>
+    <supportsDocList>true</supportsDocList>
+    <supportsGroup>false</supportsGroup>
+    <createsNewFocus>false</createsNewFocus>
+    <forDocTypes>
+      <forDocType>Acquisition</forDocType>
+      <forDocType>Batch</forDocType>
+      <forDocType>Blob</forDocType>
+      <forDocType>Citation</forDocType>
+      <forDocType>Citationauthority</forDocType>
+      <forDocType>Claim</forDocType>
+      <forDocType>CollectionObject</forDocType>
+      <forDocType>Conceptauthority</forDocType>
+      <forDocType>Conceptitem</forDocType>
+      <forDocType>Contact</forDocType>
+      <forDocType>Dimension</forDocType>
+      <forDocType>Group</forDocType>
+      <forDocType>Intake</forDocType>
+      <forDocType>Loanin</forDocType>
+      <forDocType>Loanout</forDocType>
+      <forDocType>Locationauthority</forDocType>
+      <forDocType>Locationitem</forDocType>
+      <forDocType>Media</forDocType>
+      <forDocType>Movement</forDocType>
+      <forDocType>ObjectExit</forDocType>
+      <forDocType>Organization</forDocType>
+      <forDocType>Orgauthority</forDocType>
+      <forDocType>Osteology</forDocType>
+      <forDocType>Person</forDocType>
+      <forDocType>Personauthority</forDocType>
+      <forDocType>Placeauthority</forDocType>
+      <forDocType>Placeitem</forDocType>
+      <forDocType>PublicItem</forDocType>
+      <forDocType>Relation</forDocType>
+      <forDocType>Report</forDocType>
+      <forDocType>Taxon</forDocType>
+      <forDocType>Taxonomyauthority</forDocType>
+      <forDocType>Vocabulary</forDocType>
+      <forDocType>Vocabularyitem</forDocType>
+      <forDocType>Workauthority</forDocType>
+      <forDocType>Workitem</forDocType>
+    </forDocTypes>
+  </ns2:batch_common>
+</document>
