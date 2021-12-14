@@ -7,9 +7,12 @@ module CollectionSpace
     def add_batch_job(name, template, data = {})
       payload  = Template.process(template, data)
       response = get('batch').parsed
+      total    = response['abstract_common_list']['totalItems'].to_i
       exists   = false
-      if response['abstract_common_list'].fetch('list_item', []).any?
-        exists = response['abstract_common_list']['list_item'].find { |i| i['name'] == name }
+      if total.positive?
+        list   = response['abstract_common_list']['list_item']
+        list   = [list] if total == 1 # wrap if single item
+        exists = list.find { |i| i['name'] == name }
       end
       path = exists ? "batch/#{exists['csid']}" : 'batch'
       exists ? put(path, payload) : post(path, payload)
