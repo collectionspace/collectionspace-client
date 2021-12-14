@@ -3,6 +3,18 @@
 module CollectionSpace
   # Helper methods for client requests
   module Helpers
+    # add / update batch job
+    def add_batch_job(name, template, data = {})
+      payload  = Template.process(template, data)
+      response = get('batch').parsed
+      exists   = false
+      if response['abstract_common_list'].fetch('list_item', []).any?
+        exists = response['abstract_common_list']['list_item'].find { |i| i['name'] == name }
+      end
+      path = exists ? "batch/#{exists['csid']}" : 'batch'
+      exists ? put(path, payload) : post(path, payload)
+    end
+
     # get ALL records at path by paging through record set
     def all(path, options = {})
       list_type, list_item = get_list_types(path)
@@ -66,6 +78,12 @@ module CollectionSpace
       }.fetch(path, %w[abstract_common_list list_item])
     end
 
+    def reindex_full_text(doctype)
+      run_job(
+        'Reindex Full Text', :reindex_full_text, :reindex_by_doctype, { doctype: doctype }
+      )
+    end
+
     def reset_media_blob(id, url)
       raise CollectionSpace::ArgumentError, "Not a valid url #{url}" unless URI.parse(url).instance_of? URI::HTTPS
 
@@ -82,17 +100,15 @@ module CollectionSpace
 
       delete("/blobs/#{blob_csid}") if blob_csid
 
-      # TODO: media_common can be empty?
-      media_payload = <<-XML
-      <?xml version="1.0" encoding="UTF-8"?>
-      <document name="media">
-        <ns2:media_common xmlns:ns2="http://collectionspace.org/services/media" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <identificationNumber>#{id}</identificationNumber>
-        </ns2:media_common>
-      </document>
-      XML
+      payload = Template.process(:reset_media_blob, { id: id })
+      put(media_uri, payload, query: { 'blobUri' => url })
+    end
 
-      put(media_uri, media_payload.lstrip, query: { 'blobUri' => url })
+    def run_job(name, template, invoke_template, data = {})
+      payload = Template.process(invoke_template, data)
+      job     = add_batch_job(name, template)
+      path    = job.parsed['document']['collectionspace_core']['uri']
+      post(path, payload)
     end
 
     def search(query, params = {})
