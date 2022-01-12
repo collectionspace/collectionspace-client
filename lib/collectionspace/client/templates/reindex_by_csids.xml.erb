@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:invocationContext xmlns:ns2="http://collectionspace.org/services/common/invocable">
+  <mode>list</mode>
+  <docType><%= data[:doctype] %></docType>
+  <listCSIDs>
+<% data[:csids].each do |csid| %>
+    <csid><%= csid %></csid>
+<% end %>
+  </listCSIDs>
+</ns2:invocationContext>

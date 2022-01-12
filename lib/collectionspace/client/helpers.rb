@@ -81,10 +81,16 @@ module CollectionSpace
       }.fetch(path, %w[abstract_common_list list_item])
     end
 
-    def reindex_full_text(doctype)
-      run_job(
-        'Reindex Full Text', :reindex_full_text, :reindex_by_doctype, { doctype: doctype }
-      )
+    def reindex_full_text(doctype, csids = [])
+      if csids.any?
+        run_job(
+          'Reindex Full Text', :reindex_full_text, :reindex_by_csids, { doctype: doctype, csids: csids }
+        )
+      else
+        run_job(
+          'Reindex Full Text', :reindex_full_text, :reindex_by_doctype, { doctype: doctype }
+        )
+      end
     end
 
     def reset_media_blob(id, url)
