@@ -125,10 +125,10 @@ module CollectionSpace
       request 'GET', query.path, options
     end
 
-    def keyword_search(type:, subtype: nil, value:, sort: nil, include_deleted: false)
+    def keyword_search(type:, subtype: nil, value:, sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       sort ||= 'collectionspace_core:updatedAt DESC'
-      options = prepare_keyword_query(value, {sortBy: sort, wf_deleted: include_deleted})
+      options = prepare_keyword_query(value, {sortBy: sort})
       request 'GET', service[:path], options
     end
 
