@@ -56,6 +56,7 @@ module CollectionSpace
 
     # find procedure or object by type and id
     # find authority/vocab term by type, subtype, and refname
+    # rubocop:disable Metrics/ParameterLists
     def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil, case_sensitive: true)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
@@ -65,10 +66,11 @@ module CollectionSpace
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: case_sensitive ? "= '#{value.gsub(/'/, '\\\\\'')}'" : "ILIKE '#{value.gsub(/'/, '\\\\\'')}'" 
+        expression: case_sensitive ? "= '#{value.gsub(/'/, '\\\\\'')}'" : "ILIKE '#{value.gsub(/'/, '\\\\\'')}'"
       )
       search(search_args, sortBy: sort)
     end
+    # rubocop:enable Metrics/ParameterLists
 
     def find_relation(subject_csid:, object_csid:)
       get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid })
@@ -125,10 +127,10 @@ module CollectionSpace
       request 'GET', query.path, options
     end
 
-    def keyword_search(type:, subtype: nil, value:, sort: nil)
+    def keyword_search(type:, value:, subtype: nil, sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       sort ||= 'collectionspace_core:updatedAt DESC'
-      options = prepare_keyword_query(value, {sortBy: sort})
+      options = prepare_keyword_query(value, { sortBy: sort })
       request 'GET', service[:path], options
     end
 
