@@ -27,7 +27,7 @@ module CollectionSpace
         parsed[:label] = between_single_quotes(parts[6])
       end
 
-      return_class == :refname_obj ? self.new(parsed) : parsed
+      return_class == :refname_obj ? new(parsed) : parsed
     end
 
     def self.between_parens(part)
@@ -45,7 +45,7 @@ module CollectionSpace
     end
 
     def initialize(parsed_hash)
-      parsed_hash.each{ |attr, val| instance_variable_set("@#{attr}".to_sym, val) }
+      parsed_hash.each { |attr, val| instance_variable_set("@#{attr}".to_sym, val) }
     end
 
     attr_reader :domain, :type, :subtype, :identifier, :label
@@ -54,7 +54,7 @@ module CollectionSpace
     # As of v0.13.1, this is equivalent to calling RefName.parse('refnamevalue', :hash)
     # This was added to simplify the process of updating existing code that expects a hash when calling RefName.parse
     def to_h
-      instance_variables.map{ |var| [var.to_s.delete_prefix('@').to_sym, instance_variable_get(var)] }.to_h
+      instance_variables.map { |var| [var.to_s.delete_prefix('@').to_sym, instance_variable_get(var)] }.to_h
     end
   end
 end

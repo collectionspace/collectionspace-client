@@ -20,15 +20,15 @@ describe CollectionSpace::RefName do
       let(:refname) do
         "urn:cspace:core.collectionspace.org:collectionobjects:id(09f531bd-4f12-4c36-9f92)'Loaned object 1'"
       end
-      
+
       it 'parses as expected' do
         expect(result_as_hash).to eq({
-          domain: 'core.collectionspace.org',
-          type: 'collectionobjects',
-          subtype: nil,
-          identifier: '09f531bd-4f12-4c36-9f92',
-          label: 'Loaned object 1'
-        })
+                                       domain: 'core.collectionspace.org',
+                                       type: 'collectionobjects',
+                                       subtype: nil,
+                                       identifier: '09f531bd-4f12-4c36-9f92',
+                                       label: 'Loaned object 1'
+                                     })
       end
     end
 
@@ -39,12 +39,12 @@ describe CollectionSpace::RefName do
 
       it 'parses as expected' do
         expect(result_as_hash).to eq({
-          domain: 'core.collectionspace.org',
-          type: 'acquisitions',
-          subtype: nil,
-          identifier: '5043d8cc-9437-4bc7-92d1',
-          label: nil
-        })
+                                       domain: 'core.collectionspace.org',
+                                       type: 'acquisitions',
+                                       subtype: nil,
+                                       identifier: '5043d8cc-9437-4bc7-92d1',
+                                       label: nil
+                                     })
       end
     end
 
@@ -55,12 +55,12 @@ describe CollectionSpace::RefName do
 
       it 'parses as expected' do
         expect(result_as_hash).to eq({
-          domain: 'core.collectionspace.org',
-          type: 'relations',
-          subtype: nil,
-          identifier: 'da044bc2-9fbf-474d-803a',
-          label: nil
-        })
+                                       domain: 'core.collectionspace.org',
+                                       type: 'relations',
+                                       subtype: nil,
+                                       identifier: 'da044bc2-9fbf-474d-803a',
+                                       label: nil
+                                     })
       end
     end
 
@@ -71,56 +71,56 @@ describe CollectionSpace::RefName do
 
       it 'parses as expected' do
         expect(result_as_hash).to eq({
-          domain: 'core.collectionspace.org',
-          type: 'personauthorities',
-          subtype: 'person',
-          identifier: nil,
-          label: 'Local Persons'
-        })
+                                       domain: 'core.collectionspace.org',
+                                       type: 'personauthorities',
+                                       subtype: 'person',
+                                       identifier: nil,
+                                       label: 'Local Persons'
+                                     })
       end
     end
 
     context 'with authority term refname' do
       it 'parses as expected' do
         expect(result_as_hash).to eq({
-          domain: 'core.collectionspace.org',
-          type: 'personauthorities',
-          subtype: 'person',
-          identifier: '1234561562130996026',
-          label: '123456'
-        })
+                                       domain: 'core.collectionspace.org',
+                                       type: 'personauthorities',
+                                       subtype: 'person',
+                                       identifier: '1234561562130996026',
+                                       label: '123456'
+                                     })
       end
     end
 
     context 'with refname containing colon' do
       let(:refname) do
-        "urn:cspace:core.collectionspace.org:locationauthorities:name(location):item:name(AR1U1Shelf14078111602)'A:R1:U1:Shelf 1'"
+        "urn:cspace:core.collectionspace.org:locationauthorities:name(location):item:name(AR1U1Shelf1)'A:R1:U1:Shelf 1'"
       end
 
       it 'parses as expected' do
         expect(result_as_hash).to eq({
-          domain: 'core.collectionspace.org',
-          type: 'locationauthorities',
-          subtype: 'location',
-          identifier: 'AR1U1Shelf14078111602',
-          label: 'A:R1:U1:Shelf 1'
-        })
+                                       domain: 'core.collectionspace.org',
+                                       type: 'locationauthorities',
+                                       subtype: 'location',
+                                       identifier: 'AR1U1Shelf1',
+                                       label: 'A:R1:U1:Shelf 1'
+                                     })
       end
     end
 
     context 'with refname containing parentheses' do
       let(:refname) do
-        "urn:cspace:core.collectionspace.org:conceptauthorities:name(concept):item:name(JMAlexanderCompanyAtlantaGa1028284796)'J.M. Alexander & Company (Atlanta, Ga.)'"
+        "urn:cspace:core.collectionspace.org:conceptauthorities:name(concept):item:name(JMA)'JMA & Co. (Atlanta, Ga.)'"
       end
 
       it 'parses as expected' do
         expect(result_as_hash).to eq({
-          domain: 'core.collectionspace.org',
-          type: 'conceptauthorities',
-          subtype: 'concept',
-          identifier: 'JMAlexanderCompanyAtlantaGa1028284796',
-          label: 'J.M. Alexander & Company (Atlanta, Ga.)'
-        })
+                                       domain: 'core.collectionspace.org',
+                                       type: 'conceptauthorities',
+                                       subtype: 'concept',
+                                       identifier: 'JMA',
+                                       label: 'JMA & Co. (Atlanta, Ga.)'
+                                     })
       end
     end
   end
