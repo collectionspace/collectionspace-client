@@ -55,6 +55,7 @@ describe CollectionSpace::Helpers do
     let(:client) { default_client }
     let(:response) { client.find(args) }
     let(:result) { response.parsed['abstract_common_list']['list_item']['uri'] }
+    
     context 'with object' do
       let(:args) { { type: 'collectionobjects', value: 'QA TEST 001' } }
       it 'finds as expected' do
@@ -89,6 +90,14 @@ describe CollectionSpace::Helpers do
           '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405',
         ]
         expect(results).to eq(expected)
+      end
+    end
+
+    context 'with vocabulary and case sensitive = false' do
+      # actual value is 'additional taxa'
+      let(:args) { { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional Taxa', case_sensitive: false } }
+      it 'finds as expected' do
+        expect(result).to eq('/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9')
       end
     end
   end

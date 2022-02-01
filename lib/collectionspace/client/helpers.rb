@@ -56,7 +56,7 @@ module CollectionSpace
 
     # find procedure or object by type and id
     # find authority/vocab term by type, subtype, and refname
-    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil)
+    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil, case_sensitive: true)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
       field ||= service[:identifier]
@@ -65,7 +65,7 @@ module CollectionSpace
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: "= '#{value.gsub(/'/, '\\\\\'')}'"
+        expression: case_sensitive ? "= '#{value.gsub(/'/, '\\\\\'')}'" : "ILIKE '#{value.gsub(/'/, '\\\\\'')}'" 
       )
       search(search_args, sortBy: sort)
     end
