@@ -125,6 +125,13 @@ module CollectionSpace
       request 'GET', query.path, options
     end
 
+    def keyword_search(type:, subtype: nil, value:, sort: nil, include_deleted: false)
+      service = CollectionSpace::Service.get(type: type, subtype: subtype)
+      sort ||= 'collectionspace_core:updatedAt DESC'
+      options = prepare_keyword_query(value, {sortBy: sort, wf_deleted: include_deleted})
+      request 'GET', service[:path], options
+    end
+
     def service(type:, subtype: '')
       CollectionSpace::Service.get(type: type, subtype: subtype)
     end
@@ -134,6 +141,11 @@ module CollectionSpace
     def prepare_query(query, params = {})
       query_string = "#{query.namespace}:#{query.field} #{query.expression}"
       { query: { as: query_string }.merge(params) }
+    end
+
+    def prepare_keyword_query(query, sort = {})
+      query_string = query.downcase.gsub(' ', '+')
+      { query: { kw: query_string }.merge(sort) }
     end
   end
 end

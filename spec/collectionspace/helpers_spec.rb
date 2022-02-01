@@ -119,6 +119,56 @@ describe CollectionSpace::Helpers do
     end
   end
 
+  describe '#keyword_search' do
+    let(:client) { default_client }
+    it 'finds as expected' do
+      args = [
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional taxa' },
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'ADDITIONAL TAXA' },
+        { type: 'collectionobjects', value: 'tea'},
+        { type: 'collectionobjects', value: 'set'},
+        { type: 'collectionobjects', value: 'tea set'},
+        { type: 'personauthorities', subtype: 'person', value: 'A.' },
+        { type: 'personauthorities', subtype: 'person', value: 'P' },
+        { type: 'personauthorities', subtype: 'person', value: 'Q.' },
+        { type: 'personauthorities', subtype: 'person', value: 'Colet' },
+        { type: 'personauthorities', subtype: 'person', value: 'Linda' },
+        { type: 'personauthorities', subtype: 'person', value: 'Linda Colet' }
+        
+      ]
+      results = args.map { |arg| client.keyword_search(arg) }
+        .map{ |response| response.parsed['abstract_common_list']['list_item'] }
+        .map{ |list| list.is_a?(Hash) ? [list] : list } # handle single item returned
+        .map{ |list| list.nil? ? [{}] : list } # handle no items returned
+        .map{ |list| list.map{ |item| item['uri'] } }
+        .flatten
+
+      expected = [
+        '/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9',
+        '/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9',
+        '/collectionobjects/ac04b8a6-db59-433e-872f',
+        '/collectionobjects/8b21c9af-1fab-4708-91d4',
+        '/collectionobjects/16e51d6a-5ae3-4716-bd0f',
+        '/collectionobjects/bf51110a-0666-47b8-b9d4',
+        '/collectionobjects/77c07515-c0e3-4b76-aeea',
+        '/collectionobjects/bf51110a-0666-47b8-b9d4',
+        '/collectionobjects/bf51110a-0666-47b8-b9d4',
+        nil,
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/f7464b3c-f2a9-4c7a-bf5d',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2661dcf8-f184-41db-b032',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2c4e4938-482d-4574-946b',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e4b4c37c-9243-4eb4-807b',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e0e83104-85bc-48ba-acef',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/7b110f01-acac-4742-bdf0',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2fd23671-b476-4f67-b548',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df',
+      ]
+      expect(results).to eq(expected)
+    end
+  end
+
   describe '#reset_media_blob' do
     let(:client) { default_client }
     context 'with an invalid url' do
