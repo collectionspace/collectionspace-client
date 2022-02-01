@@ -3,7 +3,12 @@
 module CollectionSpace
   # CollectionSpace RefName
   class RefName
-    def self.parse(refname)
+    # Convenience class method, so new instance of RefName does not have to be instantiated in order to parse
+    #
+    # As of v0.13.1, return_class is added and defaults to nil for backward compatibility
+    # Eventually this default will be deprecated, and a parsed RefName object will be returned as the default.
+    #   Any new code written using this method should set the return_class parameter to :refname_obj
+    def self.parse(refname, return_class = nil)
       parts   = refname.split(':')
       subpart = parts[4] =~ /^id/ ? :identifier : :subtype
       nilpart = parts[4] =~ /^id/ ? :subtype    : :identifier
@@ -22,7 +27,7 @@ module CollectionSpace
         parsed[:label] = between_single_quotes(parts[6])
       end
 
-      parsed
+      return_class == :refname_obj ? self.new(parsed) : parsed
     end
 
     def self.between_parens(part)
@@ -37,6 +42,19 @@ module CollectionSpace
       return nil unless part.match(regex)
 
       part.match(regex).captures[0]
+    end
+
+    def initialize(parsed_hash)
+      parsed_hash.each{ |attr, val| instance_variable_set("@#{attr}".to_sym, val) }
+    end
+
+    attr_reader :domain, :type, :subtype, :identifier, :label
+
+    # Returns a parsed RefName object as a hash.
+    # As of v0.13.1, this is equivalent to calling RefName.parse('refnamevalue', :hash)
+    # This was added to simplify the process of updating existing code that expects a hash when calling RefName.parse
+    def to_h
+      instance_variables.map{ |var| [var.to_s.delete_prefix('@').to_sym, instance_variable_get(var)] }.to_h
     end
   end
 end
