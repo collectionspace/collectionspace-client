@@ -56,19 +56,20 @@ module CollectionSpace
 
     # find procedure or object by type and id
     # find authority/vocab term by type, subtype, and refname
-    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil)
+    # rubocop:disable Metrics/ParameterLists
+    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil, operator: '=')
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
       field ||= service[:identifier]
-      sort ||= 'collectionspace_core:updatedAt DESC'
       search_args = CollectionSpace::Search.new.from_hash(
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: "= '#{value.gsub(/'/, '\\\\\'')}'"
+        expression: "#{operator} '#{value.gsub(/'/, '\\\\\'')}'"
       )
-      search(search_args, sortBy: sort)
+      search(search_args, sortBy: CollectionSpace::Search::DEFAULT_SORT)
     end
+    # rubocop:enable Metrics/ParameterLists
 
     def find_relation(subject_csid:, object_csid:)
       get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid })
@@ -125,6 +126,12 @@ module CollectionSpace
       request 'GET', query.path, options
     end
 
+    def keyword_search(type:, value:, subtype: nil, sort: nil)
+      service = CollectionSpace::Service.get(type: type, subtype: subtype)
+      options = prepare_keyword_query(value, { sortBy: CollectionSpace::Search::DEFAULT_SORT })
+      request 'GET', service[:path], options
+    end
+
     def service(type:, subtype: '')
       CollectionSpace::Service.get(type: type, subtype: subtype)
     end
@@ -134,6 +141,11 @@ module CollectionSpace
     def prepare_query(query, params = {})
       query_string = "#{query.namespace}:#{query.field} #{query.expression}"
       { query: { as: query_string }.merge(params) }
+    end
+
+    def prepare_keyword_query(query, sort = {})
+      query_string = query.downcase.gsub(' ', '+')
+      { query: { kw: query_string }.merge(sort) }
     end
   end
 end
