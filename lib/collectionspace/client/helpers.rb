@@ -57,18 +57,17 @@ module CollectionSpace
     # find procedure or object by type and id
     # find authority/vocab term by type, subtype, and refname
     # rubocop:disable Metrics/ParameterLists
-    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil, case_sensitive: true)
+    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil, operator: '=')
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
       field ||= service[:identifier]
-      sort ||= 'collectionspace_core:updatedAt DESC'
       search_args = CollectionSpace::Search.new.from_hash(
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: case_sensitive ? "= '#{value.gsub(/'/, '\\\\\'')}'" : "ILIKE '#{value.gsub(/'/, '\\\\\'')}'"
+        expression: "#{operator} '#{value.gsub(/'/, '\\\\\'')}'"
       )
-      search(search_args, sortBy: sort)
+      search(search_args, sortBy: CollectionSpace::Search::DEFAULT_SORT)
     end
     # rubocop:enable Metrics/ParameterLists
 
@@ -129,8 +128,7 @@ module CollectionSpace
 
     def keyword_search(type:, value:, subtype: nil, sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
-      sort ||= 'collectionspace_core:updatedAt DESC'
-      options = prepare_keyword_query(value, { sortBy: sort })
+      options = prepare_keyword_query(value, { sortBy: CollectionSpace::Search::DEFAULT_SORT })
       request 'GET', service[:path], options
     end
 

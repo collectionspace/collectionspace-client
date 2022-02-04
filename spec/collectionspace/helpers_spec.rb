@@ -94,10 +94,20 @@ describe CollectionSpace::Helpers do
       end
     end
 
-    context 'with vocabulary and case sensitive = false' do
+    context 'with vocabulary and operator = ILIKE' do
       # actual value is 'additional taxa'
       let(:args) do
-        { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional Taxa', case_sensitive: false }
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional Taxa', operator: 'ILIKE' }
+      end
+      it 'finds as expected' do
+        expect(result).to eq('/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9')
+      end
+    end
+
+    context 'with vocabulary and operator = LIKE' do
+      # actual value is 'additional taxa'
+      let(:args) do
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'additional %', operator: 'LIKE' }
       end
       it 'finds as expected' do
         expect(result).to eq('/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9')
