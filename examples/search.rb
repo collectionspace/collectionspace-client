@@ -22,7 +22,7 @@ search_args = {
 puts 'Search: %D'
 response = client.search(
   CollectionSpace::Search.new.from_hash(search_args),
-  { sortBy: 'collectionspace_core:updatedAt DESC' }
+  { sortBy: CollectionSpace::Search::DEFAULT_SORT }
 )
 if response.result.success?
   response.parsed['abstract_common_list']['list_item'].map do |i|
