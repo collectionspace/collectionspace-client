@@ -8,6 +8,14 @@ describe CollectionSpace::RefName do
   let(:refname) do
     "urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(1234561562130996026)'123456'"
   end
+  
+  describe '#new' do
+    let(:result) { CollectionSpace::RefName.new(refname) }
+
+    it 'returns a parsed RefName object' do
+      expect(result).to be_a(CollectionSpace::RefName)
+    end
+  end
 
   describe '.parse' do
     context 'with :refname_obj passed in as return_class' do
