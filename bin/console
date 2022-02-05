@@ -1,0 +1,26 @@
+#! /usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+Bundler.require(:tools)
+
+require_relative '../lib/collectionspace/client'
+require 'irb'
+
+module CollectionSpace
+  ::CS = CollectionSpace # alias only in console to minimize typing
+
+  module_function
+
+  def coredev
+    CollectionSpace::Client.new(
+      CollectionSpace::Configuration.new(
+        base_uri: 'https://core.dev.collectionspace.org/cspace-services',
+        username: 'admin@core.collectionspace.org',
+        password: 'Administrator'
+      )
+    )
+  end
+end
+
+IRB.start(__FILE__)
