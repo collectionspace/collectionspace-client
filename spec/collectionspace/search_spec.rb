@@ -12,7 +12,7 @@ describe CollectionSpace::Search do
     }
   end
   it 'can construct search from a hash' do
-    search = CollectionSpace::Search.new(search_args)
+    search = CollectionSpace::Search.new(**search_args)
     expect(search.path).to eq(search_args[:path])
     expect(search.namespace).to eq(search_args[:namespace])
     expect(search.field).to eq(search_args[:field])
@@ -23,7 +23,7 @@ describe CollectionSpace::Search do
     client = CollectionSpace::Client.new(CollectionSpace::Configuration.new)
     allow(client).to receive(:request).and_return nil
     client.search(
-      CollectionSpace::Search.new(search_args),
+      CollectionSpace::Search.new(**search_args),
       { sortBy: 'collectionspace_core:updatedAt DESC' }
     )
     expect(client).to have_received(:request).with(
