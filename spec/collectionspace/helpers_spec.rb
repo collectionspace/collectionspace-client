@@ -38,7 +38,8 @@ describe CollectionSpace::Helpers do
   describe '#domain' do
     let(:client) { CollectionSpace::Client.new(CollectionSpace::Configuration.new) }
     it 'can get the client domain' do
-      body = '{ "abstract_common_list": { "list_item": { "refName": "urn:cspace:core.collectionspace.org:personauthorities:name(ulan_pa)\'ULAN Persons\'" } } }'
+      refname = "urn:cspace:core.collectionspace.org:personauthorities:name(ulan_pa)\'ULAN Persons\'"
+      body = %({ "abstract_common_list": { "list_item": { "refName": "#{refname}" } } })
       allow(client).to receive(:request).and_return CollectionSpace::Response.new(
         OpenStruct.new(
           code: '200',
@@ -55,6 +56,7 @@ describe CollectionSpace::Helpers do
     let(:client) { default_client }
     let(:response) { client.find(args) }
     let(:result) { response.parsed['abstract_common_list']['list_item']['uri'] }
+
     context 'with object' do
       let(:args) { { type: 'collectionobjects', value: 'QA TEST 001' } }
       it 'finds as expected' do
@@ -86,9 +88,29 @@ describe CollectionSpace::Helpers do
           '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df',
           '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975',
           '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b',
-          '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405',
+          '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405'
         ]
         expect(results).to eq(expected)
+      end
+    end
+
+    context 'with vocabulary and operator = ILIKE' do
+      # actual value is 'additional taxa'
+      let(:args) do
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional Taxa', operator: 'ILIKE' }
+      end
+      it 'finds as expected' do
+        expect(result).to eq('/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9')
+      end
+    end
+
+    context 'with vocabulary and operator = LIKE' do
+      # actual value is 'additional taxa'
+      let(:args) do
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'additional %', operator: 'LIKE' }
+      end
+      it 'finds as expected' do
+        expect(result).to eq('/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9')
       end
     end
   end
@@ -116,6 +138,56 @@ describe CollectionSpace::Helpers do
       it 'finds as expected' do
         expect(result).to eq('/relations/53b4a988-cd8a-4299-9ae7')
       end
+    end
+  end
+
+  describe '#keyword_search' do
+    let(:client) { default_client }
+    it 'finds as expected' do
+      args = [
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional taxa' },
+        { type: 'vocabularies', subtype: 'annotationtype', value: 'ADDITIONAL TAXA' },
+        { type: 'collectionobjects', value: 'tea' },
+        { type: 'collectionobjects', value: 'set' },
+        { type: 'collectionobjects', value: 'tea set' },
+        { type: 'personauthorities', subtype: 'person', value: 'A.' },
+        { type: 'personauthorities', subtype: 'person', value: 'P' },
+        { type: 'personauthorities', subtype: 'person', value: 'Q.' },
+        { type: 'personauthorities', subtype: 'person', value: 'Colet' },
+        { type: 'personauthorities', subtype: 'person', value: 'Linda' },
+        { type: 'personauthorities', subtype: 'person', value: 'Linda Colet' }
+
+      ]
+      results = args.map { |arg| client.keyword_search(arg) }
+                    .map { |response| response.parsed['abstract_common_list']['list_item'] }
+                    .map { |list| list.is_a?(Hash) ? [list] : list } # handle single item returned
+                    .map { |list| list.nil? ? [{}] : list } # handle no items returned
+                    .map { |list| list.map { |item| item['uri'] } }
+                    .flatten
+
+      expected = [
+        '/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9',
+        '/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9',
+        '/collectionobjects/ac04b8a6-db59-433e-872f',
+        '/collectionobjects/8b21c9af-1fab-4708-91d4',
+        '/collectionobjects/16e51d6a-5ae3-4716-bd0f',
+        '/collectionobjects/bf51110a-0666-47b8-b9d4',
+        '/collectionobjects/77c07515-c0e3-4b76-aeea',
+        '/collectionobjects/bf51110a-0666-47b8-b9d4',
+        '/collectionobjects/bf51110a-0666-47b8-b9d4',
+        nil,
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/f7464b3c-f2a9-4c7a-bf5d',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2661dcf8-f184-41db-b032',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2c4e4938-482d-4574-946b',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e4b4c37c-9243-4eb4-807b',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e0e83104-85bc-48ba-acef',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/7b110f01-acac-4742-bdf0',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2fd23671-b476-4f67-b548',
+        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df'
+      ]
+      expect(results).to eq(expected)
     end
   end
 
