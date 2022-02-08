@@ -3,46 +3,39 @@
 module CollectionSpace
   # CollectionSpace configuration
   class Configuration
-    def defaults
-      {
-        base_uri: nil,
-        username: nil,
-        password: nil,
-        page_size: 25,
-        include_deleted: false,
-        throttle: 0,
-        verify_ssl: true
-      }
-    end
-
-    attr_accessor :foo
-    def initialize(settings = {})
-      settings = defaults.merge(settings)
-      settings.each do |property, value|
-        next unless defaults.key?(property)
-
-        instance_variable_set("@#{property}", value)
-        #self.class.send(:attr_accessor, property)
+    class << self
+      def defaults
+        {
+          base_uri: nil,
+          username: nil,
+          password: nil,
+          page_size: 25,
+          include_deleted: false,
+          throttle: 0,
+          verify_ssl: true
+        }
       end
 
-      attributes = defaults.keys
-      set_class_attrs(attributes) unless class_attrs_exist?(attributes)
+      # The first time a Configuration instance is created, creates `attr_accessor` for each key
+      #   in defaults
+      # Then it undefines and redefines itself as a blank method.
+      # The `undef` is required to avoid 'method redefined' warnings
+      def set_attr_accessors
+        defaults.keys.each{ |setting| send(:attr_accessor, setting) }
+        undef :set_attr_accessors
+        define_singleton_method(:set_attr_accessors){}
+      end
     end
-    
-    private
 
-    def class_attrs_exist?(settings)
-      settings.all?{ |setting| methods.any?(setting) }
-    end
+    def initialize(settings = {})
+      settings = self.class.defaults.merge(settings)
+      settings.each do |property, value|
+        next unless self.class.defaults.key?(property)
 
-    def set_class_attr(setting)
-      return if [setting, "#{setting}=".to_sym].all?{ |meth| methods.any?(meth) }
+        instance_variable_set("@#{property}", value)
+      end
 
-      self.class.send(:attr_accessor, setting)
-    end
-    
-    def set_class_attrs(settings)
-      settings.each{ |setting| set_class_attr(setting) }
+      self.class.set_attr_accessors
     end
   end
 end
