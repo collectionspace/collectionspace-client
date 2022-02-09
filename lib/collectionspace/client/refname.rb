@@ -1,7 +1,16 @@
 # frozen_string_literal: true
 
+require 'strscan'
+
 module CollectionSpace
   # CollectionSpace RefName
+  #
+  # There are four patterns we need to handle:
+  # 
+  # - urn:cspace:domain:type:name(subtype)'label'                       : Top level authority/vocabulary
+  # - urn:cspace:domain:type:name(subtype):item:name(identifier)'label' : Authority/vocabulary term
+  # - urn:cspace:domain:type:id(identifier)'label'                      : Collectionobject
+  # - urn:cspace:domain:type:id(identifier)                             : Procedures, relations, blobs
   class RefName
     attr_reader :domain, :type, :subtype, :identifier, :label
 
@@ -16,25 +25,21 @@ module CollectionSpace
     end
 
     def parse
-      parts   = @refname.split(':')
-      subpart = parts[4] =~ /^id/ ? :identifier : :subtype
-      nilpart = parts[4] =~ /^id/ ? :subtype    : :identifier
+      scanner = StringScanner.new(@refname)
+      scanner.skip('urn:cspace:')
+      @domain = to_next_colon(scanner) 
+      @type = to_next_colon(scanner)
 
-      @domain = parts[2]
-      @type   = parts[3]
-      @label  = between_single_quotes(parts[4])
-      instance_variable_set("@#{subpart}".to_sym, between_parens(parts[4]))
-      instance_variable_set("@#{nilpart}".to_sym, nil)
-
-      if parts.length > 5
-        parts[6] = parts[6..parts.length].join(':') if parts.length > 7
-        @identifier = between_parens(parts[6])
-        @label      = between_single_quotes(parts[6])
+      case next_segment(scanner)
+      when 'name'
+        set_subtype(scanner)
+      when 'id'
+        set_identifier(scanner)
       end
 
       self
     end
-
+   
     # Convenience class method, so new instance of RefName does not have to be instantiated in order to parse
     #
     # As of v0.13.1, return_class is added and defaults to nil for backward compatibility
@@ -42,20 +47,6 @@ module CollectionSpace
     #   Any new code written using this method should set the return_class parameter to :refname_obj
     def self.parse(refname, return_class = nil)
       return_class == :refname_obj ? new(refname) : new(refname).to_h
-    end
-
-    def between_parens(part)
-      regex_capture_first(/\((.*?)\)/, part)
-    end
-
-    def between_single_quotes(part)
-      regex_capture_first(/'(.*)'/, part)
-    end
-
-    def regex_capture_first(regex, part)
-      return nil unless part.match(regex)
-
-      part.match(regex).captures[0]
     end
 
     # Returns a parsed RefName object as a hash.
@@ -69,6 +60,55 @@ module CollectionSpace
         identifier: identifier,
         label: label
       }
+    end
+
+    private
+
+    def next_segment(scanner)
+      segment = scanner.check_until(/\(/)
+      return nil unless segment
+      
+      segment.delete_suffix('(')
+    end
+
+    def set_identifier(scanner)
+      scanner.skip('id(')
+      @identifier = to_end_paren(scanner)
+      return if scanner.eos?
+
+      set_label(scanner)
+    end
+
+    def set_label(scanner)
+      scanner.skip("'")
+      @label = scanner.rest.delete_suffix("'")
+    end
+
+    def set_subtype(scanner)
+      scanner.skip('name(')
+      @subtype = to_end_paren(scanner)
+
+      case next_segment(scanner)
+      when nil
+        set_label(scanner)
+      when ':item:name'
+        set_term_identifier(scanner)
+      end
+    end
+
+    def set_term_identifier(scanner)
+      scanner.skip(':item:name(')
+      @identifier = to_end_paren(scanner)
+      scanner.skip("'")
+      set_label(scanner)
+    end
+    
+    def to_end_paren(scanner)
+      scanner.scan_until(/\)/).delete_suffix(')')
+    end
+
+    def to_next_colon(scanner)
+      scanner.scan_until(/:/).delete_suffix(':')
     end
   end
 end
