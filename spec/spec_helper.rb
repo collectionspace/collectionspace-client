@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start{ enable_coverage :branch }
+
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'collectionspace/client'
 require 'pry'
