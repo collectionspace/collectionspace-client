@@ -98,6 +98,22 @@ describe CollectionSpace::RefName do
           label: '123456'
         })
       end
+
+      context "when label contains '" do
+        let(:refname) do
+          "urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(JimOMalley1644425338074)'Jim O'Malley'"
+        end
+
+        it 'parses as expected' do
+          expect(result_as_hash).to eq({
+            domain: 'core.collectionspace.org',
+            type: 'personauthorities',
+            subtype: 'person',
+            identifier: 'JimOMalley1644425338074',
+            label: "Jim O'Malley"
+          })
+        end
+      end
     end
 
     context 'with refname containing colon' do
