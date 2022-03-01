@@ -71,8 +71,16 @@ module CollectionSpace
     end
     # rubocop:enable Metrics/ParameterLists
 
-    def find_relation(subject_csid:, object_csid:)
-      get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid })
+    # @param subject_csid [String] to be searched as `sbj` value
+    # @param object_csid [String] to be searched as `obj` value
+    # @param rel_type [String<'affects', 'hasBroader'>, nil] to be searched as `prd` value
+    def find_relation(subject_csid:, object_csid:, rel_type: nil)
+      if rel_type
+        get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid, 'prd' => rel_type })
+      else
+        warn('No rel_type specified, so multiple types of relations may be returned', uplevel: 1)
+        get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid })
+      end
     end
 
     def get_list_types(path)

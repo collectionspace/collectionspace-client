@@ -120,20 +120,27 @@ describe CollectionSpace::Helpers do
     let(:response) { client.find_relation(args) }
     let(:result) { response.parsed['relations_common_list']['relation_list_item']['uri'] }
     context 'with object hierarchy' do
-      let(:args) { { subject_csid: '16161bff-b01a-4b55-95aa', object_csid: '34bb1c08-5f46-4347-94db' } }
+      let(:args) { { subject_csid: '16161bff-b01a-4b55-95aa', object_csid: '34bb1c08-5f46-4347-94db', rel_type: 'hasBroader' } }
       it 'finds as expected' do
         expect(result).to eq('/relations/e23631b8-a977-46b8-b4b9')
       end
     end
 
     context 'with authority hierarchy' do
-      let(:args) { { subject_csid: 'e4f1148d-1790-417c-ab7a', object_csid: '40adef7a-aadc-4743-b2ed' } }
+      let(:args) { { subject_csid: 'e4f1148d-1790-417c-ab7a', object_csid: '40adef7a-aadc-4743-b2ed', rel_type: 'hasBroader' } }
       it 'finds as expected' do
         expect(result).to eq('/relations/1a35c85f-a549-48ec-bfc3')
       end
     end
 
     context 'with non-hierarchical relation' do
+      let(:args) { { subject_csid: '56c04f5f-32b9-4f1d-8a4b', object_csid: '6f0ce7b3-0130-444d-8633', rel_type: 'affects' } }
+      it 'finds as expected' do
+        expect(result).to eq('/relations/53b4a988-cd8a-4299-9ae7')
+      end
+    end
+
+    context 'with no reltype given' do
       let(:args) { { subject_csid: '56c04f5f-32b9-4f1d-8a4b', object_csid: '6f0ce7b3-0130-444d-8633' } }
       it 'finds as expected' do
         expect(result).to eq('/relations/53b4a988-cd8a-4299-9ae7')
