@@ -78,7 +78,10 @@ module CollectionSpace
       if rel_type
         get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid, 'prd' => rel_type })
       else
-        warn('No rel_type specified, so multiple types of relations may be returned', uplevel: 1)
+        warn(
+          "No rel_type specified, so multiple types of relations between #{subject_csid} and #{object_csid} may be returned",
+          uplevel: 1
+        )
         get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid })
       end
     end
