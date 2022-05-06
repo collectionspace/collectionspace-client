@@ -4,18 +4,17 @@ module CollectionSpace
   # Helper methods for client requests
   module Helpers
     # add / update batch job
-    def add_batch_job(name, template, data = {})
+    def add_batch_job(name, template, data = {}, params = { pgSz: 100 })
       payload  = Template.process(template, data)
-      response = get('batch').parsed
-      total    = response['abstract_common_list']['totalItems'].to_i
-      exists   = false
-      if total.positive?
-        list   = response['abstract_common_list']['list_item']
-        list   = [list] if total == 1 # wrap if single item
-        exists = list.find { |i| i['name'] == name }
-      end
-      path = exists ? "batch/#{exists['csid']}" : 'batch'
-      exists ? put(path, payload) : post(path, payload)
+      response = get('batch', { query: params })
+      create_or_update(response, 'batch', 'name', name, payload)
+    end
+
+    # add / update reports
+    def add_report(data = {}, params = { pgSz: 100 })
+      payload  = Template.process('report', data)
+      response = get('reports', { query: params })
+      create_or_update(response, 'reports', 'name', data[:name], payload)
     end
 
     # get ALL records at path by paging through record set
@@ -148,6 +147,13 @@ module CollectionSpace
     end
 
     private
+
+    def create_or_update(response, path, property, value, payload)
+      list_type, item_type = get_list_types(path)
+      item = response.find(list_type, item_type, property, value)
+      path = item ? "#{path}/#{item['csid']}" : path
+      item ? put(path, payload) : post(path, payload)
+    end
 
     def prepare_query(query, params = {})
       query_string = "#{query.namespace}:#{query.field} #{query.expression}"

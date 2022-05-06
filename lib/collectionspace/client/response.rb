@@ -12,5 +12,14 @@ module CollectionSpace
       body = result.body
       @xml = @result.success? && body =~ /<?xml/ ? Nokogiri::XML(body) : nil
     end
+
+    def find(list_type, item_type, property, value)
+      total = parsed[list_type]['totalItems'].to_i
+      return unless total.positive?
+
+      list   = parsed[list_type][item_type]
+      list   = [list] if total == 1 # wrap if single item
+      list.find { |i| i[property] == value }
+    end
   end
 end
