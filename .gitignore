@@ -1,6 +1,7 @@
 *.gem
 *.swp
 /.bundle/
+/.vscode
 /.yardoc
 /Gemfile.lock
 /_yardoc/
@@ -9,6 +10,7 @@
 /examples/my_*.rb
 /pkg/
 /spec/reports/
+.byebug_history
 .rspec_status
 /tmp/
 collectionobject.rb
