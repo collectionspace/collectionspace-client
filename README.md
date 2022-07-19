@@ -41,6 +41,7 @@ gem bump --version $VERSION --tag
 # i.e.
 gem bump --version minor --tag --pretend # dryrun
 gem bump --version minor --tag # do it for real
+# PR and merge will publish new version
 ```
 
 ## Contributing
