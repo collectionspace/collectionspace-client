@@ -9,6 +9,10 @@ RSpec::Core::RakeTask.new(:spec)
 
 task default: :spec
 
+task :version do
+  puts CollectionSpace::Client::VERSION
+end
+
 namespace :cli do
   desc "Update a user's password: requires an Admin level account to perform the update"
   task :update_password, [:endpoint, :admin, :password, :user, :new_password] do |_t, args|
