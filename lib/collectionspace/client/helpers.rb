@@ -4,17 +4,17 @@ module CollectionSpace
   # Helper methods for client requests
   module Helpers
     # add / update batch job
-    def add_batch_job(name, template, data = {}, params = { pgSz: 100 })
-      payload  = Template.process(template, data)
-      response = get('batch', { query: params })
-      create_or_update(response, 'batch', 'name', name, payload)
+    def add_batch_job(name, template, data = {}, params = {pgSz: 100})
+      payload = Template.process(template, data)
+      response = get("batch", {query: params})
+      create_or_update(response, "batch", "name", name, payload)
     end
 
     # add / update reports
-    def add_report(data = {}, params = { pgSz: 100 })
-      payload  = Template.process('report', data)
-      response = get('reports', { query: params })
-      create_or_update(response, 'reports', 'name', data[:name], payload)
+    def add_report(data = {}, params = {pgSz: 100})
+      payload = Template.process("report", data)
+      response = get("reports", {query: params})
+      create_or_update(response, "reports", "name", data[:name], payload)
     end
 
     # get ALL records at path by paging through record set
@@ -24,10 +24,10 @@ module CollectionSpace
       return [] unless iterations.positive?
 
       Enumerator::Lazy.new(0...iterations) do |yielder, i|
-        response = request('GET', path, options.merge(query: { pgNum: i }))
+        response = request("GET", path, options.merge(query: {pgNum: i}))
         raise CollectionSpace::RequestError, response.result.body unless response.result.success?
 
-        items_in_page = response.parsed[list_type].fetch('itemsInPage', 0).to_i
+        items_in_page = response.parsed[list_type].fetch("itemsInPage", 0).to_i
         list_items = items_in_page.positive? ? response.parsed[list_type][list_item] : []
         list_items = [list_items] if items_in_page == 1
 
@@ -37,26 +37,25 @@ module CollectionSpace
 
     def count(path)
       list_type, = get_list_types(path)
-      response   = request('GET', path, query: { pgNum: 0, pgSz: 1 })
+      response = request("GET", path, query: {pgNum: 0, pgSz: 1})
       raise CollectionSpace::RequestError, response.result.body unless response.result.success?
 
-      response.parsed[list_type]['totalItems'].to_i
+      response.parsed[list_type]["totalItems"].to_i
     end
 
     # get the tenant domain from a system required top level authority (person)
     def domain
-      path = 'personauthorities'
-      response = request('GET', path, query: { pgNum: 0, pgSz: 1 })
+      path = "personauthorities"
+      response = request("GET", path, query: {pgNum: 0, pgSz: 1})
       raise CollectionSpace::RequestError, response.result.body unless response.result.success?
 
-      refname = response.parsed.dig(*get_list_types(path), 'refName')
+      refname = response.parsed.dig(*get_list_types(path), "refName")
       CollectionSpace::RefName.parse(refname)[:domain]
     end
 
     # find procedure or object by type and id
     # find authority/vocab term by type, subtype, and refname
-    # rubocop:disable Metrics/ParameterLists
-    def find(type:, value:, subtype: nil, field: nil, schema: 'common', sort: nil, operator: '=')
+    def find(type:, value:, subtype: nil, field: nil, schema: "common", sort: nil, operator: "=")
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
       field ||= service[:term] # this will be set if it is an authority or vocabulary, otherwise nil
       field ||= service[:identifier]
@@ -64,7 +63,7 @@ module CollectionSpace
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: "#{operator} '#{value.gsub(/'/, '\\\\\'')}'"
+        expression: "#{operator} '#{value.gsub(/'/, "\\\\'")}'"
       )
       search(search_args, sortBy: CollectionSpace::Search::DEFAULT_SORT)
     end
@@ -75,31 +74,31 @@ module CollectionSpace
     # @param rel_type [String<'affects', 'hasBroader'>, nil] to be searched as `prd` value
     def find_relation(subject_csid:, object_csid:, rel_type: nil)
       if rel_type
-        get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid, 'prd' => rel_type })
+        get("relations", query: {"sbj" => subject_csid, "obj" => object_csid, "prd" => rel_type})
       else
         warn(
           "No rel_type specified, so multiple types of relations between #{subject_csid} and #{object_csid} may be returned",
           uplevel: 1
         )
-        get('relations', query: { 'sbj' => subject_csid, 'obj' => object_csid })
+        get("relations", query: {"sbj" => subject_csid, "obj" => object_csid})
       end
     end
 
     def get_list_types(path)
       {
-        'accounts' => %w[accounts_common_list account_list_item],
-        'relations' => %w[relations_common_list relation_list_item]
+        "accounts" => %w[accounts_common_list account_list_item],
+        "relations" => %w[relations_common_list relation_list_item]
       }.fetch(path, %w[abstract_common_list list_item])
     end
 
     def reindex_full_text(doctype, csids = [])
       if csids.any?
         run_job(
-          'Reindex Full Text', :reindex_full_text, :reindex_by_csids, { doctype: doctype, csids: csids }
+          "Reindex Full Text", :reindex_full_text, :reindex_by_csids, {doctype: doctype, csids: csids}
         )
       else
         run_job(
-          'Reindex Full Text', :reindex_full_text, :reindex_by_doctype, { doctype: doctype }
+          "Reindex Full Text", :reindex_full_text, :reindex_by_doctype, {doctype: doctype}
         )
       end
     end
@@ -107,42 +106,42 @@ module CollectionSpace
     def reset_media_blob(id, url)
       raise CollectionSpace::ArgumentError, "Not a valid url #{url}" unless URI.parse(url).instance_of? URI::HTTPS
 
-      response = find(type: 'media', value: id, field: 'identificationNumber')
+      response = find(type: "media", value: id, field: "identificationNumber")
       raise CollectionSpace::RequestError, response.result.body unless response.result.success?
 
       found = response.parsed
-      total = found['abstract_common_list']['totalItems'].to_i
+      total = found["abstract_common_list"]["totalItems"].to_i
       raise CollectionSpace::NotFoundError, "Media #{id} not found" if total.zero?
       raise CollectionSpace::DuplicateIdFound, "Found multiple media records for #{id}" unless total == 1
 
-      media_uri = found['abstract_common_list']['list_item']['uri']
-      blob_csid = found['abstract_common_list']['list_item']['blobCsid']
+      media_uri = found["abstract_common_list"]["list_item"]["uri"]
+      blob_csid = found["abstract_common_list"]["list_item"]["blobCsid"]
 
       delete("/blobs/#{blob_csid}") if blob_csid
 
-      payload = Template.process(:reset_media_blob, { id: id })
-      put(media_uri, payload, query: { 'blobUri' => url })
+      payload = Template.process(:reset_media_blob, {id: id})
+      put(media_uri, payload, query: {"blobUri" => url})
     end
 
     def run_job(name, template, invoke_template, data = {})
       payload = Template.process(invoke_template, data)
-      job     = add_batch_job(name, template)
-      path    = job.parsed['document']['collectionspace_core']['uri']
+      job = add_batch_job(name, template)
+      path = job.parsed["document"]["collectionspace_core"]["uri"]
       post(path, payload)
     end
 
     def search(query, params = {})
       options = prepare_query(query, params)
-      request 'GET', query.path, options
+      request "GET", query.path, options
     end
 
     def keyword_search(type:, value:, subtype: nil, sort: nil)
       service = CollectionSpace::Service.get(type: type, subtype: subtype)
-      options = prepare_keyword_query(value, { sortBy: CollectionSpace::Search::DEFAULT_SORT })
-      request 'GET', service[:path], options
+      options = prepare_keyword_query(value, {sortBy: CollectionSpace::Search::DEFAULT_SORT})
+      request "GET", service[:path], options
     end
 
-    def service(type:, subtype: '')
+    def service(type:, subtype: "")
       CollectionSpace::Service.get(type: type, subtype: subtype)
     end
 
@@ -151,18 +150,18 @@ module CollectionSpace
     def create_or_update(response, path, property, value, payload)
       list_type, item_type = get_list_types(path)
       item = response.find(list_type, item_type, property, value)
-      path = item ? "#{path}/#{item['csid']}" : path
+      path = item ? "#{path}/#{item["csid"]}" : path
       item ? put(path, payload) : post(path, payload)
     end
 
     def prepare_query(query, params = {})
       query_string = "#{query.namespace}:#{query.field} #{query.expression}"
-      { query: { as: query_string }.merge(params) }
+      {query: {as: query_string}.merge(params)}
     end
 
     def prepare_keyword_query(query, sort = {})
-      query_string = query.downcase.gsub(' ', '+')
-      { query: { kw: query_string }.merge(sort) }
+      query_string = query.downcase.tr(" ", "+")
+      {query: {kw: query_string}.merge(sort)}
     end
   end
 end

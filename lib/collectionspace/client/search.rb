@@ -5,12 +5,12 @@ module CollectionSpace
   class Search
     attr_accessor :path, :namespace, :field, :expression
 
-    DEFAULT_SORT = 'collectionspace_core:updatedAt DESC'
+    DEFAULT_SORT = "collectionspace_core:updatedAt DESC"
 
     def initialize(path: nil, namespace: nil, field: nil, expression: nil)
-      @path       = path
-      @namespace  = namespace
-      @field      = field
+      @path = path
+      @namespace = namespace
+      @field = field
       @expression = expression
     end
 

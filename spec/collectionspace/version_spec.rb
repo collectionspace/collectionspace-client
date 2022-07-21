@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe CollectionSpace::Client do
-  describe 'Version information' do
-    it 'has a version number' do
+  describe "Version information" do
+    it "has a version number" do
       expect(CollectionSpace::Client::VERSION).not_to be nil
     end
   end
