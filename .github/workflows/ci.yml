@@ -17,7 +17,7 @@ jobs:
 
       - name: Lint
         run: |
-          bundle exec rubocop
+          bundle exec standardrb
 
       - name: Run tests
         run: |

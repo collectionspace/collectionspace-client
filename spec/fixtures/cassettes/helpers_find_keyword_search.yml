@@ -1,0 +1,537 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/vocabularies/urn:cspace:name(annotationtype)/items?kw=additional%2Btaxa&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:49 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '963'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sourcePage|sas|proposed|referenced|deprecated|termStatus|description|source|order|displayName|shortIdentifier</fieldsReturned><list-item><csid>84c82c13-9d46-48a9-a8b9</csid><uri>/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(annotationtype):item:name(additional_taxa)'additional
+        taxa'</refName><updatedAt>2022-01-04T14:20:39.681Z</updatedAt><workflowState>project</workflowState><rev>1</rev><sas>false</sas><proposed>true</proposed><order>0000</order><displayName>additional
+        taxa</displayName><shortIdentifier>additional_taxa</shortIdentifier></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:47 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/vocabularies/urn:cspace:name(annotationtype)/items?kw=additional%2Btaxa&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:49 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '963'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sourcePage|sas|proposed|referenced|deprecated|termStatus|description|source|order|displayName|shortIdentifier</fieldsReturned><list-item><csid>84c82c13-9d46-48a9-a8b9</csid><uri>/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(annotationtype):item:name(additional_taxa)'additional
+        taxa'</refName><updatedAt>2022-01-04T14:20:39.681Z</updatedAt><workflowState>project</workflowState><rev>1</rev><sas>false</sas><proposed>true</proposed><order>0000</order><displayName>additional
+        taxa</displayName><shortIdentifier>additional_taxa</shortIdentifier></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:47 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects?kw=tea&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:49 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1765'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>4</itemsInPage><totalItems>4</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned><list-item><csid>8b21c9af-1fab-4708-91d4</csid><uri>/collectionobjects/8b21c9af-1fab-4708-91d4</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(8b21c9af-1fab-4708-91d4)'Tea
+        cup'</refName><updatedAt>2022-05-21T16:34:17.216Z</updatedAt><workflowState>project</workflowState><objectNumber>Tea
+        cup</objectNumber></list-item><list-item><csid>ac04b8a6-db59-433e-872f</csid><uri>/collectionobjects/ac04b8a6-db59-433e-872f</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(ac04b8a6-db59-433e-872f)'tea
+        platter'</refName><updatedAt>2022-01-24T15:17:56.906Z</updatedAt><workflowState>project</workflowState><objectNumber>tea
+        platter</objectNumber></list-item><list-item><csid>16e51d6a-5ae3-4716-bd0f</csid><uri>/collectionobjects/16e51d6a-5ae3-4716-bd0f</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(16e51d6a-5ae3-4716-bd0f)'tea
+        saucer'</refName><updatedAt>2021-10-15T01:44:35.202Z</updatedAt><workflowState>project</workflowState><objectNumber>tea
+        saucer</objectNumber></list-item><list-item><csid>bf51110a-0666-47b8-b9d4</csid><uri>/collectionobjects/bf51110a-0666-47b8-b9d4</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(bf51110a-0666-47b8-b9d4)'Tea
+        Set'</refName><updatedAt>2021-10-15T01:43:56.437Z</updatedAt><workflowState>project</workflowState><objectNumber>Tea
+        Set</objectNumber></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:48 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects?kw=set&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:50 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1207'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>2</itemsInPage><totalItems>2</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned><list-item><csid>77c07515-c0e3-4b76-aeea</csid><uri>/collectionobjects/77c07515-c0e3-4b76-aeea</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(77c07515-c0e3-4b76-aeea)'Coffee
+        set'</refName><updatedAt>2022-01-31T21:34:52.301Z</updatedAt><workflowState>project</workflowState><objectNumber>Coffee
+        set</objectNumber><objectName>Beverage serving</objectName><title>Fancy coffee
+        set</title><responsibleDepartment>decorative-arts</responsibleDepartment></list-item><list-item><csid>bf51110a-0666-47b8-b9d4</csid><uri>/collectionobjects/bf51110a-0666-47b8-b9d4</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(bf51110a-0666-47b8-b9d4)'Tea
+        Set'</refName><updatedAt>2021-10-15T01:43:56.437Z</updatedAt><workflowState>project</workflowState><objectNumber>Tea
+        Set</objectNumber></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:48 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/collectionobjects?kw=tea%2Bset&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:50 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '725'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|objectNumber|objectName|title|responsibleDepartment</fieldsReturned><list-item><csid>bf51110a-0666-47b8-b9d4</csid><uri>/collectionobjects/bf51110a-0666-47b8-b9d4</uri><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(bf51110a-0666-47b8-b9d4)'Tea
+        Set'</refName><updatedAt>2021-10-15T01:43:56.437Z</updatedAt><workflowState>project</workflowState><objectNumber>Tea
+        Set</objectNumber></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:48 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?kw=a.&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:50 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '419'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>0</itemsInPage><totalItems>0</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:49 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?kw=p&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:50 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '946'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>f7464b3c-f2a9-4c7a-bf5d</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/f7464b3c-f2a9-4c7a-bf5d</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(JacksonPeter1583972224862)'Jackson,
+        Peter'</refName><updatedAt>2020-03-12T07:17:28.530Z</updatedAt><workflowState>project</workflowState><rev>1</rev><sas>false</sas><shortIdentifier>JacksonPeter1583972224862</shortIdentifier><proposed>true</proposed><termDisplayName>Jackson,
+        Peter</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:49 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?kw=q.&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:51 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1564'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>2</itemsInPage><totalItems>2</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>2661dcf8-f184-41db-b032</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2661dcf8-f184-41db-b032</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(JohnQPublic1643671048993)'John
+        Q. Public'</refName><updatedAt>2022-01-31T23:17:28.993Z</updatedAt><workflowState>project</workflowState><rev>3</rev><sas>false</sas><surName>Public</surName><foreName>John</foreName><shortIdentifier>JohnQPublic1643671048993</shortIdentifier><proposed>true</proposed><termDisplayName>John
+        Q. Public</termDisplayName></list-item><list-item><csid>2c4e4938-482d-4574-946b</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2c4e4938-482d-4574-946b</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(FirstQName1643665954806)'First
+        Q. Name'</refName><updatedAt>2022-01-31T21:52:34.806Z</updatedAt><workflowState>project</workflowState><rev>1</rev><sas>false</sas><surName>Name</surName><foreName>First</foreName><shortIdentifier>FirstQName1643665954806</shortIdentifier><proposed>true</proposed><termDisplayName>First
+        Q. Name</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:49 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?kw=colet&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:51 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1973'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>3</itemsInPage><totalItems>3</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>67235e6f-5fc1-4319-b4df</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(LindaColet1586542542615)'Linda
+        Colet'</refName><updatedAt>2022-01-19T16:37:38.676Z</updatedAt><workflowState>project</workflowState><rev>4</rev><sas>false</sas><shortIdentifier>LindaColet1586542542615</shortIdentifier><proposed>true</proposed><termDisplayName>Linda
+        Colet</termDisplayName></list-item><list-item><csid>e4b4c37c-9243-4eb4-807b</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e4b4c37c-9243-4eb4-807b</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(JuliaColet1597339858398)'Julia
+        Colet'</refName><updatedAt>2021-09-15T20:56:43.681Z</updatedAt><workflowState>project</workflowState><rev>2</rev><sas>false</sas><shortIdentifier>JuliaColet1597339858398</shortIdentifier><proposed>true</proposed><termDisplayName>Julia
+        Colet</termDisplayName></list-item><list-item><csid>e0e83104-85bc-48ba-acef</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e0e83104-85bc-48ba-acef</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(JuliaColet1593635400570)'Colet,
+        Julia'</refName><updatedAt>2021-08-19T00:19:37.491Z</updatedAt><workflowState>project</workflowState><rev>11</rev><sas>false</sas><shortIdentifier>JuliaColet1593635400570</shortIdentifier><proposed>true</proposed><termDisplayName>Colet,
+        Julia</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:49 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?kw=linda&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:51 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '2162'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>3</itemsInPage><totalItems>3</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>67235e6f-5fc1-4319-b4df</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(LindaColet1586542542615)'Linda
+        Colet'</refName><updatedAt>2022-01-19T16:37:38.676Z</updatedAt><workflowState>project</workflowState><rev>4</rev><sas>false</sas><shortIdentifier>LindaColet1586542542615</shortIdentifier><proposed>true</proposed><termDisplayName>Linda
+        Colet</termDisplayName></list-item><list-item><csid>7b110f01-acac-4742-bdf0</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/7b110f01-acac-4742-bdf0</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(LindaWilliams2929906007)'Linda
+        Williams'</refName><updatedAt>2020-05-14T06:30:05.931Z</updatedAt><workflowState>project</workflowState><rev>1</rev><sas>false</sas><surName>Williams</surName><foreName>Linda</foreName><shortIdentifier>LindaWilliams2929906007</shortIdentifier><proposed>true</proposed><termStatus>rejected</termStatus><termDisplayName>Linda
+        Williams</termDisplayName></list-item><list-item><csid>2fd23671-b476-4f67-b548</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2fd23671-b476-4f67-b548</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(3_LindaWilliams3452336633)'3_Linda
+        Williams'</refName><updatedAt>2020-02-29T04:31:30.199Z</updatedAt><workflowState>project</workflowState><rev>0</rev><sas>false</sas><surName>Williams</surName><foreName>Linda</foreName><shortIdentifier>3_LindaWilliams3452336633</shortIdentifier><proposed>true</proposed><termStatus>rejected</termStatus><termDisplayName>3_Linda
+        Williams</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:50 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?kw=linda%2Bcolet&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:27:51 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '936'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>67235e6f-5fc1-4319-b4df</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(LindaColet1586542542615)'Linda
+        Colet'</refName><updatedAt>2022-01-19T16:37:38.676Z</updatedAt><workflowState>project</workflowState><rev>4</rev><sas>false</sas><shortIdentifier>LindaColet1586542542615</shortIdentifier><proposed>true</proposed><termDisplayName>Linda
+        Colet</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:27:50 GMT
+recorded_with: VCR 6.1.0
