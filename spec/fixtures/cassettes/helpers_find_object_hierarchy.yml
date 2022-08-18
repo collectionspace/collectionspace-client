@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/relations?obj=34bb1c08-5f46-4347-94db&pgSz=25&prd=hasBroader&sbj=16161bff-b01a-4b55-95aa&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:22:09 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1538'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><rel:relations-common-list
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rel="http://collectionspace.org/services/relation"
+        xmlns:ns4="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>subjectCsid|relationshipType|predicateDisplayName|relationshipMetaType|objectCsid|uri|csid|subject|object</fieldsReturned><relation-list-item><uri>/relations/e23631b8-a977-46b8-b4b9</uri><csid>e23631b8-a977-46b8-b4b9</csid><subjectCsid>16161bff-b01a-4b55-95aa</subjectCsid><relationshipType>hasBroader</relationshipType><predicate>hasBroader</predicate><relationshipMetaType>non-separable-part</relationshipMetaType><objectCsid>34bb1c08-5f46-4347-94db</objectCsid><subject><uri>/collectionobjects/16161bff-b01a-4b55-95aa</uri><csid>16161bff-b01a-4b55-95aa</csid><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(16161bff-b01a-4b55-95aa)'Hierarchy
+        Test 0001'</refName><name></name><number>Hierarchy Test 0001</number><documentType>CollectionObject</documentType></subject><object><uri>/collectionobjects/34bb1c08-5f46-4347-94db</uri><csid>34bb1c08-5f46-4347-94db</csid><refName>urn:cspace:core.collectionspace.org:collectionobjects:id(34bb1c08-5f46-4347-94db)'Hierarchy
+        Object Parent Record'</refName><name></name><number>Hierarchy Object Parent
+        Record</number><documentType>CollectionObject</documentType></object></relation-list-item></rel:relations-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:22:08 GMT
+recorded_with: VCR 6.1.0

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'strscan'
+require "strscan"
 
 module CollectionSpace
   # CollectionSpace RefName
   #
   # There are four patterns we need to handle:
-  # 
+  #
   # - urn:cspace:domain:type:name(subtype)'label'                       : Top level authority/vocabulary
   # - urn:cspace:domain:type:name(subtype):item:name(identifier)'label' : Authority/vocabulary term
   # - urn:cspace:domain:type:id(identifier)'label'                      : Collectionobject
@@ -15,31 +15,31 @@ module CollectionSpace
     attr_reader :domain, :type, :subtype, :identifier, :label
 
     def initialize(refname)
-      @refname    = refname
-      @domain     = nil
-      @type       = nil
-      @subtype    = nil
+      @refname = refname
+      @domain = nil
+      @type = nil
+      @subtype = nil
       @identifier = nil
-      @label      = nil
+      @label = nil
       parse
     end
 
     def parse
       scanner = StringScanner.new(@refname)
-      scanner.skip('urn:cspace:')
-      @domain = to_next_colon(scanner) 
+      scanner.skip("urn:cspace:")
+      @domain = to_next_colon(scanner)
       @type = to_next_colon(scanner)
 
       case next_segment(scanner)
-      when 'name'
+      when "name"
         set_subtype(scanner)
-      when 'id'
+      when "id"
         set_identifier(scanner)
       end
 
       self
     end
-   
+
     # Convenience class method, so new instance of RefName does not have to be instantiated in order to parse
     #
     # As of v0.13.1, return_class is added and defaults to nil for backward compatibility
@@ -67,12 +67,12 @@ module CollectionSpace
     def next_segment(scanner)
       segment = scanner.check_until(/\(/)
       return nil unless segment
-      
-      segment.delete_suffix('(')
+
+      segment.delete_suffix("(")
     end
 
     def set_identifier(scanner)
-      scanner.skip('id(')
+      scanner.skip("id(")
       @identifier = to_end_paren(scanner)
       return if scanner.eos?
 
@@ -85,30 +85,30 @@ module CollectionSpace
     end
 
     def set_subtype(scanner)
-      scanner.skip('name(')
+      scanner.skip("name(")
       @subtype = to_end_paren(scanner)
 
       case next_segment(scanner)
       when nil
         set_label(scanner)
-      when ':item:name'
+      when ":item:name"
         set_term_identifier(scanner)
       end
     end
 
     def set_term_identifier(scanner)
-      scanner.skip(':item:name(')
+      scanner.skip(":item:name(")
       @identifier = to_end_paren(scanner)
       scanner.skip("'")
       set_label(scanner)
     end
-    
+
     def to_end_paren(scanner)
-      scanner.scan_until(/\)/).delete_suffix(')')
+      scanner.scan_until(/\)/).delete_suffix(")")
     end
 
     def to_next_colon(scanner)
-      scanner.scan_until(/:/).delete_suffix(':')
+      scanner.scan_until(/:/).delete_suffix(":")
     end
   end
 end

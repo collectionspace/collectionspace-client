@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe CollectionSpace::Configuration do
-  let(:base) { 'https://core.dev.collectionspace.org/cspace-services' }
+  let(:base) { "https://core.dev.collectionspace.org/cspace-services" }
 
-  it 'sets the configuration defaults' do
+  it "sets the configuration defaults" do
     config = CollectionSpace::Configuration.new
     expect(config.base_uri).to eq nil
     expect(config.username).to eq nil
@@ -16,20 +16,20 @@ describe CollectionSpace::Configuration do
     expect(config.verify_ssl).to eq true
   end
 
-  it 'allows configuration settings to be provided' do
+  it "allows configuration settings to be provided" do
     config = CollectionSpace::Configuration.new(
       base_uri: base
     )
     expect(config.base_uri).to eq base
   end
 
-  it 'allows the configuration properties to be updated' do
+  it "allows the configuration properties to be updated" do
     config = CollectionSpace::Configuration.new
     config.base_uri = base
     expect(config.base_uri).to eq base
   end
 
-  it 'ignores unrecognized configuration properties' do
+  it "ignores unrecognized configuration properties" do
     config = CollectionSpace::Configuration.new(xyz: 123)
     expect { config.xyz }.to raise_error(NoMethodError)
   end

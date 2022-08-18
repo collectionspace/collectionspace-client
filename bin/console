@@ -1,11 +1,11 @@
 #! /usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'bundler/setup'
+require "bundler/setup"
 Bundler.require(:tools)
 
-require_relative '../lib/collectionspace/client'
-require 'irb'
+require_relative "../lib/collectionspace/client"
+require "irb"
 
 module CollectionSpace
   ::CS = CollectionSpace # alias only in console to minimize typing
@@ -15,9 +15,9 @@ module CollectionSpace
   def coredev
     CollectionSpace::Client.new(
       CollectionSpace::Configuration.new(
-        base_uri: 'https://core.dev.collectionspace.org/cspace-services',
-        username: 'admin@core.collectionspace.org',
-        password: 'Administrator'
+        base_uri: "https://core.dev.collectionspace.org/cspace-services",
+        username: "admin@core.collectionspace.org",
+        password: "Administrator"
       )
     )
   end

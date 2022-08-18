@@ -1,0 +1,420 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27California%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:17 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '908'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>40adef7a-aadc-4743-b2ed</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(California3071184726)'California'</refName><updatedAt>2020-04-28T02:27:28.811Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>California3071184726</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>California</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:15 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27Death%20Valley%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:17 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '920'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>e4f1148d-1790-417c-ab7a</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(DeathValley1592443356403)'Death
+        Valley'</refName><updatedAt>2021-09-03T03:40:33.530Z</updatedAt><workflowState>project</workflowState><rev>1</rev><shortIdentifier>DeathValley1592443356403</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Death
+        Valley</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:16 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27Hamilton!,%20Ohio%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:17 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '928'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>c9d34920-1782-49ed-a0c3</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/c9d34920-1782-49ed-a0c3</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(HamiltonOhio1594238008012)'Hamilton!,
+        Ohio'</refName><updatedAt>2020-07-09T02:53:28.010Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>HamiltonOhio1594238008012</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Hamilton!,
+        Ohio</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:16 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27%E5%A7%AB%E8%B7%AF%E5%9F%8E%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:18 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '892'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxuczI6YWJzdHJhY3QtY29tbW9uLWxpc3QgeG1sbnM6bnMyPSJodHRwOi8vY29sbGVjdGlvbnNwYWNlLm9yZy9zZXJ2aWNlcy9qYXhiIj48cGFnZU51bT4wPC9wYWdlTnVtPjxwYWdlU2l6ZT4yNTwvcGFnZVNpemU+PGl0ZW1zSW5QYWdlPjE8L2l0ZW1zSW5QYWdlPjx0b3RhbEl0ZW1zPjE8L3RvdGFsSXRlbXM+PGZpZWxkc1JldHVybmVkPmNzaWR8dXJpfHJlZk5hbWV8dXBkYXRlZEF0fHdvcmtmbG93U3RhdGV8cmV2fHNob3J0SWRlbnRpZmllcnxzYXN8cHJvcG9zZWR8ZGVwcmVjYXRlZHx0ZXJtU3RhdHVzfHRlcm1EaXNwbGF5TmFtZTwvZmllbGRzUmV0dXJuZWQ+PGxpc3QtaXRlbT48Y3NpZD40NzQ1YjdiMS1jYzdhLTQ1OGUtOTc0MjwvY3NpZD48dXJpPi9wbGFjZWF1dGhvcml0aWVzLzgzOGRiYzFjLTEyZjAtNDVmYS05YTI2L2l0ZW1zLzQ3NDViN2IxLWNjN2EtNDU4ZS05NzQyPC91cmk+PHJlZk5hbWU+dXJuOmNzcGFjZTpjb3JlLmNvbGxlY3Rpb25zcGFjZS5vcmc6cGxhY2VhdXRob3JpdGllczpuYW1lKHBsYWNlKTppdGVtOm5hbWUoMTU5NDIzODg0ODk3OCkn5aer6Lev5Z+OJzwvcmVmTmFtZT48dXBkYXRlZEF0PjIwMjAtMDctMDlUMDM6MDc6MjguOTc4WjwvdXBkYXRlZEF0Pjx3b3JrZmxvd1N0YXRlPnByb2plY3Q8L3dvcmtmbG93U3RhdGU+PHJldj4wPC9yZXY+PHNob3J0SWRlbnRpZmllcj4xNTk0MjM4ODQ4OTc4PC9zaG9ydElkZW50aWZpZXI+PHNhcz5mYWxzZTwvc2FzPjxwcm9wb3NlZD50cnVlPC9wcm9wb3NlZD48dGVybURpc3BsYXlOYW1lPuWnq+i3r+WfjjwvdGVybURpc3BsYXlOYW1lPjwvbGlzdC1pdGVtPjwvbnMyOmFic3RyYWN0LWNvbW1vbi1saXN0Pg==
+  recorded_at: Thu, 21 Jul 2022 16:17:16 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27No%5C%27Where%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:18 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '904'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>a0f4ba2a-07cb-4647-a884</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/a0f4ba2a-07cb-4647-a884</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(NoWhere1594238123131)'No'Where'</refName><updatedAt>2020-07-09T02:55:23.131Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>NoWhere1594238123131</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>No'Where</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?as=persons_common:personTermGroupList/0/termDisplayName%20=%20%27Morris,%20Perry(Pete)%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:18 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '962'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>2f050460-984b-49d7-b6df</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(MorrisPerryPete1594239937268)'Morris,
+        Perry(Pete)'</refName><updatedAt>2020-07-09T03:25:37.267Z</updatedAt><workflowState>project</workflowState><rev>0</rev><sas>false</sas><shortIdentifier>MorrisPerryPete1594239937268</shortIdentifier><proposed>true</proposed><termDisplayName>Morris,
+        Perry(Pete)</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?as=persons_common:personTermGroupList/0/termDisplayName%20=%20%27Clark,%20H.%20Pol%20%26%20Mary%20Gambo%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:19 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '990'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>699abb7c-9a14-48cc-a975</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(ClarkHPolMaryGambo1594240061769)'Clark,
+        H. Pol &amp; Mary Gambo'</refName><updatedAt>2020-07-09T03:27:41.769Z</updatedAt><workflowState>project</workflowState><rev>0</rev><sas>false</sas><shortIdentifier>ClarkHPolMaryGambo1594240061769</shortIdentifier><proposed>true</proposed><termDisplayName>Clark,
+        H. Pol &amp; Mary Gambo</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/orgauthorities/urn:cspace:name(organization)/items?as=organizations_common:orgTermGroupList/0/termDisplayName%20=%20%27Smith%5C%27s%20Appletree%20Garager%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:19 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '971'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>02ed1508-9a29-451e-a08b</csid><uri>/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b</uri><refName>urn:cspace:core.collectionspace.org:orgauthorities:name(organization):item:name(SmithsAppletreeGarager1594847228862)'Smith's
+        Appletree Garager'</refName><updatedAt>2020-07-16T04:07:08.860Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>SmithsAppletreeGarager1594847228862</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Smith's
+        Appletree Garager</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/orgauthorities/urn:cspace:name(organization)/items?as=organizations_common:orgTermGroupList/0/termDisplayName%20=%20%27The%20%22Grand%22%20Canyon%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:17:19 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '941'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>bf51a88c-2eae-48d6-9405</csid><uri>/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405</uri><refName>urn:cspace:core.collectionspace.org:orgauthorities:name(organization):item:name(TheGrandCanyon1594847660775)'The
+        "Grand" Canyon'</refName><updatedAt>2020-07-16T04:14:20.775Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>TheGrandCanyon1594847660775</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>The
+        "Grand" Canyon</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:17:18 GMT
+recorded_with: VCR 6.1.0
