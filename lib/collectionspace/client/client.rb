@@ -23,6 +23,17 @@ module CollectionSpace
       request "POST", path, {body: payload}.merge(options)
     end
 
+    def post_file(file, options = {})
+      file = File.expand_path(file)
+      raise ArgumentError, "cannot find file #{file}" unless File.exist? file
+
+      request "POST", "blobs", {
+        body: {
+          file: File.open(file)
+        }
+      }.merge(options)
+    end
+
     def put(path, payload, options = {})
       check_payload(payload)
       request "PUT", path, {body: payload}.merge(options)

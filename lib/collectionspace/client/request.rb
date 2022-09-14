@@ -40,6 +40,7 @@ module CollectionSpace
       @options[:query] = options.fetch(:query, {})
 
       self.class.base_uri config.base_uri
+      self.class.debug_output $stdout if config.verbose
       self.class.default_params(
         wf_deleted: config.include_deleted,
         pgSz: config.page_size

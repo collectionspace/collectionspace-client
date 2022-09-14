@@ -13,14 +13,17 @@ describe CollectionSpace::Configuration do
     expect(config.page_size).to eq 25
     expect(config.include_deleted).to eq false
     expect(config.throttle).to eq 0
+    expect(config.verbose).to eq false
     expect(config.verify_ssl).to eq true
   end
 
   it "allows configuration settings to be provided" do
     config = CollectionSpace::Configuration.new(
-      base_uri: base
+      base_uri: base,
+      verbose: true
     )
     expect(config.base_uri).to eq base
+    expect(config.verbose).to eq true
   end
 
   it "allows the configuration properties to be updated" do
