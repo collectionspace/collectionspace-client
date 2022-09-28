@@ -1,4 +1,6 @@
 *.gem
+*.jpg
+*.pdf
 *.swp
 /.bundle/
 /.vscode

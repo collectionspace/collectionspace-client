@@ -6,6 +6,7 @@ describe CollectionSpace::Request do
   let(:client) { default_client }
   let(:object_uri) { "collectionobjects/67e88be5-a498-4922-a90c" }
   let(:post_payload) { fixture("collectionobject.xml") }
+  let(:post_file) { File.join("spec", "fixtures", "files", "tower.jpg") }
   let(:put_payload) { fixture("collectionobject_update.xml") }
   let(:search) do
     {
@@ -21,6 +22,22 @@ describe CollectionSpace::Request do
       response = client.post("collectionobjects", post_payload)
       expect(response.status_code).to eq(201)
     end
+  end
+
+  it "can create a blob record" do
+    VCR.use_cassette("blobs_create") do
+      response = client.post_file(post_file)
+      expect(response.status_code).to eq(201)
+    end
+  end
+
+  it "raises an error creating a blob record if file is not found" do
+    bad_file_path = "/this/file/does/not/exist.ext"
+    expect(File.file?(bad_file_path)).to be false
+
+    expect {
+      client.post_file(bad_file_path)
+    }.to raise_error CollectionSpace::ArgumentError, /#{bad_file_path}/
   end
 
   it "can read a collectionobject" do
