@@ -10,7 +10,7 @@ module CollectionSpace
       @parsed = result.parsed_response
       @status_code = result.code.to_i
       body = result.body
-      @xml = @result.success? && body =~ /<?xml/ ? Nokogiri::XML(body) : nil
+      @xml = (@result.success? && body =~ /<?xml/) ? Nokogiri::XML(body) : nil
     end
 
     def find(list_type, item_type, property, value)

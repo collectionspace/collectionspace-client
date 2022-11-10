@@ -46,7 +46,7 @@ module CollectionSpace
     # Eventually this default will be deprecated, and a parsed RefName object will be returned as the default.
     #   Any new code written using this method should set the return_class parameter to :refname_obj
     def self.parse(refname, return_class = nil)
-      return_class == :refname_obj ? new(refname) : new(refname).to_h
+      (return_class == :refname_obj) ? new(refname) : new(refname).to_h
     end
 
     # Returns a parsed RefName object as a hash.
