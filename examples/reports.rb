@@ -164,6 +164,17 @@ STANDARD_REPORTS = [
     mimetype: "application/pdf"
   },
   {
+    name: "Object Valuation",
+    notes: "Returns latest valuation information for selected objects",
+    doctype: "CollectionObject",
+    supports_single_doc: "false",
+    supports_doc_list: "true",
+    supports_group: "false",
+    supports_no_context: "true",
+    filename: "object_valuation.jrxml",
+    mimetype: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  },
+  {
     name: "Systematic Inventory",
     notes: "Generate a checklist for performing an inventory on a range of storage locations. Runs on all records, using the provided start and end locations.",
     doctype: "Locationitem",
