@@ -38,7 +38,7 @@ describe CollectionSpace::Helpers do
   describe "#domain" do
     let(:client) { CollectionSpace::Client.new(CollectionSpace::Configuration.new) }
     it "can get the client domain" do
-      refname = "urn:cspace:core.collectionspace.org:personauthorities:name(ulan_pa)\'ULAN Persons\'"
+      refname = "urn:cspace:core.collectionspace.org:personauthorities:name(ulan_pa)'ULAN Persons'"
       body = %({ "abstract_common_list": { "list_item": { "refName": "#{refname}" } } })
       allow(client).to receive(:request).and_return CollectionSpace::Response.new(
         OpenStruct.new(
