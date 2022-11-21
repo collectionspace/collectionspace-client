@@ -17,6 +17,17 @@ module CollectionSpace
       create_or_update(response, "reports", "name", data[:name], payload)
     end
 
+    # returns Array of authority doctypes for use in setting up batches
+    def authority_doctypes
+      response = get("/servicegroups/authority")
+      unless response.result.success?
+        raise CollectionSpace::RequestError, response.result.body
+      end
+
+      result = response.result.parsed_response
+      result.dig("document", "servicegroups_common", "hasDocTypes", "hasDocType")
+    end
+
     # get ALL records at path by paging through record set
     def all(path, options = {})
       list_type, list_item = get_list_types(path)

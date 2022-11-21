@@ -5,6 +5,19 @@ require "spec_helper"
 describe CollectionSpace::Helpers do
   let(:client) { CollectionSpace::Client.new }
 
+  describe "#authority_doctypes" do
+    let(:client) { default_client }
+    let(:result) { client.authority_doctypes }
+
+    it "returns Array of authority doctypes" do
+      VCR.use_cassette("helpers_authority_doctypes") do
+        expected = %w[Workitem Person Conceptitem Placeitem Citation Organization
+          Locationitem].sort
+        expect(result.sort).to eq(expected)
+      end
+    end
+  end
+
   describe "#get_list_types" do
     let(:result) { client.get_list_types(type) }
     context "with accounts" do
