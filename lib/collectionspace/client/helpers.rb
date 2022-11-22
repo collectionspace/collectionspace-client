@@ -10,6 +10,13 @@ module CollectionSpace
       create_or_update(response, "batch", "name", name, payload)
     end
 
+    # add / update batches and data updates
+    def add_batch(data = {}, params = {pgSz: 100})
+      payload = Template.process("batch", data)
+      response = get("batch", {query: params})
+      create_or_update(response, "batch", "name", data[:name], payload)
+    end
+
     # add / update reports
     def add_report(data = {}, params = {pgSz: 100})
       payload = Template.process("report", data)

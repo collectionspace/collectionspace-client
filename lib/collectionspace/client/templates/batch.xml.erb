@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document name="batch">
+  <ns2:batch_common xmlns:ns2="http://collectionspace.org/services/batch">
+    <name><%= data.fetch(:name) %></name>
+    <notes><%= data.fetch(:notes, data[:name]) %></notes>
+    <forDocTypes>
+      <% data.fetch(:doctype).each do |doctype| %>
+        <forDocType><%= doctype %></forDocType>
+      <% end %>
+    </forDocTypes>
+    <supportsSingleDoc><%= data.fetch(:supports_single_doc, 'true') %></supportsSingleDoc>
+    <supportsDocList><%= data.fetch(:supports_doc_list, 'false') %></supportsDocList>
+    <supportsGroup><%= data.fetch(:supports_group, 'false') %></supportsGroup>
+    <supportsNoContext><%= data.fetch(:supports_no_context, 'true') %></supportsNoContext>
+    <createsNewFocus><%= data.fetch(:creates_new_focus, 'false') %></createsNewFocus>
+    <className><%= data.fetch(:classname) %></className>
+  </ns2:batch_common>
+</document>
