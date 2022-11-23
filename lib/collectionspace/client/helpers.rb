@@ -10,11 +10,29 @@ module CollectionSpace
       create_or_update(response, "batch", "name", name, payload)
     end
 
+    # add / update batches and data updates
+    def add_batch(data = {}, params = {pgSz: 100})
+      payload = Template.process("batch", data)
+      response = get("batch", {query: params})
+      create_or_update(response, "batch", "name", data[:name], payload)
+    end
+
     # add / update reports
     def add_report(data = {}, params = {pgSz: 100})
       payload = Template.process("report", data)
       response = get("reports", {query: params})
       create_or_update(response, "reports", "name", data[:name], payload)
+    end
+
+    # returns Array of authority doctypes for use in setting up batches
+    def authority_doctypes
+      response = get("/servicegroups/authority")
+      unless response.result.success?
+        raise CollectionSpace::RequestError, response.result.body
+      end
+
+      result = response.result.parsed_response
+      result.dig("document", "servicegroups_common", "hasDocTypes", "hasDocType")
     end
 
     # get ALL records at path by paging through record set
