@@ -242,12 +242,14 @@ describe CollectionSpace::Helpers do
 
   describe "#reset_media_blob" do
     let(:client) { default_client }
+    let(:result) { client.reset_media_blob(id: id, url: url) }
+
     context "with an invalid url" do
       let(:id) { "DTS.1" }
       let(:url) { "not_a_url" }
       it "will report an argument error" do
         VCR.use_cassette("helpers_reset_media_blob_invalid_url") do
-          expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::ArgumentError)
+          expect { result }.to raise_error(CollectionSpace::ArgumentError)
         end
       end
     end
@@ -257,7 +259,7 @@ describe CollectionSpace::Helpers do
       let(:url) { "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" }
       it "will report a not found error" do
         VCR.use_cassette("helpers_reset_media_blob_does_not_exist") do
-          expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::NotFoundError)
+          expect { result }.to raise_error(CollectionSpace::NotFoundError)
         end
       end
     end
@@ -267,7 +269,7 @@ describe CollectionSpace::Helpers do
       let(:url) { "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" }
       it "will report a duplicate id error" do
         VCR.use_cassette("helpers_reset_media_blob_duplicate") do
-          expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::DuplicateIdFound)
+          expect { result }.to raise_error(CollectionSpace::DuplicateIdFound)
         end
       end
     end
@@ -279,9 +281,8 @@ describe CollectionSpace::Helpers do
         VCR.use_cassette("helpers_reset_media_blob_success") do
           response = client.find(type: "media", value: id, field: "identificationNumber")
           blob_csid = response.parsed["abstract_common_list"]["list_item"]["blobCsid"]
-          response = client.reset_media_blob(id, url)
-          expect(response.result.success?).to be true
-          expect(response.parsed["document"]["media_common"]["blobCsid"]).to_not eq blob_csid
+          expect(result.result.success?).to be true
+          expect(result.parsed["document"]["media_common"]["blobCsid"]).to_not eq blob_csid
         end
       end
     end
