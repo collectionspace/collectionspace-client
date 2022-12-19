@@ -121,24 +121,68 @@ module CollectionSpace
       end
     end
 
-    def reset_media_blob(id, url)
-      raise CollectionSpace::ArgumentError, "Not a valid url #{url}" unless URI.parse(url).instance_of? URI::HTTPS
+    # @param id [String] media record's identificationNumber value
+    # @param url [String] blobUri value
+    # @param verbose [Boolean] whether to put brief report of outcome to STDOUT
+    # @param ensure_safe_url [Boolean] set to false if using FILE URIs or
+    #   other non-HTTPS URIs
+    # @param delete_existing_blob [Boolean] set to false if you have already
+    #   manually deleted blobs
+    def reset_media_blob(id:, url:, verbose: false,
+      ensure_safe_url: true,
+      delete_existing_blob: true)
+      if ensure_safe_url
+        unless URI.parse(url).instance_of? URI::HTTPS
+          raise CollectionSpace::ArgumentError, "Not a valid url #{url}"
+        end
+      end
 
       response = find(type: "media", value: id, field: "identificationNumber")
-      raise CollectionSpace::RequestError, response.result.body unless response.result.success?
+      unless response.result.success?
+        if verbose
+          puts "#{id}\tfailure\tAPI request error: #{response.result.body}"
+        else
+          raise CollectionSpace::RequestError, response.result.body
+        end
+      end
 
       found = response.parsed
       total = found["abstract_common_list"]["totalItems"].to_i
-      raise CollectionSpace::NotFoundError, "Media #{id} not found" if total.zero?
-      raise CollectionSpace::DuplicateIdFound, "Found multiple media records for #{id}" unless total == 1
+
+      if total.zero?
+        msg = "Media #{id} not found"
+        if verbose
+          puts "#{id}\tfailure\t#{msg}"
+        else
+          raise CollectionSpace::NotFoundError, msg
+        end
+      elsif total > 1
+        msg = "Found multiple media records for #{id}"
+        if verbose
+          puts "#{id}\tfailure\t#{msg}"
+        else
+          raise CollectionSpace::DuplicateIdFound, msg
+        end
+      end
 
       media_uri = found["abstract_common_list"]["list_item"]["uri"]
-      blob_csid = found["abstract_common_list"]["list_item"]["blobCsid"]
 
-      delete("/blobs/#{blob_csid}") if blob_csid
+      if delete_existing_blob
+        blob_csid = found["abstract_common_list"]["list_item"]["blobCsid"]
+        delete("/blobs/#{blob_csid}") if blob_csid
+      end
 
       payload = Template.process(:reset_media_blob, {id: id})
-      put(media_uri, payload, query: {"blobUri" => url})
+      response = put(media_uri, payload, query: {"blobUri" => url})
+      if verbose
+        if response.result.success?
+          puts "#{id}\tsuccess\t"
+        else
+          puts "#{id}\tfailure\t#{response.parsed}"
+        end
+      else
+        response
+      end
     end
 
     def run_job(name, template, invoke_template, data = {})
