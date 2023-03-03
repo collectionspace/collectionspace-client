@@ -12,7 +12,7 @@ describe CollectionSpace::Helpers do
     it "returns Array of authority doctypes" do
       VCR.use_cassette("helpers_authority_doctypes") do
         expected = %w[Workitem Person Conceptitem Placeitem Citation Organization
-                      Locationitem].sort
+          Locationitem].sort
         expect(result.sort).to eq(expected)
       end
     end
