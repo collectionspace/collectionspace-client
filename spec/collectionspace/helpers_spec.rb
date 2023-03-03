@@ -68,7 +68,7 @@ describe CollectionSpace::Helpers do
   describe "#find" do
     let(:client) { default_client }
     let(:response) { client.find(**args) }
-    let(:result) { response.parsed['abstract_common_list']['list_item']['uri'] }
+    let(:result) { response.parsed["abstract_common_list"]["list_item"]["uri"] }
 
     context "with object" do
       let(:args) { {type: "collectionobjects", value: "QA TEST 001"} }
@@ -93,17 +93,17 @@ describe CollectionSpace::Helpers do
           {type: "orgauthorities", subtype: "organization", value: 'The "Grand" Canyon'}
         ]
         results = args.map { |arg| client.find(**arg) }
-                      .map { |resp| resp.parsed['abstract_common_list']['list_item']['uri'] }
+          .map { |resp| resp.parsed["abstract_common_list"]["list_item"]["uri"] }
         expected = [
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/c9d34920-1782-49ed-a0c3',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/4745b7b1-cc7a-458e-9742',
-          '/placeauthorities/838dbc1c-12f0-45fa-9a26/items/a0f4ba2a-07cb-4647-a884',
-          '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df',
-          '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975',
-          '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b',
-          '/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405'
+          "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed",
+          "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a",
+          "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/c9d34920-1782-49ed-a0c3",
+          "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/4745b7b1-cc7a-458e-9742",
+          "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/a0f4ba2a-07cb-4647-a884",
+          "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df",
+          "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975",
+          "/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b",
+          "/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405"
         ]
         expect(results).to eq(expected)
       end
@@ -137,11 +137,11 @@ describe CollectionSpace::Helpers do
   describe "#find_relation" do
     let(:client) { default_client }
     let(:response) { client.find_relation(**args) }
-    let(:result) { response.parsed['relations_common_list']['relation_list_item']['uri'] }
-    context 'with object hierarchy' do
-      let(:args) { { subject_csid: '16161bff-b01a-4b55-95aa', object_csid: '34bb1c08-5f46-4347-94db' } }
-      it 'finds as expected' do
-        expect(result).to eq('/relations/e23631b8-a977-46b8-b4b9')
+    let(:result) { response.parsed["relations_common_list"]["relation_list_item"]["uri"] }
+    context "with object hierarchy" do
+      let(:args) { {subject_csid: "16161bff-b01a-4b55-95aa", object_csid: "34bb1c08-5f46-4347-94db"} }
+      it "finds as expected" do
+        expect(result).to eq("/relations/e23631b8-a977-46b8-b4b9")
       end
     end
 
@@ -192,33 +192,33 @@ describe CollectionSpace::Helpers do
 
       ]
       results = args.map { |arg| client.keyword_search(**arg) }
-                    .map { |response| response.parsed['abstract_common_list']['list_item'] }
-                    .map { |list| list.is_a?(Hash) ? [list] : list } # handle single item returned
-                    .map { |list| list.nil? ? [{}] : list } # handle no items returned
-                    .map { |list| list.map { |item| item['uri'] } }
-                    .flatten
+        .map { |response| response.parsed["abstract_common_list"]["list_item"] }
+        .map { |list| list.is_a?(Hash) ? [list] : list } # handle single item returned
+        .map { |list| list.nil? ? [{}] : list } # handle no items returned
+        .map { |list| list.map { |item| item["uri"] } }
+        .flatten
 
       expected = [
-        '/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9',
-        '/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9',
-        '/collectionobjects/ac04b8a6-db59-433e-872f',
-        '/collectionobjects/8b21c9af-1fab-4708-91d4',
-        '/collectionobjects/16e51d6a-5ae3-4716-bd0f',
-        '/collectionobjects/bf51110a-0666-47b8-b9d4',
-        '/collectionobjects/77c07515-c0e3-4b76-aeea',
-        '/collectionobjects/bf51110a-0666-47b8-b9d4',
-        '/collectionobjects/bf51110a-0666-47b8-b9d4',
+        "/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9",
+        "/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9",
+        "/collectionobjects/ac04b8a6-db59-433e-872f",
+        "/collectionobjects/8b21c9af-1fab-4708-91d4",
+        "/collectionobjects/16e51d6a-5ae3-4716-bd0f",
+        "/collectionobjects/bf51110a-0666-47b8-b9d4",
+        "/collectionobjects/77c07515-c0e3-4b76-aeea",
+        "/collectionobjects/bf51110a-0666-47b8-b9d4",
+        "/collectionobjects/bf51110a-0666-47b8-b9d4",
         nil,
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/f7464b3c-f2a9-4c7a-bf5d',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2661dcf8-f184-41db-b032',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2c4e4938-482d-4574-946b',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e4b4c37c-9243-4eb4-807b',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e0e83104-85bc-48ba-acef',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/7b110f01-acac-4742-bdf0',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2fd23671-b476-4f67-b548',
-        '/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df'
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/f7464b3c-f2a9-4c7a-bf5d",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2661dcf8-f184-41db-b032",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2c4e4938-482d-4574-946b",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e4b4c37c-9243-4eb4-807b",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/e0e83104-85bc-48ba-acef",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/7b110f01-acac-4742-bdf0",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2fd23671-b476-4f67-b548",
+        "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/67235e6f-5fc1-4319-b4df"
       ]
       expect(results).to eq(expected)
     end

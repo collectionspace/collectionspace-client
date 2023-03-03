@@ -11,7 +11,7 @@ describe CollectionSpace::Search do
       expression: "ILIKE '%D%'"
     }
   end
-  it 'can construct search from a hash' do
+  it "can construct search from a hash" do
     search = CollectionSpace::Search.new(**search_args)
     expect(search.path).to eq(search_args[:path])
     expect(search.namespace).to eq(search_args[:namespace])
@@ -24,7 +24,7 @@ describe CollectionSpace::Search do
     allow(client).to receive(:request).and_return nil
     client.search(
       CollectionSpace::Search.new(**search_args),
-      { sortBy: 'collectionspace_core:updatedAt DESC' }
+      {sortBy: "collectionspace_core:updatedAt DESC"}
     )
     expect(client).to have_received(:request).with(
       "GET", "groups", {
