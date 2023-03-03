@@ -29,9 +29,17 @@ STANDARD_TENANTS.each do |tenant|
       password: "Administrator"
     )
   )
+  base = client.config.base_uri
+    .delete_suffix("/cspace-services")
+    .delete_prefix("https://")
 
   STANDARD_REPORTS.each do |report|
     response = client.add_report(report)
-    puts response.inspect
+    if response.result.success?
+      puts "Added #{report[:name]} to #{base}"
+    else
+      puts "FAILED TO ADD #{report[:name]} to #{base}"
+      puts response.inspect
+    end
   end
 end
