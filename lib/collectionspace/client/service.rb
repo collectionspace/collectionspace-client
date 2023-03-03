@@ -3,192 +3,198 @@
 module CollectionSpace
   # CollectionSpace service
   class Service
-    TERM_SUFFIX = 'TermGroupList/0/termDisplayName'
-    def self.get(type:, subtype: '')
+    TERM_SUFFIX = "TermGroupList/0/termDisplayName"
+    def self.get(type:, subtype: "")
       {
-        'acquisitions' => {
-          identifier: 'acquisitionReferenceNumber',
-          ns_prefix: 'acquisitions',
-          path: 'acquisitions',
+        "acquisitions" => {
+          identifier: "acquisitionReferenceNumber",
+          ns_prefix: "acquisitions",
+          path: "acquisitions",
           term: nil
         },
-        'citationauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'citations',
+        "citationauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "citations",
           path: "citationauthorities/urn:cspace:name(#{subtype})/items",
           term: "citation#{TERM_SUFFIX}"
         },
-        'claims' => {
-          identifier: 'claimNumber',
-          ns_prefix: 'claims',
-          path: 'claims',
+        "claims" => {
+          identifier: "claimNumber",
+          ns_prefix: "claims",
+          path: "claims",
           term: nil
         },
-        'collectionobjects' => {
-          identifier: 'objectNumber',
-          ns_prefix: 'collectionobjects',
-          path: 'collectionobjects',
+        "collectionobjects" => {
+          identifier: "objectNumber",
+          ns_prefix: "collectionobjects",
+          path: "collectionobjects",
           term: nil
         },
-        'conceptauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'concepts',
+        "conceptauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "concepts",
           path: "conceptauthorities/urn:cspace:name(#{subtype})/items",
           term: "concept#{TERM_SUFFIX}"
         },
-        'conditionchecks' => {
-          identifier: 'conditionCheckRefNumber',
-          ns_prefix: 'conditionchecks',
-          path: 'conditionchecks',
+        "conditionchecks" => {
+          identifier: "conditionCheckRefNumber",
+          ns_prefix: "conditionchecks",
+          path: "conditionchecks",
           term: nil
         },
-        'conservation' => {
-          identifier: 'conservationNumber',
-          ns_prefix: 'conservation',
-          path: 'conservation',
+        "conservation" => {
+          identifier: "conservationNumber",
+          ns_prefix: "conservation",
+          path: "conservation",
           term: nil
         },
-        'exhibitions' => {
-          identifier: 'exhibitionNumber',
-          ns_prefix: 'exhibitions',
-          path: 'exhibitions',
+        "exhibitions" => {
+          identifier: "exhibitionNumber",
+          ns_prefix: "exhibitions",
+          path: "exhibitions",
           term: nil
         },
-        'groups' => {
-          identifier: 'title',
-          ns_prefix: 'groups',
-          path: 'groups',
+        "groups" => {
+          identifier: "title",
+          ns_prefix: "groups",
+          path: "groups",
           term: nil
         },
-        'insurances' => {
-          identifier: 'insuranceIndemnityReferenceNumber',
-          ns_prefix: 'insurances',
-          path: 'insurances',
+        "insurances" => {
+          identifier: "insuranceIndemnityReferenceNumber",
+          ns_prefix: "insurances",
+          path: "insurances",
           term: nil
         },
-        'intakes' => {
-          identifier: 'entryNumber',
-          ns_prefix: 'intakes',
-          path: 'intakes',
+        "intakes" => {
+          identifier: "entryNumber",
+          ns_prefix: "intakes",
+          path: "intakes",
           term: nil
         },
-        'loansin' => {
-          identifier: 'loanInNumber',
-          ns_prefix: 'loansin',
-          path: 'loansin',
+        "iterationreports" => {
+          identifier: "iterationIdentificationNumber",
+          ns_prefix: "iterationreports",
+          path: "iterationreports",
           term: nil
         },
-        'loansout' => {
-          identifier: 'loanOutNumber',
-          ns_prefix: 'loansout',
-          path: 'loansout',
+        "loansin" => {
+          identifier: "loanInNumber",
+          ns_prefix: "loansin",
+          path: "loansin",
           term: nil
         },
-        'locationauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'locations',
+        "loansout" => {
+          identifier: "loanOutNumber",
+          ns_prefix: "loansout",
+          path: "loansout",
+          term: nil
+        },
+        "locationauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "locations",
           path: "locationauthorities/urn:cspace:name(#{subtype})/items",
           term: "loc#{TERM_SUFFIX}"
         },
-        'materialauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'materials',
+        "materialauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "materials",
           path: "materialauthorities/urn:cspace:name(#{subtype})/items",
           term: "material#{TERM_SUFFIX}"
         },
-        'media' => {
-          identifier: 'identificationNumber',
-          ns_prefix: 'media',
-          path: 'media',
+        "media" => {
+          identifier: "identificationNumber",
+          ns_prefix: "media",
+          path: "media",
           term: nil
         },
-        'movements' => {
-          identifier: 'movementReferenceNumber',
-          ns_prefix: 'movements',
-          path: 'movements',
+        "movements" => {
+          identifier: "movementReferenceNumber",
+          ns_prefix: "movements",
+          path: "movements",
           term: nil
         },
-        'objectexit' => {
-          identifier: 'exitNumber',
-          ns_prefix: 'objectexit',
-          path: 'objectexit',
+        "objectexit" => {
+          identifier: "exitNumber",
+          ns_prefix: "objectexit",
+          path: "objectexit",
           term: nil
         },
-        'orgauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'organizations',
+        "orgauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "organizations",
           path: "orgauthorities/urn:cspace:name(#{subtype})/items",
           term: "org#{TERM_SUFFIX}"
         },
-        'osteology' => {
-          identifier: 'InventoryID',
-          ns_prefix: 'osteology',
-          path: 'osteology',
+        "osteology" => {
+          identifier: "InventoryID",
+          ns_prefix: "osteology",
+          path: "osteology",
           term: nil
         },
-        'personauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'persons',
+        "personauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "persons",
           path: "personauthorities/urn:cspace:name(#{subtype})/items",
           term: "person#{TERM_SUFFIX}"
         },
-        'placeauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'places',
+        "placeauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "places",
           path: "placeauthorities/urn:cspace:name(#{subtype})/items",
           term: "place#{TERM_SUFFIX}"
         },
-        'pottags' => {
-          identifier: 'potTagNumber',
-          ns_prefix: 'pottags',
-          path: 'pottags',
+        "pottags" => {
+          identifier: "potTagNumber",
+          ns_prefix: "pottags",
+          path: "pottags",
           term: nil
         },
-        'propagations' => {
-          identifier: 'propNumber',
-          ns_prefix: 'propagations',
-          path: 'propagations',
+        "propagations" => {
+          identifier: "propNumber",
+          ns_prefix: "propagations",
+          path: "propagations",
           term: nil
         },
-        'relations' => {
-          identifier: 'csid',
-          ns_prefix: 'relations',
-          path: 'relations',
+        "relations" => {
+          identifier: "csid",
+          ns_prefix: "relations",
+          path: "relations",
           term: nil
         },
-        'taxonomyauthority' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'taxon',
+        "taxonomyauthority" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "taxon",
           path: "taxonomyauthority/urn:cspace:name(#{subtype})/items",
           term: "taxon#{TERM_SUFFIX}"
         },
-        'transports' => {
-          identifier: 'transportReferenceNumber',
-          ns_prefix: 'transports',
-          path: 'transports',
+        "transports" => {
+          identifier: "transportReferenceNumber",
+          ns_prefix: "transports",
+          path: "transports",
           term: nil
         },
-        'uoc' => {
-          identifier: 'referenceNumber',
-          ns_prefix: 'uoc',
-          path: 'uoc',
+        "uoc" => {
+          identifier: "referenceNumber",
+          ns_prefix: "uoc",
+          path: "uoc",
           term: nil
         },
-        'valuationcontrols' => {
-          identifier: 'valuationcontrolRefNumber',
-          ns_prefix: 'valuationcontrols',
-          path: 'valuationcontrols',
+        "valuationcontrols" => {
+          identifier: "valuationcontrolRefNumber",
+          ns_prefix: "valuationcontrols",
+          path: "valuationcontrols",
           term: nil
         },
-        'vocabularies' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'vocabularyitems',
+        "vocabularies" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "vocabularyitems",
           path: "vocabularies/urn:cspace:name(#{subtype})/items",
-          term: 'displayName'
+          term: "displayName"
         },
-        'workauthorities' => {
-          identifier: 'shortIdentifier',
-          ns_prefix: 'works',
+        "workauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "works",
           path: "workauthorities/urn:cspace:name(#{subtype})/items",
           term: "work#{TERM_SUFFIX}"
         }

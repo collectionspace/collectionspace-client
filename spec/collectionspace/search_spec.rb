@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe CollectionSpace::Search do
   let(:search_args) do
     {
-      path: 'groups',
-      namespace: 'groups_common',
-      field: 'title',
+      path: "groups",
+      namespace: "groups_common",
+      field: "title",
       expression: "ILIKE '%D%'"
     }
   end
@@ -19,7 +19,7 @@ describe CollectionSpace::Search do
     expect(search.expression).to eq(search_args[:expression])
   end
 
-  it 'can add params for search' do
+  it "can add params for search" do
     client = CollectionSpace::Client.new(CollectionSpace::Configuration.new)
     allow(client).to receive(:request).and_return nil
     client.search(
@@ -27,8 +27,8 @@ describe CollectionSpace::Search do
       { sortBy: 'collectionspace_core:updatedAt DESC' }
     )
     expect(client).to have_received(:request).with(
-      'GET', 'groups', {
-        query: { as: "groups_common:title ILIKE '%D%'", sortBy: 'collectionspace_core:updatedAt DESC' }
+      "GET", "groups", {
+        query: {as: "groups_common:title ILIKE '%D%'", sortBy: "collectionspace_core:updatedAt DESC"}
       }
     )
   end

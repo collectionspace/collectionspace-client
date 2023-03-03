@@ -8,28 +8,39 @@ module CollectionSpace
 
     def initialize(config = Configuration.new)
       unless config.is_a? CollectionSpace::Configuration
-        raise CollectionSpace::ArgumentError, 'Invalid configuration object'
+        raise CollectionSpace::ArgumentError, "Invalid configuration object"
       end
 
       @config = config
     end
 
     def get(path, options = {})
-      request 'GET', path, options
+      request "GET", path, options
     end
 
     def post(path, payload, options = {})
       check_payload(payload)
-      request 'POST', path, { body: payload }.merge(options)
+      request "POST", path, {body: payload}.merge(options)
+    end
+
+    def post_file(file, options = {})
+      file = File.expand_path(file)
+      raise ArgumentError, "cannot find file #{file}" unless File.exist? file
+
+      request "POST", "blobs", {
+        body: {
+          file: File.open(file)
+        }
+      }.merge(options)
     end
 
     def put(path, payload, options = {})
       check_payload(payload)
-      request 'PUT', path, { body: payload }.merge(options)
+      request "PUT", path, {body: payload}.merge(options)
     end
 
     def delete(path)
-      request 'DELETE', path
+      request "DELETE", path
     end
 
     private

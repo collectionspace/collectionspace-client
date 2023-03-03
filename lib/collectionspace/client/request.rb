@@ -11,21 +11,21 @@ module CollectionSpace
         delete: {},
         get: {},
         post: {
-          'Content-Type' => 'application/xml',
-          'Content-Length' => 'nnnn'
+          "Content-Type" => "application/xml",
+          "Content-Length" => "nnnn"
         },
         put: {
-          'Content-Type' => 'application/xml',
-          'Content-Length' => 'nnnn'
+          "Content-Type" => "application/xml",
+          "Content-Length" => "nnnn"
         }
       }
       headers[method]
     end
 
-    def initialize(config, method = 'GET', path = '', options = {})
+    def initialize(config, method = "GET", path = "", options = {})
       @config = config
       @method = method.downcase.to_sym
-      @path   = path.gsub(%r{^/}, '')
+      @path = path.gsub(%r{^/}, "")
 
       @auth = {
         username: config.username,
@@ -35,11 +35,12 @@ module CollectionSpace
       headers = default_headers(@method).merge(options.fetch(:headers, {}))
       @options = options
       @options[:basic_auth] = @auth
-      @options[:headers]    = headers
-      @options[:verify]     = config.verify_ssl
-      @options[:query]      = options.fetch(:query, {})
+      @options[:headers] = headers
+      @options[:verify] = config.verify_ssl
+      @options[:query] = options.fetch(:query, {})
 
       self.class.base_uri config.base_uri
+      self.class.debug_output $stdout if config.verbose
       self.class.default_params(
         wf_deleted: config.include_deleted,
         pgSz: config.page_size

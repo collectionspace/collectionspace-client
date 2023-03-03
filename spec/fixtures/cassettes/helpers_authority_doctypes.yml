@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/servicegroups/authority?pgSz=25&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 21 Nov 2022 23:51:15 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '520'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <document name="servicegroups"><ns2:servicegroups_common xmlns:ns2="http://collectionspace.org/services/servicegroup"><name>authority</name><uri>/servicegroups/authority</uri><hasDocTypes><hasDocType>Workitem</hasDocType><hasDocType>Person</hasDocType><hasDocType>Conceptitem</hasDocType><hasDocType>Placeitem</hasDocType><hasDocType>Citation</hasDocType><hasDocType>Organization</hasDocType><hasDocType>Locationitem</hasDocType></hasDocTypes></ns2:servicegroups_common></document>
+  recorded_at: Mon, 21 Nov 2022 23:51:15 GMT
+recorded_with: VCR 6.0.0

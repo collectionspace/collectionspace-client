@@ -1,33 +1,46 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe CollectionSpace::Helpers do
   let(:client) { CollectionSpace::Client.new }
 
-  describe '#get_list_types' do
+  describe "#authority_doctypes" do
+    let(:client) { default_client }
+    let(:result) { client.authority_doctypes }
+
+    it "returns Array of authority doctypes" do
+      VCR.use_cassette("helpers_authority_doctypes") do
+        expected = %w[Workitem Person Conceptitem Placeitem Citation Organization
+          Locationitem].sort
+        expect(result.sort).to eq(expected)
+      end
+    end
+  end
+
+  describe "#get_list_types" do
     let(:result) { client.get_list_types(type) }
-    context 'with accounts' do
-      let(:type) { 'accounts' }
-      it 'can get accounts list type' do
+    context "with accounts" do
+      let(:type) { "accounts" }
+      it "can get accounts list type" do
         expect(result).to eq(
           %w[accounts_common_list account_list_item]
         )
       end
     end
 
-    context 'with regular type' do
-      let(:type) { 'media' }
-      it 'can get regular list type' do
+    context "with regular type" do
+      let(:type) { "media" }
+      it "can get regular list type" do
         expect(result).to eq(
           %w[abstract_common_list list_item]
         )
       end
     end
 
-    context 'with relations' do
-      let(:type) { 'relations' }
-      it 'can get relations list type' do
+    context "with relations" do
+      let(:type) { "relations" }
+      it "can get relations list type" do
         expect(result).to eq(
           %w[relations_common_list relation_list_item]
         )
@@ -35,47 +48,49 @@ describe CollectionSpace::Helpers do
     end
   end
 
-  describe '#domain' do
+  describe "#domain" do
     let(:client) { CollectionSpace::Client.new(CollectionSpace::Configuration.new) }
-    it 'can get the client domain' do
-      refname = "urn:cspace:core.collectionspace.org:personauthorities:name(ulan_pa)\'ULAN Persons\'"
+    it "can get the client domain" do
+      refname = "urn:cspace:core.collectionspace.org:personauthorities:name(ulan_pa)'ULAN Persons'"
       body = %({ "abstract_common_list": { "list_item": { "refName": "#{refname}" } } })
       allow(client).to receive(:request).and_return CollectionSpace::Response.new(
         OpenStruct.new(
-          code: '200',
+          code: "200",
           body: body,
           parsed_response: JSON.parse(body),
           success?: true
         )
       )
-      expect(client.domain).to eq('core.collectionspace.org')
+      expect(client.domain).to eq("core.collectionspace.org")
     end
   end
 
-  describe '#find' do
+  describe "#find" do
     let(:client) { default_client }
     let(:response) { client.find(**args) }
     let(:result) { response.parsed['abstract_common_list']['list_item']['uri'] }
 
-    context 'with object' do
-      let(:args) { { type: 'collectionobjects', value: 'QA TEST 001' } }
-      it 'finds as expected' do
-        expect(result).to eq('/collectionobjects/56c04f5f-32b9-4f1d-8a4b')
+    context "with object" do
+      let(:args) { {type: "collectionobjects", value: "QA TEST 001"} }
+      it "finds as expected" do
+        VCR.use_cassette("helpers_find_with_collectionobject") do
+          expect(result).to eq("/collectionobjects/56c04f5f-32b9-4f1d-8a4b")
+        end
       end
     end
 
-    context 'with authority term' do
-      it 'finds as expected' do
+    context "with authority term" do
+      it "finds as expected" do
         args = [
-          { type: 'placeauthorities', subtype: 'place', value: 'California' },
-          { type: 'placeauthorities', subtype: 'place', value: 'Death Valley' },
-          { type: 'placeauthorities', subtype: 'place', value: 'Hamilton!, Ohio' },
-          { type: 'placeauthorities', subtype: 'place', value: '姫路城' },
-          { type: 'placeauthorities', subtype: 'place', value: "No'Where" },
-          { type: 'personauthorities', subtype: 'person', value: 'Morris, Perry(Pete)' },
-          { type: 'personauthorities', subtype: 'person', value: 'Clark, H. Pol & Mary Gambo' },
-          { type: 'orgauthorities', subtype: 'organization', value: "Smith's Appletree Garager" },
-          { type: 'orgauthorities', subtype: 'organization', value: 'The "Grand" Canyon' }
+          {type: "placeauthorities", subtype: "place", value: "California"},
+          {type: "placeauthorities", subtype: "place", value: "Death Valley"},
+          {type: "placeauthorities", subtype: "place", value: "Hamilton!, Ohio"},
+          {type: "placeauthorities", subtype: "place", value: "姫路城"},
+          {type: "placeauthorities", subtype: "place", value: "No'Where"},
+          {type: "personauthorities", subtype: "person", value: "Morris, Perry(Pete)"},
+          {type: "personauthorities", subtype: "person", value: "Clark, H. Pol & Mary Gambo"},
+          {type: "orgauthorities", subtype: "organization", value: "Smith's Appletree Garager"},
+          {type: "orgauthorities", subtype: "organization", value: 'The "Grand" Canyon'}
         ]
         results = args.map { |arg| client.find(**arg) }
                       .map { |resp| resp.parsed['abstract_common_list']['list_item']['uri'] }
@@ -94,28 +109,32 @@ describe CollectionSpace::Helpers do
       end
     end
 
-    context 'with vocabulary and operator = ILIKE' do
+    context "with vocabulary and operator = ILIKE" do
       # actual value is 'additional taxa'
       let(:args) do
-        { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional Taxa', operator: 'ILIKE' }
+        {type: "vocabularies", subtype: "annotationtype", value: "Additional Taxa", operator: "ILIKE"}
       end
-      it 'finds as expected' do
-        expect(result).to eq('/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9')
+      it "finds as expected" do
+        VCR.use_cassette("helpers_find_with_ilike") do
+          expect(result).to eq("/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9")
+        end
       end
     end
 
-    context 'with vocabulary and operator = LIKE' do
+    context "with vocabulary and operator = LIKE" do
       # actual value is 'additional taxa'
       let(:args) do
-        { type: 'vocabularies', subtype: 'annotationtype', value: 'additional %', operator: 'LIKE' }
+        {type: "vocabularies", subtype: "annotationtype", value: "additional %", operator: "LIKE"}
       end
-      it 'finds as expected' do
-        expect(result).to eq('/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9')
+      it "finds as expected" do
+        VCR.use_cassette("helpers_find_with_like") do
+          expect(result).to eq("/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9")
+        end
       end
     end
   end
 
-  describe '#find_relation' do
+  describe "#find_relation" do
     let(:client) { default_client }
     let(:response) { client.find_relation(**args) }
     let(:result) { response.parsed['relations_common_list']['relation_list_item']['uri'] }
@@ -126,36 +145,50 @@ describe CollectionSpace::Helpers do
       end
     end
 
-    context 'with authority hierarchy' do
-      let(:args) { { subject_csid: 'e4f1148d-1790-417c-ab7a', object_csid: '40adef7a-aadc-4743-b2ed' } }
-      it 'finds as expected' do
-        expect(result).to eq('/relations/1a35c85f-a549-48ec-bfc3')
+    context "with non-hierarchical relation" do
+      let(:args) { {subject_csid: "56c04f5f-32b9-4f1d-8a4b", object_csid: "6f0ce7b3-0130-444d-8633", rel_type: "affects"} }
+
+      it "finds as expected" do
+        VCR.use_cassette("helpers_find_non_hierarchical_relation") do
+          expect(result).to eq("/relations/53b4a988-cd8a-4299-9ae7")
+        end
       end
     end
 
-    context 'with non-hierarchical relation' do
-      let(:args) { { subject_csid: '56c04f5f-32b9-4f1d-8a4b', object_csid: '6f0ce7b3-0130-444d-8633' } }
-      it 'finds as expected' do
-        expect(result).to eq('/relations/53b4a988-cd8a-4299-9ae7')
+    context "with no reltype given" do
+      let(:args) { {subject_csid: "56c04f5f-32b9-4f1d-8a4b", object_csid: "6f0ce7b3-0130-444d-8633"} }
+
+      it "finds as expected" do
+        VCR.use_cassette("helpers_find_with_no_reltype") do
+          expect(result).to eq("/relations/53b4a988-cd8a-4299-9ae7")
+        end
+      end
+
+      it "warns" do
+        msg = "No rel_type specified, so multiple types of relations between 56c04f5f-32b9-4f1d-8a4b and 6f0ce7b3-0130-444d-8633 may be returned"
+        VCR.use_cassette("helpers_find_with_no_reltype") do
+          expect(client).to receive(:warn).with(msg, uplevel: 1)
+          response
+        end
       end
     end
   end
 
-  describe '#keyword_search' do
+  describe "#keyword_search" do
     let(:client) { default_client }
-    it 'finds as expected' do
+    it "finds as expected" do
       args = [
-        { type: 'vocabularies', subtype: 'annotationtype', value: 'Additional taxa' },
-        { type: 'vocabularies', subtype: 'annotationtype', value: 'ADDITIONAL TAXA' },
-        { type: 'collectionobjects', value: 'tea' },
-        { type: 'collectionobjects', value: 'set' },
-        { type: 'collectionobjects', value: 'tea set' },
-        { type: 'personauthorities', subtype: 'person', value: 'A.' },
-        { type: 'personauthorities', subtype: 'person', value: 'P' },
-        { type: 'personauthorities', subtype: 'person', value: 'Q.' },
-        { type: 'personauthorities', subtype: 'person', value: 'Colet' },
-        { type: 'personauthorities', subtype: 'person', value: 'Linda' },
-        { type: 'personauthorities', subtype: 'person', value: 'Linda Colet' }
+        {type: "vocabularies", subtype: "annotationtype", value: "Additional taxa"},
+        {type: "vocabularies", subtype: "annotationtype", value: "ADDITIONAL TAXA"},
+        {type: "collectionobjects", value: "tea"},
+        {type: "collectionobjects", value: "set"},
+        {type: "collectionobjects", value: "tea set"},
+        {type: "personauthorities", subtype: "person", value: "A."},
+        {type: "personauthorities", subtype: "person", value: "P"},
+        {type: "personauthorities", subtype: "person", value: "Q."},
+        {type: "personauthorities", subtype: "person", value: "Colet"},
+        {type: "personauthorities", subtype: "person", value: "Linda"},
+        {type: "personauthorities", subtype: "person", value: "Linda Colet"}
 
       ]
       results = args.map { |arg| client.keyword_search(**arg) }
@@ -191,41 +224,50 @@ describe CollectionSpace::Helpers do
     end
   end
 
-  describe '#reset_media_blob' do
+  describe "#reset_media_blob" do
     let(:client) { default_client }
-    context 'with an invalid url' do
-      let(:id) { 'DTS.1' }
-      let(:url) { 'not_a_url' }
-      it 'will report an argument error' do
-        expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::ArgumentError)
+    let(:result) { client.reset_media_blob(id: id, url: url) }
+
+    context "with an invalid url" do
+      let(:id) { "DTS.1" }
+      let(:url) { "not_a_url" }
+      it "will report an argument error" do
+        VCR.use_cassette("helpers_reset_media_blob_invalid_url") do
+          expect { result }.to raise_error(CollectionSpace::ArgumentError)
+        end
       end
     end
 
-    context 'with no matching media record' do
-      let(:id) { 'DTS.does_not_exist' }
-      let(:url) { 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png' }
-      it 'will report a not found error' do
-        expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::NotFoundError)
+    context "with no matching media record" do
+      let(:id) { "DTS.does_not_exist" }
+      let(:url) { "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" }
+      it "will report a not found error" do
+        VCR.use_cassette("helpers_reset_media_blob_does_not_exist") do
+          expect { result }.to raise_error(CollectionSpace::NotFoundError)
+        end
       end
     end
 
-    context 'with multiple matching media records' do
-      let(:id) { 'DTS.dupes' }
-      let(:url) { 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png' }
-      it 'will report a duplicate id error' do
-        expect { client.reset_media_blob(id, url) }.to raise_error(CollectionSpace::DuplicateIdFound)
+    context "with multiple matching media records" do
+      let(:id) { "DTS.dupes" }
+      let(:url) { "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" }
+      it "will report a duplicate id error" do
+        VCR.use_cassette("helpers_reset_media_blob_duplicate") do
+          expect { result }.to raise_error(CollectionSpace::DuplicateIdFound)
+        end
       end
     end
 
-    context 'with a matching media record' do
-      let(:id) { 'DTS.1' }
-      let(:url) { 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png' }
-      it 'will reset the media blob record' do
-        response  = client.find(type: 'media', value: id, field: 'identificationNumber')
-        blob_csid = response.parsed['abstract_common_list']['list_item']['blobCsid']
-        response  = client.reset_media_blob(id, url)
-        expect(response.result.success?).to be true
-        expect(response.parsed['document']['media_common']['blobCsid']).to_not eq blob_csid
+    context "with a matching media record" do
+      let(:id) { "DTS.1" }
+      let(:url) { "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" }
+      it "will reset the media blob record" do
+        VCR.use_cassette("helpers_reset_media_blob_success") do
+          response = client.find(type: "media", value: id, field: "identificationNumber")
+          blob_csid = response.parsed["abstract_common_list"]["list_item"]["blobCsid"]
+          expect(result.result.success?).to be true
+          expect(result.parsed["document"]["media_common"]["blobCsid"]).to_not eq blob_csid
+        end
       end
     end
   end

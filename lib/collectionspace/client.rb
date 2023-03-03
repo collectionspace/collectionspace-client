@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-require 'httparty'
-require 'nokogiri'
-require 'uri'
+require "httparty"
+require "nokogiri"
+require "uri"
 
 # mixins required first
-require 'collectionspace/client/helpers'
-require 'collectionspace/client/template'
+require "collectionspace/client/helpers"
+require "collectionspace/client/template"
 
-require 'collectionspace/client/client'
-require 'collectionspace/client/configuration'
-require 'collectionspace/client/refname'
-require 'collectionspace/client/request'
-require 'collectionspace/client/response'
-require 'collectionspace/client/search'
-require 'collectionspace/client/service'
-require 'collectionspace/client/version'
+require "collectionspace/client/client"
+require "collectionspace/client/configuration"
+require "collectionspace/client/refname"
+require "collectionspace/client/request"
+require "collectionspace/client/response"
+require "collectionspace/client/search"
+require "collectionspace/client/service"
+require "collectionspace/client/version"
 
 module CollectionSpace
   class ArgumentError < StandardError; end
@@ -24,7 +24,7 @@ module CollectionSpace
 
   class NotFoundError < StandardError; end
 
-  class PayloadError  < StandardError; end
+  class PayloadError < StandardError; end
 
-  class RequestError  < StandardError; end
+  class RequestError < StandardError; end
 end

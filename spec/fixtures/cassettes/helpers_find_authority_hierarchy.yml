@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/relations?obj=40adef7a-aadc-4743-b2ed&pgSz=25&prd=hasBroader&sbj=e4f1148d-1790-417c-ab7a&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 21 Jul 2022 16:20:42 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1521'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><rel:relations-common-list
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rel="http://collectionspace.org/services/relation"
+        xmlns:ns4="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>subjectCsid|relationshipType|predicateDisplayName|relationshipMetaType|objectCsid|uri|csid|subject|object</fieldsReturned><relation-list-item><uri>/relations/1a35c85f-a549-48ec-bfc3</uri><csid>1a35c85f-a549-48ec-bfc3</csid><subjectCsid>e4f1148d-1790-417c-ab7a</subjectCsid><relationshipType>hasBroader</relationshipType><predicate>hasBroader</predicate><objectCsid>40adef7a-aadc-4743-b2ed</objectCsid><subject><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a</uri><csid>e4f1148d-1790-417c-ab7a</csid><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(DeathValley1592443356403)'Death
+        Valley'</refName><name>Death Valley</name><number>Death Valley</number><documentType>Placeitem</documentType></subject><object><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed</uri><csid>40adef7a-aadc-4743-b2ed</csid><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(California3071184726)'California'</refName><name>California</name><number>California</number><documentType>Placeitem</documentType></object></relation-list-item></rel:relations-common-list>
+  recorded_at: Thu, 21 Jul 2022 16:20:41 GMT
+recorded_with: VCR 6.1.0

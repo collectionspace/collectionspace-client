@@ -1,21 +1,26 @@
 # frozen_string_literal: true
 
-require 'bundler/gem_tasks'
-require 'rspec/core/rake_task'
-require 'base64'
-require 'collectionspace/client'
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
+require "base64"
+require "collectionspace/client"
+require "standard/rake"
 
 RSpec::Core::RakeTask.new(:spec)
 
 task default: :spec
 
+task :version do
+  puts CollectionSpace::Client::VERSION
+end
+
 namespace :cli do
   desc "Update a user's password: requires an Admin level account to perform the update"
   task :update_password, [:endpoint, :admin, :password, :user, :new_password] do |_t, args|
-    endpoint     = args[:endpoint]
-    admin        = args[:admin]
-    password     = args[:password]
-    user         = args[:user]
+    endpoint = args[:endpoint]
+    admin = args[:admin]
+    password = args[:password]
+    user = args[:user]
     new_password = args[:new_password]
 
     client = CollectionSpace::Client.new(
@@ -33,9 +38,9 @@ namespace :cli do
       </ns2:accounts_common>
     XML
 
-    client.all('accounts').each do |account|
-      if account['email'] == user
-        puts client.put(account['uri'], payload).parsed
+    client.all("accounts").each do |account|
+      if account["email"] == user
+        puts client.put(account["uri"], payload).parsed
         break
       end
     end
