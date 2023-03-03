@@ -22,50 +22,7 @@ STANDARD_TENANTS = [
   :publicart
 ]
 
-def standard_batches(client)
-  [
-    {
-      name: "Update Current Location",
-      notes: "Recompute the current location of Object records, based on the " \
-        "related Location/Movement/Inventory records. Runs on a single record " \
-        "or all records.",
-      doctype: %w[CollectionObject],
-      supports_single_doc: "true",
-      supports_doc_list: "false",
-      supports_group: "false",
-      supports_no_context: "true",
-      creates_new_focus: "false",
-      classname:
-      "org.collectionspace.services.batch.nuxeo.UpdateObjectLocationBatchJob"
-    },
-    {
-      name: "Update Inventory Status",
-      notes: "Set the inventory status of selected Object records. Runs on a " \
-        "record list only.",
-      doctype: %w[CollectionObject],
-      supports_single_doc: "false",
-      supports_doc_list: "true",
-      supports_group: "false",
-      supports_no_context: "false",
-      creates_new_focus: "false",
-      classname:
-      "org.collectionspace.services.batch.nuxeo.UpdateInventoryStatusBatchJob"
-    },
-    {
-      name: "Merge Authority Items",
-      notes: "Merge an authority item into a target, and update all " \
-        "referencing records. Runs on a single record only.",
-      doctype: client.authority_doctypes,
-      supports_single_doc: "true",
-      supports_doc_list: "false",
-      supports_group: "false",
-      supports_no_context: "false",
-      creates_new_focus: "false",
-      classname:
-      "org.collectionspace.services.batch.nuxeo.MergeAuthorityItemsBatchJob"
-    }
-  ]
-end
+STANDARD_BATCHES = CollectionSpace::Batch.all
 
 STANDARD_TENANTS.each do |tenant|
   client = CollectionSpace::Client.new(
@@ -78,8 +35,10 @@ STANDARD_TENANTS.each do |tenant|
   base = client.config.base_uri
     .delete_suffix("/cspace-services")
     .delete_prefix("https://")
+  merge_doctypes = client.authority_doctypes
 
-  standard_batches(client).each do |batch|
+  STANDARD_BATCHES.each do |batch|
+    batch[:doctype] = merge_doctypes if batch[:name] == "Merge Authority Items"
     response = client.add_batch(batch)
     if response.result.success?
       puts "Added #{batch[:name]} to #{base}"
