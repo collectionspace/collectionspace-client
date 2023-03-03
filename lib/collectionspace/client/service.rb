@@ -72,6 +72,12 @@ module CollectionSpace
           path: "intakes",
           term: nil
         },
+        "iterationreports" => {
+          identifier: "iterationIdentificationNumber",
+          ns_prefix: "iterationreports",
+          path: "iterationreports",
+          term: nil
+        },
         "loansin" => {
           identifier: "loanInNumber",
           ns_prefix: "loansin",
