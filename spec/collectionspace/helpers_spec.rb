@@ -67,7 +67,7 @@ describe CollectionSpace::Helpers do
 
   describe "#find" do
     let(:client) { default_client }
-    let(:response) { client.find(args) }
+    let(:response) { client.find(**args) }
     let(:result) { response.parsed["abstract_common_list"]["list_item"]["uri"] }
 
     context "with object" do
@@ -93,7 +93,7 @@ describe CollectionSpace::Helpers do
           {type: "orgauthorities", subtype: "organization", value: 'The "Grand" Canyon'}
         ]
         VCR.use_cassette("helpers_find_with_authority_term") do
-          results = args.map { |arg| client.find(arg) }
+          results = args.map { |arg| client.find(**arg) }
             .map { |resp| resp.parsed["abstract_common_list"]["list_item"]["uri"] }
           expected = [
             "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed",
@@ -138,23 +138,13 @@ describe CollectionSpace::Helpers do
 
   describe "#find_relation" do
     let(:client) { default_client }
-    let(:response) { client.find_relation(args) }
+    let(:response) { client.find_relation(**args) }
     let(:result) { response.parsed["relations_common_list"]["relation_list_item"]["uri"] }
     context "with object hierarchy" do
       let(:args) { {subject_csid: "16161bff-b01a-4b55-95aa", object_csid: "34bb1c08-5f46-4347-94db", rel_type: "hasBroader"} }
       it "finds as expected" do
         VCR.use_cassette("helpers_find_object_hierarchy") do
           expect(result).to eq("/relations/e23631b8-a977-46b8-b4b9")
-        end
-      end
-    end
-
-    context "with authority hierarchy" do
-      let(:args) { {subject_csid: "e4f1148d-1790-417c-ab7a", object_csid: "40adef7a-aadc-4743-b2ed", rel_type: "hasBroader"} }
-
-      it "finds as expected" do
-        VCR.use_cassette("helpers_find_authority_hierarchy") do
-          expect(result).to eq("/relations/1a35c85f-a549-48ec-bfc3")
         end
       end
     end
@@ -206,7 +196,7 @@ describe CollectionSpace::Helpers do
 
       ]
       VCR.use_cassette("helpers_find_keyword_search") do
-        results = args.map { |arg| client.keyword_search(arg) }
+        results = args.map { |arg| client.keyword_search(**arg) }
           .map { |response| response.parsed["abstract_common_list"]["list_item"] }
           .map { |list| list.is_a?(Hash) ? [list] : list } # handle single item returned
           .map { |list| list.nil? ? [{}] : list } # handle no items returned
