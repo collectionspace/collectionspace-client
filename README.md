@@ -39,8 +39,8 @@ gem install gem-release
 # https://github.com/svenfuchs/gem-release#gem-bump
 gem bump --version $VERSION --tag
 # i.e.
-gem bump --version minor --tag --pretend # dryrun
-gem bump --version minor --tag # do it for real
+gem bump --version minor --pretend # dryrun
+gem bump --version minor # do it for real
 # PR and merge will publish new version
 ```
 
