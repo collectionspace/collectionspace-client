@@ -37,10 +37,11 @@ bundle exec rake
 ```bash
 gem install gem-release
 # https://github.com/svenfuchs/gem-release#gem-bump
-gem bump --version $VERSION --tag
+gem bump --version $VERSION
 # i.e.
 gem bump --version minor --pretend # dryrun
 gem bump --version minor # do it for real
+bundle # update gem version in Gemfile.lock
 # PR and merge will publish new version
 ```
 
