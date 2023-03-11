@@ -9,8 +9,10 @@ Gem::Specification.new do |spec|
   spec.email = ["mark.cooper@lyrasis.org"]
 
   spec.summary = "CollectionSpace API client."
+  spec.description = "Client for interacting with CollectionSpace Services API"
   spec.homepage = "https://github.com/lyrasis/collectionspace-client.git"
   spec.license = "MIT"
+  spec.required_ruby_version = ">= 2.7.4"
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir = "exe"
