@@ -12,6 +12,12 @@ module CollectionSpace
           path: "acquisitions",
           term: nil
         },
+        "chronologyauthorities" => {
+          identifier: "shortIdentifier",
+          ns_prefix: "chronologies",
+          path: "chronologyauthorities/urn:cspace:name(#{subtype})/items",
+          term: "chronologie#{TERM_SUFFIX}"
+        },
         "citationauthorities" => {
           identifier: "shortIdentifier",
           ns_prefix: "citations",
