@@ -16,7 +16,7 @@ module CollectionSpace
           identifier: "shortIdentifier",
           ns_prefix: "chronologies",
           path: "chronologyauthorities/urn:cspace:name(#{subtype})/items",
-          term: "chronologie#{TERM_SUFFIX}"
+          term: "chronology#{TERM_SUFFIX}"
         },
         "citationauthorities" => {
           identifier: "shortIdentifier",
