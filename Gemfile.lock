@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    collectionspace-client (0.15.0)
+    collectionspace-client (0.15.1)
       httparty
       json
       nokogiri
