@@ -109,16 +109,13 @@ module CollectionSpace
       }.fetch(path, %w[abstract_common_list list_item])
     end
 
-    def reindex_full_text(doctype, csids = [])
-      if csids.any?
-        run_job(
-          "Reindex Full Text", :reindex_full_text, :reindex_by_csids, {doctype: doctype, csids: csids}
-        )
-      else
-        run_job(
-          "Reindex Full Text", :reindex_full_text, :reindex_by_doctype, {doctype: doctype}
-        )
-      end
+    def reindex_full_text(doctype = nil, csids = [])
+      run_job(
+        "Reindexing full text",
+        :reindex_full_text,
+        :reindex,
+        {doctype: doctype, csids: csids}
+      )
     end
 
     # @param id [String] media record's identificationNumber value
