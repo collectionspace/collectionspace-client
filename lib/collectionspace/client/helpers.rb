@@ -111,7 +111,7 @@ module CollectionSpace
 
     def reindex_full_text(doctype = nil, csids = [])
       run_job(
-        "Reindexing full text",
+        "Reindex Full Text",
         :reindex_full_text,
         :reindex,
         {doctype: doctype, csids: csids}
