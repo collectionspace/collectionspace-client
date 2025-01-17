@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Client for interacting with CollectionSpace Services API"
   spec.homepage = "https://github.com/lyrasis/collectionspace-client.git"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.7.4"
+  spec.required_ruby_version = ">= 3.0.6"
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir = "exe"
