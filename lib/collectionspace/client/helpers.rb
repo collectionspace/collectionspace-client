@@ -81,7 +81,7 @@ module CollectionSpace
         path: service[:path],
         namespace: "#{service[:ns_prefix]}_#{schema}",
         field: field,
-        expression: "#{operator} '#{value.gsub(/'/, "\\\\'")}'"
+        expression: "#{operator} '#{value.gsub("'", "\\\\'")}'"
       )
       search(search_args, sortBy: CollectionSpace::Search::DEFAULT_SORT)
     end

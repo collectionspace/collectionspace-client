@@ -11,7 +11,7 @@ describe CollectionSpace::Template do
 
   it "can change the path when template envvar is set" do
     expect(CollectionSpace::Template.templates_path).to match(
-      /#{File.join('lib', 'collectionspace', 'client', 'templates')}/
+      /#{File.join("lib", "collectionspace", "client", "templates")}/
     )
     ENV["COLLECTIONSPACE_CLIENT_TEMPLATES_PATH"] = "/path/to/nowhere"
     expect(CollectionSpace::Template.templates_path).to eq "/path/to/nowhere"
