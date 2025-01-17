@@ -99,7 +99,6 @@ DEPENDENCIES
   pry
   rake (~> 13.0)
   rspec
-  rubocop
   simplecov (~> 0.21)
   standard
   vcr (~> 6.1)
