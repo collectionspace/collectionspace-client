@@ -5,6 +5,7 @@ SimpleCov.start { enable_coverage :branch }
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 require "collectionspace/client"
+require "ostruct"
 require "pry"
 require "vcr"
 require "webmock/rspec"
