@@ -1,0 +1,1005 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ccp.collectionspace.org/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - ccp.collectionspace.org
+  response:
+    status:
+      code: 302
+      message: ''
+    headers:
+      Date:
+      - Thu, 23 Jan 2025 20:29:10 GMT
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=357C1D9BFFAD8E43A0A804CC6B13BA5E; Path=/; Secure; HttpOnly
+      Location:
+      - "/cspace/ccp/login"
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 23 Jan 2025 20:29:10 GMT
+- request:
+    method: get
+    uri: https://ccp.collectionspace.org/cspace/ccp/login
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - ccp.collectionspace.org
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 23 Jan 2025 20:29:10 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '30291'
+      Connection:
+      - keep-alive
+      Vary:
+      - Origin
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+      Cache-Control:
+      - max-age=7200
+      Expires:
+      - Thu, 23 Jan 2025 22:29:10 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - W/"30291-1728060734000"
+      Last-Modified:
+      - Fri, 04 Oct 2024 16:52:14 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+          <head>
+            <meta charset="UTF-8" />
+          </head>
+          <body>
+            <div id="cspace"></div>
+            <script src="https://cdn.jsdelivr.net/npm/cspace-ui@9.0.0/dist/cspaceUI.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/cspace-ui-plugin-profile-fcart@7.0.0/dist/cspaceUIPluginProfileFCart.min.js"></script>
+            <script>
+              cspaceUI({
+                disableAltTerms: true,
+                mediaSnapshotSort: "identificationNumber",
+                tenantId: "100027",
+                logo: "https://s3-us-west-2.amazonaws.com/cs-public-shared-files/images/core.png",
+                messages: {
+                  "about.title": "Center for Creative Photography",
+                  "about.contentHTML":
+                    "<div><p>CollectionSpace is a free, open-source collections management application for museums, historical societies, natural science collections, and more.</p></div>",
+                },
+                basename: "/cspace/ccp",
+                prettyUrls: true,
+                plugins: [cspaceUIPluginProfileFCart()],
+                optionLists: {
+                  acquisitionMethods: {
+                    values: [
+                      "accrual",
+                      "bequest",
+                      "commission",
+                      "exchange",
+                      "extended loan",
+                      "found unaccessioned",
+                      "gift",
+                      "gift-purchase",
+                      "loan",
+                      "promised gift",
+                      "purchase",
+                      "returned",
+                      "transfer",
+                      "treasure",
+                    ],
+                    messages: {
+                      accrual: {
+                        id: "option.acquisitionMethods.accrual",
+                        defaultMessage: "accrual",
+                      },
+                      bequest: {
+                        id: "option.acquisitionMethods.bequest",
+                        defaultMessage: "bequest",
+                      },
+                      commission: {
+                        id: "option.acquisitionMethods.commission",
+                        defaultMessage: "commission",
+                      },
+                      "extended loan": {
+                        id: "option.acquisitionMethods.extended loan",
+                        defaultMessage: "extended loan",
+                      },
+                      "found unaccessioned": {
+                        id: "option.acquisitionMethods.found unaccessioned",
+                        defaultMessage: "found unaccessioned",
+                      },
+                      "gift-purchase": {
+                        id: "option.acquisitionMethods.gift-purchase",
+                        defaultMessage: "gift-purchase",
+                      },
+                      loan: {
+                        id: "option.acquisitionMethods.loan",
+                        defaultMessage: "loan",
+                      },
+                      "promised gift": {
+                        id: "option.acquisitionMethods.promised gift",
+                        defaultMessage: "promised gift",
+                      },
+                      returned: {
+                        id: "option.acquisitionMethods.returned",
+                        defaultMessage: "returned",
+                      },
+                    },
+                  },
+                  addressTypes: {
+                    values: [
+                      "business",
+                      "copyright contact",
+                      "donor",
+                      "former",
+                      "home",
+                      "mailing",
+                      "other",
+                    ],
+                    messages: {
+                      "copyright contact": {
+                        id: "option.addressTypes.copyright contact",
+                        defaultMessage: "copyright contact",
+                      },
+                      donor: {
+                        id: "option.addressTypes.donor",
+                        defaultMessage: "donor",
+                      },
+                      former: {
+                        id: "option.addressTypes.former",
+                        defaultMessage: "former",
+                      },
+                      mailing: {
+                        id: "option.addressTypes.mailing",
+                        defaultMessage: "mailing",
+                      },
+                    },
+                  },
+                  collections: {
+                    values: [
+                      "library-collection",
+                      "permanent-collection",
+                      "secondary-collection",
+                      "study-collection",
+                      "teaching-collection",
+                    ],
+                    messages: {
+                      "secondary-collection": {
+                        id: "option.collections.secondary-collection",
+                        defaultMessage: "secondary collection",
+                      },
+                    },
+                  },
+                  departments: {
+                    values: [
+                      "Archives",
+                      "Art",
+                      "Art/Archives",
+                      "Books",
+                      "Drawings",
+                      "Manuscripts/Archives",
+                      "Photography",
+                      "Sculpture",
+                      "Works on paper",
+                    ],
+                    messages: {
+                      Archives: {
+                        id: "option.departments.Archives",
+                        defaultMessage: "Archives",
+                      },
+                      Art: {
+                        id: "option.departments.Art",
+                        defaultMessage: "Art",
+                      },
+                      "Art/Archives": {
+                        id: "option.departments.Art/Archives",
+                        defaultMessage: "Art/Archives",
+                      },
+                      Books: {
+                        id: "option.departments.Books",
+                        defaultMessage: "Books",
+                      },
+                      Drawings: {
+                        id: "option.departments.Drawings",
+                        defaultMessage: "Drawings",
+                      },
+                      "Manuscripts/Archives": {
+                        id: "option.departments.Manuscripts/Archives",
+                        defaultMessage: "Manuscripts/Archives",
+                      },
+                      Photography: {
+                        id: "option.departments.Photography",
+                        defaultMessage: "Photography",
+                      },
+                      Sculpture: {
+                        id: "option.departments.Sculpture",
+                        defaultMessage: "Sculpture",
+                      },
+                      "Works on paper": {
+                        id: "option.departments.Works on paper",
+                        defaultMessage: "Works on paper",
+                      },
+                    },
+                  },
+                  conditionCheckReasons: {
+                    values: [
+                      "conservation",
+                      "damaged in transit",
+                      "exhibition",
+                      "loan assessment",
+                      "new acquisition",
+                      "primary support",
+                      "secondary support",
+                    ],
+                    messages: {
+                      conservation: {
+                        id: "option.conditionCheckReasons.conservation",
+                        defaultMessage: "conservation",
+                      },
+                      "damaged in transit": {
+                        id: "option.conditionCheckReasons.damaged in transit",
+                        defaultMessage: "damaged in transit",
+                      },
+                      exhibition: {
+                        id: "option.conditionCheckReasons.exhibition",
+                        defaultMessage: "exhibition",
+                      },
+                      "loan assessment": {
+                        id: "option.conditionCheckReasons.loan assessment",
+                        defaultMessage: "loan assessment",
+                      },
+                      "new acquisition": {
+                        id: "option.conditionCheckReasons.new acquisition",
+                        defaultMessage: "new acquisition",
+                      },
+                      "primary support": {
+                        id: "option.conditionCheckReasons.primary support",
+                        defaultMessage: "primary support",
+                      },
+                      "secondary support": {
+                        id: "option.conditionCheckReasons.secondary support",
+                        defaultMessage: "secondary support",
+                      },
+                    },
+                  },
+                  conditions: {
+                    values: [
+                      "excellent",
+                      "excellent/good",
+                      "good",
+                      "good/fair",
+                      "fair",
+                      "fair/poor",
+                      "poor",
+                      "needs conservation",
+                      "stable",
+                    ],
+                    messages: {
+                      excellent: {
+                        id: "option.conditions.excellent",
+                        defaultMessage: "excellent",
+                      },
+                      "excellent/good": {
+                        id: "option.conditions.excellent/good",
+                        defaultMessage: "excellent/good",
+                      },
+                      good: {
+                        id: "option.conditions.good",
+                        defaultMessage: "good",
+                      },
+                      "good/fair": {
+                        id: "option.conditions.good/fair",
+                        defaultMessage: "good/fair",
+                      },
+                      fair: {
+                        id: "option.conditions.fair",
+                        defaultMessage: "fair",
+                      },
+                      "fair/poor": {
+                        id: "option.conditions.fair/poor",
+                        defaultMessage: "fair/poor",
+                      },
+                      poor: {
+                        id: "option.conditions.poor",
+                        defaultMessage: "poor",
+                      },
+                      "needs conservation": {
+                        id: "option.conditions.needs conservation",
+                        defaultMessage: "needs conservation",
+                      },
+                      stable: {
+                        id: "option.conditions.stable",
+                        defaultMessage: "stable",
+                      },
+                    },
+                  },
+                  genders: {
+                    values: [
+                      "agender",
+                      "bigender",
+                      "dyadic",
+                      "female",
+                      "feminine",
+                      "gender-fluid",
+                      "gender-neutral",
+                      "gender-non-binary",
+                      "genderqueer",
+                      "intersex",
+                      "male",
+                      "masculine",
+                      "pansexual",
+                      "polygender",
+                      "questioning",
+                      "transgender",
+                      "transsexual",
+                      "two-spirit",
+                      "unknown",
+                    ],
+                    messages: {
+                      unknown: {
+                        id: "option.genders.unknown",
+                        defaultMessage: "unknown",
+                      },
+                    },
+                  },
+                  loanPurposes: {
+                    values: [
+                      "exhibition",
+                      "research",
+                      "scientificorexhibitpreparation",
+                      "analysis",
+                      "photography",
+                      "conservationotherrequestedservices",
+                      "longtermcollectionsmanagementandstorage",
+                      "long-term loan",
+                      "temporary loan",
+                    ],
+                    messages: {
+                      "long-term loan": {
+                        id: "option.loanPurposes.long-term loan",
+                        defaultMessage: "long-term loan",
+                      },
+                      "temporary loan": {
+                        id: "option.loanPurposes.temporary loan",
+                        defaultMessage: "temporary loan",
+                      },
+                    },
+                  },
+                  measurementMethods: {
+                    values: [
+                      "balance_beam_scale",
+                      "hydraulic_or_pneumatic_scale",
+                      "measuring_tape_cloth",
+                      "measuring_tape_metal",
+                      "ruler",
+                      "spring_scale",
+                      "tape measure",
+                    ],
+                    messages: {
+                      "tape measure": {
+                        id: "option.measurementMethods.tape measure",
+                        defaultMessage: "tape measure",
+                      },
+                    },
+                  },
+                  measuredParts: {
+                    values: [
+                      "base",
+                      "components",
+                      "diameter",
+                      "folios",
+                      "footprint",
+                      "frame",
+                      "image",
+                      "image/primary support",
+                      "interior",
+                      "leaves",
+                      "lid",
+                      "mat",
+                      "mount",
+                      "other",
+                      "overall",
+                      "overall, frame",
+                      "overall, primary support",
+                      "overall, secondary support",
+                      "panel",
+                      "paper",
+                      "primary support",
+                      "secondary support",
+                      "sheet",
+                      "storage",
+                      "unframed",
+                    ],
+                    messages: {
+                      "image/primary support": {
+                        id: "option.measuredParts.image/primary support",
+                        defaultMessage: "image/primary support",
+                      },
+                      other: {
+                        id: "option.measuredParts.other",
+                        defaultMessage: "other",
+                      },
+                      "overall, frame": {
+                        id: "option.measuredParts.overall, frame",
+                        defaultMessage: "overall, frame",
+                      },
+                      "overall, primary support": {
+                        id: "option.measuredParts.overall, primary support",
+                        defaultMessage: "overall, primary support",
+                      },
+                      "overall, secondary support": {
+                        id: "option.measuredParts.overall, secondary support",
+                        defaultMessage: "overall, secondary support",
+                      },
+                      "primary support": {
+                        id: "option.measuredParts.primary support",
+                        defaultMessage: "primary support",
+                      },
+                      storage: {
+                        id: "option.measuredParts.storage",
+                        defaultMessage: "storage",
+                      },
+                      "secondary support": {
+                        id: "option.measuredParts.secondary support",
+                        defaultMessage: "secondary support",
+                      },
+                    },
+                  },
+                  measurementUnits: {
+                    values: [
+                      "carats",
+                      "centimeters",
+                      "cubic-centimeters",
+                      "cubic inches",
+                      "feet",
+                      "inches",
+                      "gigabytes",
+                      "kilograms",
+                      "liters",
+                      "megabytes",
+                      "millimeters",
+                      "meters",
+                      "minutes",
+                      "pixels",
+                      "pounds",
+                      "square-feet",
+                      "stories",
+                    ],
+                    messages: {
+                      "cubic inches": {
+                        id: "option.measurementunits.cubic inches",
+                        defaultMessage: "cubic inches",
+                      },
+                    },
+                  },
+                  moveReasons: {
+                    values: [
+                      "collections facility move",
+                      "conservation",
+                      "deaccession consideration",
+                      "exhibition",
+                      "exhibition/loan consideration",
+                      "fundraising/sale/trade",
+                      "imaging",
+                      "inventory",
+                      "loan in",
+                      "loan out",
+                      "location correction",
+                      "new storage location",
+                      "permanent",
+                      "photo Friday",
+                      "prep",
+                      "print viewing",
+                      "processing",
+                      "processing: acquisition",
+                      "processing: return",
+                      "refiling",
+                      "rehousing",
+                      "research",
+                      "return to owner/agent",
+                      "waiting for perm loc",
+                    ],
+                    messages: {
+                      "collections facility move": {
+                        id: "option.moveReasons.collections facility move",
+                        defaultMessage: "collections facility move",
+                      },
+                      "deaccession consideration": {
+                        id: "option.moveReasons.deaccession consideration",
+                        defaultMessage: "deaccession consideration",
+                      },
+                      "exhibition/loan consideration": {
+                        id: "option.moveReasons.exhibition/loan consideration",
+                        defaultMessage: "exhibition/loan consideration",
+                      },
+                      "fundraising/sale/trade": {
+                        id: "option.moveReasons.fundraising/sale/trade",
+                        defaultMessage: "fundraising/sale/trade",
+                      },
+                      imaging: {
+                        id: "option.moveReasons.imaging",
+                        defaultMessage: "imaging",
+                      },
+                      "loan in": {
+                        id: "option.moveReasons.loan in",
+                        defaultMessage: "loan in",
+                      },
+                      "loan out": {
+                        id: "option.moveReasons.loan out",
+                        defaultMessage: "loan out",
+                      },
+                      "location correction": {
+                        id: "option.moveReasons.location correction",
+                        defaultMessage: "location correction",
+                      },
+                      "new storage location": {
+                        id: "option.moveReasons.new storage location",
+                        defaultMessage: "new storage location",
+                      },
+                      permanent: {
+                        id: "option.moveReasons.permanent",
+                        defaultMessage: "permanent",
+                      },
+                      "photo Friday": {
+                        id: "option.moveReasons.photo Friday",
+                        defaultMessage: "photo Friday",
+                      },
+                      prep: {
+                        id: "option.moveReasons.prep",
+                        defaultMessage: "prep",
+                      },
+                      "print viewing": {
+                        id: "option.moveReasons.print viewing",
+                        defaultMessage: "print viewing",
+                      },
+                      processing: {
+                        id: "option.moveReasons.processing",
+                        defaultMessage: "processing",
+                      },
+                      "processing: acquisition": {
+                        id: "option.moveReasons.processing: acquisition",
+                        defaultMessage: "processing: acquisition",
+                      },
+                      "processing: return": {
+                        id: "option.moveReasons.processing: return",
+                        defaultMessage: "processing: return",
+                      },
+                      refiling: {
+                        id: "option.moveReasons.refiling",
+                        defaultMessage: "refiling",
+                      },
+                      rehousing: {
+                        id: "option.moveReasons.rehousing",
+                        defaultMessage: "rehousing",
+                      },
+                      "return to owner/agent": {
+                        id: "option.moveReasons.return to owner/agent",
+                        defaultMessage: "return to owner/agent",
+                      },
+                      "waiting for perm loc": {
+                        id: "option.moveReasons.waiting for perm loc",
+                        defaultMessage: "waiting for perm loc",
+                      },
+                    },
+                  },
+                  nameSystems: {
+                    values: [
+                      "art-and-architecture-thesaurus",
+                      "genre",
+                      "nomenclature",
+                      "print category",
+                    ],
+                    messages: {
+                      genre: {
+                        id: "option.nameSystems.genre",
+                        defaultMessage: "genre",
+                      },
+                      "print category": {
+                        id: "option.nameSystems.print category",
+                        defaultMessage: "print category",
+                      },
+                    },
+                  },
+                  nameTypes: {
+                    values: [
+                      "3-D object",
+                      "architecture",
+                      "archival material",
+                      "armsandarmor",
+                      "builtwork",
+                      "ceramics",
+                      "costume",
+                      "decorativearts",
+                      "furniture",
+                      "graphicarts",
+                      "installation",
+                      "jewelry",
+                      "mediaart",
+                      "mixedmedia",
+                      "musicalinstrument",
+                      "painting",
+                      "photograph",
+                      "performance",
+                      "portfolio",
+                      "print",
+                      "print, supervised",
+                      "print, unsupervised",
+                      "moveablework",
+                      "mural",
+                      "sculpture",
+                      "sketchbook",
+                      "tools",
+                      "textile",
+                      "workonpaper",
+                      "video",
+                    ],
+                    messages: {
+                      "3-D object": {
+                        id: "option.nameTypes.3-D object",
+                        defaultMessage: "3-D object",
+                      },
+                      "archival material": {
+                        id: "option.nameTypes.archival material",
+                        defaultMessage: "archival material",
+                      },
+                      "print, supervised": {
+                        id: "option.nameTypes.print, supervised",
+                        defaultMessage: "print, supervised",
+                      },
+                      "print, unsupervised": {
+                        id: "option.nameTypes.print, unsupervised",
+                        defaultMessage: "print, unsupervised",
+                      },
+                    },
+                  },
+                  numberTypes: {
+                    values: [
+                      "accession lot",
+                      "archives number",
+                      "catalogue",
+                      "catalogueraoisonne",
+                      "contact print number",
+                      "contact sheet number",
+                      "deaccession number",
+                      "exhibition",
+                      "former accession number",
+                      "lender",
+                      "loan number",
+                      "model",
+                      "negative information",
+                      "negative number",
+                      "object number 2",
+                      "obsolete",
+                      "page",
+                      "previous",
+                      "serial",
+                      "sheet",
+                      "unknown",
+                      "work print number",
+                    ],
+                    messages: {
+                      "accession lot": {
+                        id: "option.numberTypes.accession lot",
+                        defaultMessage: "accession lot",
+                      },
+                      "archives number": {
+                        id: "option.numberTypes.archives number",
+                        defaultMessage: "archives number",
+                      },
+                      "contact print number": {
+                        id: "option.numberTypes.contact print number",
+                        defaultMessage: "contact print number",
+                      },
+                      "contact sheet number": {
+                        id: "option.numberTypes.contact sheet number",
+                        defaultMessage: "contact sheet number",
+                      },
+                      "deaccession number": {
+                        id: "option.numberTypes.deaccession number",
+                        defaultMessage: "deaccession number",
+                      },
+                      "former accession number": {
+                        id: "option.numberTypes.former accession number",
+                        defaultMessage: "former accession number",
+                      },
+                      "loan number": {
+                        id: "option.numberTypes.loan number",
+                        defaultMessage: "loan number",
+                      },
+                      "negative information": {
+                        id: "option.numberTypes.negative information",
+                        defaultMessage: "negative information",
+                      },
+                      "negative number": {
+                        id: "option.numberTypes.negative number",
+                        defaultMessage: "negative number",
+                      },
+                      "object number 2": {
+                        id: "option.numberTypes.object number 2",
+                        defaultMessage: "object number 2",
+                      },
+                      "work print number": {
+                        id: "option.numberTypes.work print number",
+                        defaultMessage: "work print number",
+                      },
+                    },
+                  },
+                  personTitles: {
+                    values: [
+                      "Adjutant",
+                      "Admiral",
+                      "Baron",
+                      "Baroness",
+                      "Captain",
+                      "Chief Justice",
+                      "Colonel",
+                      "Commander",
+                      "Commodore",
+                      "Corporal",
+                      "Count",
+                      "Countess",
+                      "Dame",
+                      "Don",
+                      "Dr",
+                      "Dr Captain",
+                      "Father",
+                      "Fleet Admiral",
+                      "General",
+                      "Governor",
+                      "Honorable",
+                      "Judge",
+                      "King",
+                      "Lady",
+                      "Lieutenant",
+                      "Lieutenant Commander",
+                      "Lieutenant General",
+                      "Lord",
+                      "Madame",
+                      "Major",
+                      "Master Sergeant",
+                      "Miss",
+                      "Mr",
+                      "Mrs",
+                      "Ms",
+                      "Nurse",
+                      "Pharaoh",
+                      "Police Chief",
+                      "Prince",
+                      "Princess",
+                      "Principal",
+                      "Private",
+                      "Professor",
+                      "Queen",
+                      "Rabbi",
+                      "Reverend",
+                      "Rev Dr",
+                      "Saint",
+                      "Senator",
+                      "Sergeant",
+                      "Sheik",
+                      "Sheriff",
+                      "Sir",
+                      "Sister",
+                      "Vice Admiral",
+                    ],
+                    messages: {
+                      Adjutant: {
+                        id: "option.personTitles.Adjutant",
+                        defaultMessage: "Adjutant",
+                      },
+                      "Chief Justice": {
+                        id: "option.personTitles.Chief Justice",
+                        defaultMessage: "Chief Justice",
+                      },
+                      Colonel: {
+                        id: "option.personTitles.Colonel",
+                        defaultMessage: "Colonel",
+                      },
+                      Corporal: {
+                        id: "option.personTitles.Corporal",
+                        defaultMessage: "Corporal",
+                      },
+                      Don: {
+                        id: "option.personTitles.Don",
+                        defaultMessage: "Don",
+                      },
+                      "Dr Captain": {
+                        id: "option.personTitles.Dr Captain",
+                        defaultMessage: "Dr Captain",
+                      },
+                      Father: {
+                        id: "option.personTitles.Father",
+                        defaultMessage: "Father",
+                      },
+                      "Fleet Admiral": {
+                        id: "option.personTitles.Fleet Admiral",
+                        defaultMessage: "Fleet Admiral",
+                      },
+                      Lieutenant: {
+                        id: "option.personTitles.Lieutenant",
+                        defaultMessage: "Lieutenant",
+                      },
+                      "Lieutenant Commander": {
+                        id: "option.personTitles.Lieutenant Commander",
+                        defaultMessage: "Lieutenant Commander",
+                      },
+                      "Lieutenant General": {
+                        id: "option.personTitles.Lieutenant General",
+                        defaultMessage: "Lieutenant General",
+                      },
+                      Madame: {
+                        id: "option.personTitles.Madame",
+                        defaultMessage: "Madame",
+                      },
+                      Major: {
+                        id: "option.personTitles.Major",
+                        defaultMessage: "Major",
+                      },
+                      "Master Sergeant": {
+                        id: "option.personTitles.Master Sergeant",
+                        defaultMessage: "Master Sergeant",
+                      },
+                      Nurse: {
+                        id: "option.personTitles.Nurse",
+                        defaultMessage: "Nurse",
+                      },
+                      Pharaoh: {
+                        id: "option.personTitles.Pharaoh",
+                        defaultMessage: "Pharaoh",
+                      },
+                      "Police Chief": {
+                        id: "option.personTitles.Police Chief",
+                        defaultMessage: "Police Chief",
+                      },
+                      Principal: {
+                        id: "option.personTitles.Principal",
+                        defaultMessage: "Principal",
+                      },
+                      Private: {
+                        id: "option.personTitles.Private",
+                        defaultMessage: "Private",
+                      },
+                      Rabbi: {
+                        id: "option.personTitles.Rabbi",
+                        defaultMessage: "Rabbi",
+                      },
+                      "Rev Dr": {
+                        id: "option.personTitles.Rev Dr",
+                        defaultMessage: "Rev Dr",
+                      },
+                      Senator: {
+                        id: "option.personTitles.Senator",
+                        defaultMessage: "Senator",
+                      },
+                      Sergeant: {
+                        id: "option.personTitles.Sergeant",
+                        defaultMessage: "Sergeant",
+                      },
+                      Sheik: {
+                        id: "option.personTitles.Sheik",
+                        defaultMessage: "Sheik",
+                      },
+                      Sheriff: {
+                        id: "option.personTitles.Sheriff",
+                        defaultMessage: "Sheriff",
+                      },
+                      Sister: {
+                        id: "option.personTitles.Sister",
+                        defaultMessage: "Sister",
+                      },
+                      "Vice Admiral": {
+                        id: "option.personTitles.Vice Admiral",
+                        defaultMessage: "Vice Admiral",
+                      },
+                    },
+                  },
+                  titleTypes: {
+                    values: [
+                      "assignedbyartist",
+                      "creatorassigned",
+                      "collective",
+                      "collection",
+                      "constructed",
+                      "descriptive",
+                      "exhibition",
+                      "former",
+                      "inscribed",
+                      "institutional",
+                      "legal",
+                      "local",
+                      "manuscriptdesignation",
+                      "original",
+                      "popular",
+                      "preferred",
+                      "primary",
+                      "published",
+                      "registrar",
+                      "repository",
+                      "series",
+                      "trade",
+                      "traditional",
+                      "translated",
+                    ],
+                    messages: {
+                      exhibition: {
+                        id: "option.titleTypes.exhibition",
+                        defaultMessage: "exhibition",
+                      },
+                      legal: {
+                        id: "option.titleTypes.legal",
+                        defaultMessage: "legal",
+                      },
+                      preferred: {
+                        id: "option.titleTypes.preferred",
+                        defaultMessage: "preferred",
+                      },
+                      primary: {
+                        id: "option.titleTypes.primary",
+                        defaultMessage: "primary",
+                      },
+                      registrar: {
+                        id: "option.titleTypes.registrar",
+                        defaultMessage: "registrar",
+                      },
+                    },
+                  },
+                  valueTypes: {
+                    values: ["accession value", "deaccession value", "insurance value"],
+                    messages: {
+                      "accession value": {
+                        id: "option.valueTypes.accession value",
+                        defaultMessage: "accession value",
+                      },
+                      "deaccession value": {
+                        id: "option.valueTypes.deaccession value",
+                        defaultMessage: "deaccession value",
+                      },
+                      "insurance value": {
+                        id: "option.valueTypes.insurance value",
+                        defaultMessage: "insurance value",
+                      },
+                    },
+                  },
+                },
+              });
+            </script>
+          </body>
+        </html>
+  recorded_at: Thu, 23 Jan 2025 20:29:10 GMT
+recorded_with: VCR 6.3.1
