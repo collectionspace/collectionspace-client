@@ -24,14 +24,24 @@ VCR.configure do |c|
   end
 end
 
-def default_client
-  CollectionSpace::Client.new(
-    CollectionSpace::Configuration.new(
-      base_uri: "https://core.dev.collectionspace.org/cspace-services",
-      username: "admin@core.collectionspace.org",
-      password: "Administrator"
-    )
+def default_config
+  CollectionSpace::Configuration.new(
+    base_uri: "https://core.dev.collectionspace.org/cspace-services",
+    username: "admin@core.collectionspace.org",
+    password: "Administrator"
   )
+end
+
+def default_client
+  CollectionSpace::Client.new(default_config)
+end
+
+def no_authentication_config
+  CollectionSpace::Configuration.new(base_uri: base)
+end
+
+def no_authentication_client
+  CollectionSpace::Client.new(no_authentication_config)
 end
 
 def fixture(file)

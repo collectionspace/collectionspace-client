@@ -14,6 +14,21 @@ module CollectionSpace
       @config = config
     end
 
+    # User is required to be authenticated in order to access accounts
+    #   endpoint. We cannot distinguish between unknown user and known
+    #   user with bad password because CollectionSpace returns a 401
+    #   error regardless of reason for
+    #   non-authentication/authorization
+    def can_authenticate?
+      return false unless login_credentials_provided?
+
+      response = get("accounts/0/accountperms")
+      response.result.success? &&
+        response.parsed.respond_to?(:dig) &&
+        response.parsed.dig("account_permission", "account",
+          "userId") == config.username
+    end
+
     def get(path, options = {})
       request "GET", path, options
     end
@@ -44,6 +59,10 @@ module CollectionSpace
     end
 
     private
+
+    def login_credentials_provided?
+      config.username && config.password
+    end
 
     def check_payload(payload)
       errors = Nokogiri::XML(payload).errors

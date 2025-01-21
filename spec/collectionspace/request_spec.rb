@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe CollectionSpace::Request do
   let(:client) { default_client }
-  let(:object_uri) { "collectionobjects/67e88be5-a498-4922-a90c" }
+  let(:object_uri) { "collectionobjects/87674c8f-296d-4682-a795" }
   let(:post_payload) { fixture("collectionobject.xml") }
   let(:post_file) { File.join("spec", "fixtures", "files", "tower.jpg") }
   let(:put_payload) { fixture("collectionobject_update.xml") }
@@ -18,44 +18,46 @@ describe CollectionSpace::Request do
   end
 
   it "can create a collectionobject" do
-    VCR.use_cassette("collectionobjects_create") do
+    VCR.use_cassette("request_collectionobjects_create") do
       response = client.post("collectionobjects", post_payload)
       expect(response.status_code).to eq(201)
     end
   end
 
   it "can create a blob record" do
-    VCR.use_cassette("blobs_create") do
+    VCR.use_cassette("request_blobs_create") do
       response = client.post_file(post_file)
       expect(response.status_code).to eq(201)
     end
   end
 
   it "raises an error creating a blob record if file is not found" do
-    bad_file_path = "/this/file/does/not/exist.ext"
-    expect(File.file?(bad_file_path)).to be false
+    VCR.use_cassette("request_blobs_file_nonexistent") do
+      bad_file_path = "/this/file/does/not/exist.ext"
+      expect(File.file?(bad_file_path)).to be false
 
-    expect {
-      client.post_file(bad_file_path)
-    }.to raise_error CollectionSpace::ArgumentError, /#{bad_file_path}/
+      expect {
+        client.post_file(bad_file_path)
+      }.to raise_error CollectionSpace::ArgumentError, /#{bad_file_path}/
+    end
   end
 
   it "can read a collectionobject" do
-    VCR.use_cassette("collectionobjects_read") do
+    VCR.use_cassette("request_collectionobjects_read") do
       response = client.get(object_uri)
       expect(response.status_code).to eq(200)
     end
   end
 
   it "can update a collectionobject" do
-    VCR.use_cassette("collectionobjects_update") do
+    VCR.use_cassette("request_collectionobjects_update") do
       response = client.put(object_uri, put_payload)
       expect(response.status_code).to eq(200)
     end
   end
 
   it "can search for a collectionobject" do
-    VCR.use_cassette("collectionobjects_search") do
+    VCR.use_cassette("request_collectionobjects_search") do
       response = client.search(CollectionSpace::Search.new.from_hash(search))
       total = response.parsed["abstract_common_list"]["totalItems"].to_i
       expect(response.status_code).to eq(200)
@@ -64,7 +66,7 @@ describe CollectionSpace::Request do
   end
 
   it "can delete a collectionobject" do
-    VCR.use_cassette("collectionobjects_delete") do
+    VCR.use_cassette("request_collectionobjects_delete") do
       response = client.delete(object_uri)
       expect(response.status_code).to eq(200)
     end
