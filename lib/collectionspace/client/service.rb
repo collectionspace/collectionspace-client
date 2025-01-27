@@ -54,16 +54,46 @@ module CollectionSpace
           path: "conservation",
           term: nil
         },
+        "consultations" => {
+          identifier: "consultationNumber",
+          ns_prefix: "consultations",
+          path: "consultations",
+          term: nil
+        },
+        "deaccessions" => {
+          identifier: "deaccessionNumber",
+          ns_prefix: "deaccessions",
+          path: "deaccessions",
+          term: nil
+        },
+        "dutiesofcare" => {
+          identifier: "dutyOfCareNumber",
+          ns_prefix: "dutiesofcare",
+          path: "dutiesofcare",
+          term: nil
+        },
         "exhibitions" => {
           identifier: "exhibitionNumber",
           ns_prefix: "exhibitions",
           path: "exhibitions",
           term: nil
         },
+        "exits" => {
+          identifier: "exitNumber",
+          ns_prefix: "exits",
+          path: "exits",
+          term: nil
+        },
         "groups" => {
           identifier: "title",
           ns_prefix: "groups",
           path: "groups",
+          term: nil
+        },
+        "heldintrusts" => {
+          identifier: "heldInTrustNumber",
+          ns_prefix: "heldintrusts",
+          path: "heldintrusts",
           term: nil
         },
         "insurances" => {
@@ -120,6 +150,12 @@ module CollectionSpace
           path: "movements",
           term: nil
         },
+        "nagprainventories" => {
+          identifier: "inventoryNumber",
+          ns_prefix: "nagprainventories",
+          path: "nagprainventories",
+          term: nil
+        },
         "objectexit" => {
           identifier: "exitNumber",
           ns_prefix: "objectexit",
@@ -166,6 +202,24 @@ module CollectionSpace
           identifier: "csid",
           ns_prefix: "relations",
           path: "relations",
+          term: nil
+        },
+        "repatriationrequests" => {
+          identifier: "requestNumber",
+          ns_prefix: "repatriationrequests",
+          path: "repatriationrequests",
+          term: nil
+        },
+        "restrictedmedia" => {
+          identifier: "identificationNumber",
+          ns_prefix: "restrictedmedia",
+          path: "restrictedmedia",
+          term: nil
+        },
+        "summarydocumentations" => {
+          identifier: "documentationNumber",
+          ns_prefix: "summarydocumentations",
+          path: "summarydocumentations",
           term: nil
         },
         "taxonomyauthority" => {
