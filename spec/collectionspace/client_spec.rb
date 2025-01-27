@@ -126,4 +126,19 @@ describe CollectionSpace::Client do
       expect(service[:term]).to be_nil
     end
   end
+
+  describe "#version" do
+    let(:result) { default_client.version }
+
+    it "returns version data struct" do
+      VCR.use_cassette("client_version") do
+        expect(result).to be_a(Struct)
+        expect(result.api.success?).to be true
+        expect(result.api.build).to eq("1a157a3")
+        expect(result.api.joined).to eq("8.1")
+        expect(result.client).to eq("0.15.1")
+        expect(result.ui.profile).to eq("core")
+      end
+    end
+  end
 end

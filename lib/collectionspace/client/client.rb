@@ -58,6 +58,15 @@ module CollectionSpace
       request "DELETE", path
     end
 
+    def version
+      Struct.new(:api, :client, :ui, keyword_init: true)
+        .new(
+          api: get_api_version,
+          client: VERSION,
+          ui: CollectionSpace::UiVersion.call(self)
+        )
+    end
+
     private
 
     def login_credentials_provided?
@@ -72,6 +81,24 @@ module CollectionSpace
     def request(method, path, options = {})
       sleep config.throttle
       Response.new(Request.new(config, method, path, options).execute)
+    end
+
+    def get_api_version
+      response = get("systeminfo")
+      unless response.result.success?
+        return CollectionSpace::ApiVersion.new(
+          status: :failure, message: response.result.body
+        )
+      end
+
+      version_info = response.parsed.dig("system_info_common", "version")
+      CollectionSpace::ApiVersion.new(
+        status: :success,
+        major: version_info["major"],
+        minor: version_info["minor"],
+        patch: version_info["patch"],
+        build: version_info["build"]
+      )
     end
   end
 end

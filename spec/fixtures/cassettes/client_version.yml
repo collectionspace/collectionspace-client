@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/systeminfo?pgSz=25&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 27 Jan 2025 16:19:01 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '575'
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=E976B31BE368C7F057E8F00A04CFE98B; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:system_info_common
+        xmlns:ns2="http://collectionspace.org/services/systeminfo"><displayName>CollectionSpace
+        Services v8.1</displayName><instanceId>_dev</instanceId><version><major>8</major><minor>1</minor><patch>0</patch><build>1a157a3</build></version><javaVersionString>1.8.0_432</javaVersionString><host>Architecture:amd64
+        Name:Linux Version:4.14.355-275.570.amzn2.x86_64</host><hostTimezone>America/Los_Angeles</hostTimezone><hostLocale>en-US</hostLocale><hostCharset>UTF-8</hostCharset></ns2:system_info_common>
+  recorded_at: Mon, 27 Jan 2025 16:19:01 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - core.dev.collectionspace.org
+  response:
+    status:
+      code: 302
+      message: ''
+    headers:
+      Date:
+      - Mon, 27 Jan 2025 16:19:01 GMT
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=C209D68EC8E776D0A0E0BA0F11D1ABA7; Path=/; Secure; HttpOnly
+      Location:
+      - "/cspace/core/login"
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 27 Jan 2025 16:19:01 GMT
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace/core/login
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - core.dev.collectionspace.org
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 27 Jan 2025 16:19:02 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '278'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=7200
+      Expires:
+      - Mon, 27 Jan 2025 18:19:02 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - W/"278-1737958498000"
+      Last-Modified:
+      - Mon, 27 Jan 2025 06:14:58 GMT
+    body:
+      encoding: UTF-8
+      string: "<html>\n\t<head>\n\t\t<meta charset=\"UTF-8\" />\n\t</head>\n\t<body>\n\t\t<div
+        id=\"cspace\"></div>\n\t\t<script src=\"/cspace-ui/cspaceUI@e1a5dac.min.js\"></script>\n\t\t<script>\n\t\t\tcspaceUI({\n\t\t\t\tbasename:
+        '/cspace/core',\n\t\t\t\tprettyUrls: true,\n\t\t\t\ttenantId: '1',\n\t\t\t});\n\t\t</script>\n\t</body>\n</html>\n"
+  recorded_at: Mon, 27 Jan 2025 16:19:02 GMT
+recorded_with: VCR 6.3.1
