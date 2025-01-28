@@ -11,8 +11,8 @@ describe CollectionSpace::Helpers do
 
     it "returns Array of authority doctypes" do
       VCR.use_cassette("helpers_authority_doctypes") do
-        expected = %w[Workitem Person Conceptitem Placeitem Citation Organization
-          Locationitem].sort
+        expected = ["Chronology", "Citation", "Conceptitem", "Locationitem",
+          "Organization", "Person", "Placeitem", "Workitem"]
         expect(result.sort).to eq(expected)
       end
     end
@@ -71,10 +71,10 @@ describe CollectionSpace::Helpers do
     let(:result) { response.parsed["abstract_common_list"]["list_item"]["uri"] }
 
     context "with object" do
-      let(:args) { {type: "collectionobjects", value: "QA TEST 001"} }
+      let(:args) { {type: "collectionobjects", value: "OBJ A"} }
       it "finds as expected" do
         VCR.use_cassette("helpers_find_with_collectionobject") do
-          expect(result).to eq("/collectionobjects/56c04f5f-32b9-4f1d-8a4b")
+          expect(result).to eq("/collectionobjects/b08af938-842c-4650-82eb")
         end
       end
     end
@@ -95,16 +95,17 @@ describe CollectionSpace::Helpers do
         VCR.use_cassette("helpers_find_with_authority_term") do
           results = args.map { |arg| client.find(**arg) }
             .map { |resp| resp.parsed["abstract_common_list"]["list_item"]["uri"] }
+            .map { |uri| uri.split("/").last }
           expected = [
-            "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed",
-            "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a",
-            "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/c9d34920-1782-49ed-a0c3",
-            "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/4745b7b1-cc7a-458e-9742",
-            "/placeauthorities/838dbc1c-12f0-45fa-9a26/items/a0f4ba2a-07cb-4647-a884",
-            "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df",
-            "/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975",
-            "/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b",
-            "/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405"
+            "147c4944-fe0c-4e88-80b0",
+            "abf45754-f9d2-4588-bb64",
+            "d9bf40cf-841e-43b1-bbee",
+            "e036b409-a7f5-4eff-a030",
+            "de602169-fe35-4093-865a",
+            "dcc1969c-9340-4980-86e7",
+            "f4df08f5-5503-4d41-856c",
+            "d2d0a377-b29c-4beb-aab4",
+            "c96240b6-e294-4749-9e6c"
           ]
           expect(results).to eq(expected)
         end
@@ -118,7 +119,7 @@ describe CollectionSpace::Helpers do
       end
       it "finds as expected" do
         VCR.use_cassette("helpers_find_with_ilike") do
-          expect(result).to eq("/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9")
+          expect(result).to eq("/vocabularies/985afe4a-0740-44a0-91bd/items/0a832685-97bd-42aa-ab6d")
         end
       end
     end
@@ -130,7 +131,7 @@ describe CollectionSpace::Helpers do
       end
       it "finds as expected" do
         VCR.use_cassette("helpers_find_with_like") do
-          expect(result).to eq("/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9")
+          expect(result).to eq("/vocabularies/985afe4a-0740-44a0-91bd/items/0a832685-97bd-42aa-ab6d")
         end
       end
     end
@@ -141,35 +142,46 @@ describe CollectionSpace::Helpers do
     let(:response) { client.find_relation(**args) }
     let(:result) { response.parsed["relations_common_list"]["relation_list_item"]["uri"] }
     context "with object hierarchy" do
-      let(:args) { {subject_csid: "16161bff-b01a-4b55-95aa", object_csid: "34bb1c08-5f46-4347-94db", rel_type: "hasBroader"} }
+      let(:args) do
+        {subject_csid: "f1767589-0b0f-4066-a4c6",
+         object_csid: "b08af938-842c-4650-82eb",
+         rel_type: "hasBroader"}
+      end
       it "finds as expected" do
         VCR.use_cassette("helpers_find_object_hierarchy") do
-          expect(result).to eq("/relations/e23631b8-a977-46b8-b4b9")
+          expect(result).to eq("/relations/1323c360-d919-4209-b069")
         end
       end
     end
 
     context "with non-hierarchical relation" do
-      let(:args) { {subject_csid: "56c04f5f-32b9-4f1d-8a4b", object_csid: "6f0ce7b3-0130-444d-8633", rel_type: "affects"} }
+      let(:args) do
+        {subject_csid: "f7d3be87-8864-477a-8098",
+         object_csid: "b08af938-842c-4650-82eb",
+         rel_type: "affects"}
+      end
 
       it "finds as expected" do
         VCR.use_cassette("helpers_find_non_hierarchical_relation") do
-          expect(result).to eq("/relations/53b4a988-cd8a-4299-9ae7")
+          expect(result).to eq("/relations/7ff97301-13e4-4b5f-a5e7")
         end
       end
     end
 
     context "with no reltype given" do
-      let(:args) { {subject_csid: "56c04f5f-32b9-4f1d-8a4b", object_csid: "6f0ce7b3-0130-444d-8633"} }
+      let(:args) do
+        {subject_csid: "f7d3be87-8864-477a-8098",
+         object_csid: "b08af938-842c-4650-82eb"}
+      end
 
       it "finds as expected" do
         VCR.use_cassette("helpers_find_with_no_reltype") do
-          expect(result).to eq("/relations/53b4a988-cd8a-4299-9ae7")
+          expect(result).to eq("/relations/7ff97301-13e4-4b5f-a5e7")
         end
       end
 
       it "warns" do
-        msg = "No rel_type specified, so multiple types of relations between 56c04f5f-32b9-4f1d-8a4b and 6f0ce7b3-0130-444d-8633 may be returned"
+        msg = "No rel_type specified, so multiple types of relations between f7d3be87-8864-477a-8098 and b08af938-842c-4650-82eb may be returned"
         VCR.use_cassette("helpers_find_with_no_reltype") do
           expect(client).to receive(:warn).with(msg, uplevel: 1)
           response
@@ -183,7 +195,35 @@ describe CollectionSpace::Helpers do
     it "finds as expected" do
       args = [
         {type: "vocabularies", subtype: "annotationtype", value: "Additional taxa"},
-        {type: "vocabularies", subtype: "annotationtype", value: "ADDITIONAL TAXA"},
+        {type: "vocabularies", subtype: "annotationtype", value: "ADDITIONAL TAXA"}
+      ]
+      VCR.use_cassette("helpers_find_keyword_search") do
+        results = args.map { |arg| client.keyword_search(**arg) }
+          .map { |response| response.parsed["abstract_common_list"]["list_item"] }
+          .map { |list| list.is_a?(Hash) ? [list] : list } # handle single item returned
+          .map { |list| list.nil? ? [{}] : list } # handle no items returned
+          .map { |list| list.map { |item| item["uri"] } }
+          .flatten
+
+        expected = [
+          "/vocabularies/985afe4a-0740-44a0-91bd/items/0a832685-97bd-42aa-ab6d",
+          "/vocabularies/985afe4a-0740-44a0-91bd/items/0a832685-97bd-42aa-ab6d"
+        ]
+        expect(results).to eq(expected)
+      end
+    end
+
+    it "finds as expected", pending: "These are extracted from the previous " \
+      "test and are failing because the original test values no longer exist " \
+      "in core.dev. The way the test was written, it's hard to tell exactly " \
+      "what is supposed to be tested by each of these cases, so it's not " \
+      "clear how to re-create these tests. Also these appear to mainly test " \
+      "the functionality of keyword search via the API, *not* this app, " \
+      "since they are all called/processed exactly the same way. There's a " \
+      "value to that maybe, given the lack of clear documentation re: api, " \
+      "but I'm not sure maintaining hard-to-maintain tests about it here is " \
+      "the way to go forward" do
+      args = [
         {type: "collectionobjects", value: "tea"},
         {type: "collectionobjects", value: "set"},
         {type: "collectionobjects", value: "tea set"},
@@ -204,8 +244,6 @@ describe CollectionSpace::Helpers do
           .flatten
 
         expected = [
-          "/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9",
-          "/vocabularies/e1401111-05c2-4d6c-bdc5/items/84c82c13-9d46-48a9-a8b9",
           "/collectionobjects/8b21c9af-1fab-4708-91d4",
           "/collectionobjects/ac04b8a6-db59-433e-872f",
           "/collectionobjects/16e51d6a-5ae3-4716-bd0f",

@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://anthro.dev.collectionspace.org/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - anthro.dev.collectionspace.org
+  response:
+    status:
+      code: 302
+      message: ''
+    headers:
+      Date:
+      - Tue, 21 Jan 2025 21:01:00 GMT
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=73FA8900059DEBFF8FD1A56FA189E503; Path=/; Secure; HttpOnly
+      Location:
+      - "/cspace/anthro/login"
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 21 Jan 2025 21:01:00 GMT
+- request:
+    method: get
+    uri: https://anthro.dev.collectionspace.org/cspace/anthro/login
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - anthro.dev.collectionspace.org
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 21 Jan 2025 21:01:00 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '421'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=7200
+      Expires:
+      - Tue, 21 Jan 2025 23:01:00 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - W/"421-1737440083000"
+      Last-Modified:
+      - Tue, 21 Jan 2025 06:14:43 GMT
+    body:
+      encoding: UTF-8
+      string: "<html>\n\t<head>\n\t\t<meta charset=\"UTF-8\" />\n\t</head>\n\t<body>\n\t\t<div
+        id=\"cspace\"></div>\n\t\t<script src=\"/cspace-ui/cspaceUI@a4b6bfc.min.js\"></script>\n\t\t<script
+        src=\"/cspace-ui/cspaceUIPluginProfileAnthro@3a22c87.min.js\"></script>\n\t\t<script>\n\t\t\tcspaceUI({\n\t\t\t\tbasename:
+        '/cspace/anthro',\n\t\t\t\tplugins: [\n\t\t\t\t\tcspaceUIPluginProfileAnthro(),\n\t\t\t\t],\n\t\t\t\tprettyUrls:
+        true,\n\t\t\t\ttenantId: '1500',\n\t\t\t});\n\t\t</script>\n\t</body>\n</html>\n"
+  recorded_at: Tue, 21 Jan 2025 21:01:00 GMT
+recorded_with: VCR 6.3.1

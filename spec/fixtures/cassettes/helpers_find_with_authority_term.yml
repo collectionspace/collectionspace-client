@@ -2,6 +2,60 @@
 http_interactions:
 - request:
     method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/accounts/0/accountperms?pgSz=25&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Sun, 19 Jan 2025 02:14:17 GMT
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=6BB616555E716B6B4387DB38F59745D9; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:account_permission
+        xmlns:ns2="http://collectionspace.org/services/authorization"><account><accountId>f00e1c89-8874-471c-90e7-9a4a5fd93ae6</accountId><screenName>Administrator</screenName><userId>admin@core.collectionspace.org</userId><tenantId>1</tenantId></account><permission><permRelationshipId>14323</permRelationshipId><permissionId>1-_movements_*_workflow_lock-CRUDL</permissionId><resourceName>/movements/*/workflow/lock</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17760</permRelationshipId><permissionId>1-_deaccessions_*_workflow_delete-CRUDL</permissionId><resourceName>/deaccessions/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13441</permRelationshipId><permissionId>1-_vocabularies_*_workflow_undelete-CRUDL</permissionId><resourceName>/vocabularies/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17348</permRelationshipId><permissionId>1-_nagpraclaims_*_workflow_undelete-CRUDL</permissionId><resourceName>/nagpraclaims/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14125</permRelationshipId><permissionId>1-_citationauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/citationauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6213</permRelationshipId><permissionId>1-imports-CRUDL</permissionId><resourceName>imports</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13423</permRelationshipId><permissionId>1-_vocabularies_*_workflow_replicate-CRUDL</permissionId><resourceName>/vocabularies/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6212</permRelationshipId><permissionId>1-batch-CRUDL</permissionId><resourceName>batch</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6190</permRelationshipId><permissionId>1-acquisitions-CRUDL</permissionId><resourceName>acquisitions</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17441</permRelationshipId><permissionId>1-_consultations_*_workflow_undelete-CRUDL</permissionId><resourceName>/consultations/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13801</permRelationshipId><permissionId>1-_conceptauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/conceptauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6182</permRelationshipId><permissionId>1-valuationcontrols-CRUDL</permissionId><resourceName>valuationcontrols</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17379</permRelationshipId><permissionId>1-_nagprainventories_*_workflow_undelete-CRUDL</permissionId><resourceName>/nagprainventories/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6211</permRelationshipId><permissionId>1-batch_invoke-CRUDL</permissionId><resourceName>batch/invoke</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14143</permRelationshipId><permissionId>1-_transports_*_workflow_undelete-CRUDL</permissionId><resourceName>/transports/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13405</permRelationshipId><permissionId>1-_chronologyauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/chronologyauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17029</permRelationshipId><permissionId>1-_heldintrusts_*_workflow_undelete-CRUDL</permissionId><resourceName>/heldintrusts/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6170</permRelationshipId><permissionId>1-chronologies-CRUDL</permissionId><resourceName>chronologies</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13765</permRelationshipId><permissionId>1-_concepts_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/concepts/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14413</permRelationshipId><permissionId>1-_reports_*_workflow_delete-CRUDL</permissionId><resourceName>/reports/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14404</permRelationshipId><permissionId>1-_reports_*_workflow_undelete-CRUDL</permissionId><resourceName>/reports/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14152</permRelationshipId><permissionId>1-_transports_*_workflow_delete-CRUDL</permissionId><resourceName>/transports/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13909</permRelationshipId><permissionId>1-_vocabularyitems_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/vocabularyitems/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13432</permRelationshipId><permissionId>1-_vocabularies_*_workflow_deprecate-CRUDL</permissionId><resourceName>/vocabularies/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14386</permRelationshipId><permissionId>1-_batch_*_workflow_undelete-CRUDL</permissionId><resourceName>/batch/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6172</permRelationshipId><permissionId>1-vocabularies-CRUDL</permissionId><resourceName>vocabularies</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14467</permRelationshipId><permissionId>1-_contacts_*_workflow_undelete-CRUDL</permissionId><resourceName>/contacts/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13585</permRelationshipId><permissionId>1-_persons_*_workflow_replicate-CRUDL</permissionId><resourceName>/persons/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13504</permRelationshipId><permissionId>1-_osteology_*_workflow_delete-CRUDL</permissionId><resourceName>/osteology/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6181</permRelationshipId><permissionId>1-personauthorities-CRUDL</permissionId><resourceName>personauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6224</permRelationshipId><permissionId>1-authorization_permissions-CRUDL</permissionId><resourceName>authorization/permissions</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17388</permRelationshipId><permissionId>1-_nagprainventories_*_workflow_delete-CRUDL</permissionId><resourceName>/nagprainventories/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13954</permRelationshipId><permissionId>1-_acquisitions_*_workflow_delete-CRUDL</permissionId><resourceName>/acquisitions/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14431</permRelationshipId><permissionId>1-_relations_*_workflow_delete-CRUDL</permissionId><resourceName>/relations/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14377</permRelationshipId><permissionId>1-_blobs_*_workflow_delete-CRUDL</permissionId><resourceName>/blobs/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6219</permRelationshipId><permissionId>1-relations-CRUDL</permissionId><resourceName>relations</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17711</permRelationshipId><permissionId>1-_dutiesofcare_*_workflow_delete-CRUDL</permissionId><resourceName>/dutiesofcare/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17147</permRelationshipId><permissionId>1-runsqlscripts-CRUDL</permissionId><resourceName>runsqlscripts</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14179</permRelationshipId><permissionId>1-_organizations_*_workflow_replicate-CRUDL</permissionId><resourceName>/organizations/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14053</permRelationshipId><permissionId>1-_placeauthorities_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/placeauthorities/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6214</permRelationshipId><permissionId>1-exports-CRUDL</permissionId><resourceName>exports</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13720</permRelationshipId><permissionId>1-_objectexit_*_workflow_delete-CRUDL</permissionId><resourceName>/objectexit/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14197</permRelationshipId><permissionId>1-_organizations_*_workflow_undelete-CRUDL</permissionId><resourceName>/organizations/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13450</permRelationshipId><permissionId>1-_vocabularies_*_workflow_delete-CRUDL</permissionId><resourceName>/vocabularies/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13990</permRelationshipId><permissionId>1-_places_*_workflow_delete-CRUDL</permissionId><resourceName>/places/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13540</permRelationshipId><permissionId>1-_works_*_workflow_delete-CRUDL</permissionId><resourceName>/works/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13747</permRelationshipId><permissionId>1-_concepts_*_workflow_undelete-CRUDL</permissionId><resourceName>/concepts/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13630</permRelationshipId><permissionId>1-_persons_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/persons/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13693</permRelationshipId><permissionId>1-_valuationcontrols_*_workflow_undelete-CRUDL</permissionId><resourceName>/valuationcontrols/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6177</permRelationshipId><permissionId>1-workauthorities-CRUDL</permissionId><resourceName>workauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14395</permRelationshipId><permissionId>1-_batch_*_workflow_delete-CRUDL</permissionId><resourceName>/batch/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13882</permRelationshipId><permissionId>1-_vocabularyitems_*_workflow_deprecate-CRUDL</permissionId><resourceName>/vocabularyitems/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14089</permRelationshipId><permissionId>1-_exhibitions_*_workflow_undelete-CRUDL</permissionId><resourceName>/exhibitions/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14251</permRelationshipId><permissionId>1-_orgauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/orgauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13522</permRelationshipId><permissionId>1-_conditionchecks_*_workflow_delete-CRUDL</permissionId><resourceName>/conditionchecks/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13495</permRelationshipId><permissionId>1-_osteology_*_workflow_undelete-CRUDL</permissionId><resourceName>/osteology/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17022</permRelationshipId><permissionId>1-heldintrusts-CRUDL</permissionId><resourceName>heldintrusts</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13684</permRelationshipId><permissionId>1-_personauthorities_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/personauthorities/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13855</permRelationshipId><permissionId>1-_media_*_workflow_undelete-CRUDL</permissionId><resourceName>/media/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14314</permRelationshipId><permissionId>1-_locationauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/locationauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6227</permRelationshipId><permissionId>1-authorization_roles_permroles-CRUDL</permissionId><resourceName>authorization/roles/permroles</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13486</permRelationshipId><permissionId>1-_groups_*_workflow_delete-CRUDL</permissionId><resourceName>/groups/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6228</permRelationshipId><permissionId>1-authorization_roles_accountroles-CRUDL</permissionId><resourceName>authorization/roles/accountroles</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17944</permRelationshipId><permissionId>1-_exits_*_workflow_delete-CRUDL</permissionId><resourceName>/exits/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6198</permRelationshipId><permissionId>1-iterationreports-CRUDL</permissionId><resourceName>iterationreports</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6205</permRelationshipId><permissionId>1-id-CRUDL</permissionId><resourceName>id</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13972</permRelationshipId><permissionId>1-_places_*_workflow_deprecate-CRUDL</permissionId><resourceName>/places/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13819</permRelationshipId><permissionId>1-_conceptauthorities_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/conceptauthorities/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13666</permRelationshipId><permissionId>1-_personauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/personauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14332</permRelationshipId><permissionId>1-_movements_*_workflow_undelete-CRUDL</permissionId><resourceName>/movements/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13603</permRelationshipId><permissionId>1-_persons_*_workflow_undelete-CRUDL</permissionId><resourceName>/persons/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13837</permRelationshipId><permissionId>1-_loansout_*_workflow_undelete-CRUDL</permissionId><resourceName>/loansout/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6200</permRelationshipId><permissionId>1-orgauthorities-CRUDL</permissionId><resourceName>orgauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6180</permRelationshipId><permissionId>1-persons-CRUDL</permissionId><resourceName>persons</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13333</permRelationshipId><permissionId>1-_insurances_*_workflow_undelete-CRUDL</permissionId><resourceName>/insurances/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14017</permRelationshipId><permissionId>1-_placeauthorities_*_workflow_replicate-CRUDL</permissionId><resourceName>/placeauthorities/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6223</permRelationshipId><permissionId>1-authorization_roles-CRUDL</permissionId><resourceName>authorization/roles</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6192</permRelationshipId><permissionId>1-placeauthorities-CRUDL</permissionId><resourceName>placeauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13774</permRelationshipId><permissionId>1-_concepts_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/concepts/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6188</permRelationshipId><permissionId>1-vocabularyitems-CRUDL</permissionId><resourceName>vocabularyitems</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6197</permRelationshipId><permissionId>1-transports-CRUDL</permissionId><resourceName>transports</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17751</permRelationshipId><permissionId>1-_deaccessions_*_workflow_undelete-CRUDL</permissionId><resourceName>/deaccessions/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14107</permRelationshipId><permissionId>1-_citations_*_workflow_undelete-CRUDL</permissionId><resourceName>/citations/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13558</permRelationshipId><permissionId>1-_workauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/workauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17702</permRelationshipId><permissionId>1-_dutiesofcare_*_workflow_undelete-CRUDL</permissionId><resourceName>/dutiesofcare/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13963</permRelationshipId><permissionId>1-_places_*_workflow_replicate-CRUDL</permissionId><resourceName>/places/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13342</permRelationshipId><permissionId>1-_insurances_*_workflow_delete-CRUDL</permissionId><resourceName>/insurances/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14287</permRelationshipId><permissionId>1-_locations_*_workflow_undelete-CRUDL</permissionId><resourceName>/locations/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13648</permRelationshipId><permissionId>1-_personauthorities_*_workflow_deprecate-CRUDL</permissionId><resourceName>/personauthorities/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14008</permRelationshipId><permissionId>1-_places_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/places/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6183</permRelationshipId><permissionId>1-objectexit-CRUDL</permissionId><resourceName>objectexit</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14440</permRelationshipId><permissionId>1-_dimensions_*_workflow_lock-CRUDL</permissionId><resourceName>/dimensions/*/workflow/lock</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14359</permRelationshipId><permissionId>1-_publicitems_*_workflow_delete-CRUDL</permissionId><resourceName>/publicitems/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6208</permRelationshipId><permissionId>1-structureddates-CRUDL</permissionId><resourceName>structureddates</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6203</permRelationshipId><permissionId>1-movements-CRUDL</permissionId><resourceName>movements</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17886</permRelationshipId><permissionId>1-exits-CRUDL</permissionId><resourceName>exits</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14233</permRelationshipId><permissionId>1-_orgauthorities_*_workflow_replicate-CRUDL</permissionId><resourceName>/orgauthorities/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17372</permRelationshipId><permissionId>1-nagprainventories-CRUDL</permissionId><resourceName>nagprainventories</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13783</permRelationshipId><permissionId>1-_conceptauthorities_*_workflow_replicate-CRUDL</permissionId><resourceName>/conceptauthorities/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6167</permRelationshipId><permissionId>1-insurances-CRUDL</permissionId><resourceName>insurances</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14071</permRelationshipId><permissionId>1-_intakes_*_workflow_undelete-CRUDL</permissionId><resourceName>/intakes/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13675</permRelationshipId><permissionId>1-_personauthorities_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/personauthorities/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17317</permRelationshipId><permissionId>1-_dutyofcares_*_workflow_undelete-CRUDL</permissionId><resourceName>/dutyofcares/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14458</permRelationshipId><permissionId>1-_dimensions_*_workflow_delete-CRUDL</permissionId><resourceName>/dimensions/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6216</permRelationshipId><permissionId>1-index-CRUDL</permissionId><resourceName>index</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14161</permRelationshipId><permissionId>1-_iterationreports_*_workflow_undelete-CRUDL</permissionId><resourceName>/iterationreports/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6209</permRelationshipId><permissionId>1-systeminfo-CRUDL</permissionId><resourceName>systeminfo</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14062</permRelationshipId><permissionId>1-_placeauthorities_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/placeauthorities/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13936</permRelationshipId><permissionId>1-_collectionobjects_*_workflow_delete-CRUDL</permissionId><resourceName>/collectionobjects/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6178</permRelationshipId><permissionId>1-accounts-CRUDL</permissionId><resourceName>accounts</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6176</permRelationshipId><permissionId>1-works-CRUDL</permissionId><resourceName>works</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6193</permRelationshipId><permissionId>1-intakes-CRUDL</permissionId><resourceName>intakes</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6187</permRelationshipId><permissionId>1-media-CRUDL</permissionId><resourceName>media</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17341</permRelationshipId><permissionId>1-nagpraclaims-CRUDL</permissionId><resourceName>nagpraclaims</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14170</permRelationshipId><permissionId>1-_iterationreports_*_workflow_delete-CRUDL</permissionId><resourceName>/iterationreports/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6202</permRelationshipId><permissionId>1-locationauthorities-CRUDL</permissionId><resourceName>locationauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14224</permRelationshipId><permissionId>1-_organizations_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/organizations/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6171</permRelationshipId><permissionId>1-chronologyauthorities-CRUDL</permissionId><resourceName>chronologyauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6201</permRelationshipId><permissionId>1-locations-CRUDL</permissionId><resourceName>locations</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6220</permRelationshipId><permissionId>1-dimensions-CRUDL</permissionId><resourceName>dimensions</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13702</permRelationshipId><permissionId>1-_valuationcontrols_*_workflow_delete-CRUDL</permissionId><resourceName>/valuationcontrols/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13711</permRelationshipId><permissionId>1-_objectexit_*_workflow_undelete-CRUDL</permissionId><resourceName>/objectexit/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13612</permRelationshipId><permissionId>1-_persons_*_workflow_delete-CRUDL</permissionId><resourceName>/persons/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6179</permRelationshipId><permissionId>1-conservation-CRUDL</permissionId><resourceName>conservation</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13360</permRelationshipId><permissionId>1-_loansin_*_workflow_delete-CRUDL</permissionId><resourceName>/loansin/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14206</permRelationshipId><permissionId>1-_organizations_*_workflow_delete-CRUDL</permissionId><resourceName>/organizations/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6218</permRelationshipId><permissionId>1-reports-CRUDL</permissionId><resourceName>reports</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13414</permRelationshipId><permissionId>1-_chronologyauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/chronologyauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13531</permRelationshipId><permissionId>1-_works_*_workflow_undelete-CRUDL</permissionId><resourceName>/works/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13756</permRelationshipId><permissionId>1-_concepts_*_workflow_delete-CRUDL</permissionId><resourceName>/concepts/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6204</permRelationshipId><permissionId>1-idgenerators-CRUDL</permissionId><resourceName>idgenerators</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13729</permRelationshipId><permissionId>1-_concepts_*_workflow_replicate-CRUDL</permissionId><resourceName>/concepts/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17434</permRelationshipId><permissionId>1-consultations-CRUDL</permissionId><resourceName>consultations</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14098</permRelationshipId><permissionId>1-_exhibitions_*_workflow_delete-CRUDL</permissionId><resourceName>/exhibitions/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6175</permRelationshipId><permissionId>1-conditionchecks-CRUDL</permissionId><resourceName>conditionchecks</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14368</permRelationshipId><permissionId>1-_blobs_*_workflow_undelete-CRUDL</permissionId><resourceName>/blobs/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6199</permRelationshipId><permissionId>1-organizations-CRUDL</permissionId><resourceName>organizations</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13351</permRelationshipId><permissionId>1-_loansin_*_workflow_undelete-CRUDL</permissionId><resourceName>/loansin/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13639</permRelationshipId><permissionId>1-_personauthorities_*_workflow_replicate-CRUDL</permissionId><resourceName>/personauthorities/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13549</permRelationshipId><permissionId>1-_workauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/workauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14260</permRelationshipId><permissionId>1-_orgauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/orgauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>18006</permRelationshipId><permissionId>1-restrictedmedia-CRUDL</permissionId><resourceName>restrictedmedia</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14341</permRelationshipId><permissionId>1-_movements_*_workflow_delete-CRUDL</permissionId><resourceName>/movements/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14116</permRelationshipId><permissionId>1-_citations_*_workflow_delete-CRUDL</permissionId><resourceName>/citations/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6207</permRelationshipId><permissionId>1-servicegroups-CRUDL</permissionId><resourceName>servicegroups</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17038</permRelationshipId><permissionId>1-_heldintrusts_*_workflow_delete-CRUDL</permissionId><resourceName>/heldintrusts/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14422</permRelationshipId><permissionId>1-_relations_*_workflow_undelete-CRUDL</permissionId><resourceName>/relations/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14044</permRelationshipId><permissionId>1-_placeauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/placeauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6196</permRelationshipId><permissionId>1-citationauthorities-CRUDL</permissionId><resourceName>citationauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13792</permRelationshipId><permissionId>1-_conceptauthorities_*_workflow_deprecate-CRUDL</permissionId><resourceName>/conceptauthorities/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6189</permRelationshipId><permissionId>1-collectionobjects-CRUDL</permissionId><resourceName>collectionobjects</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17310</permRelationshipId><permissionId>1-dutyofcares-CRUDL</permissionId><resourceName>dutyofcares</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17693</permRelationshipId><permissionId>1-dutiesofcare-CRUDL</permissionId><resourceName>dutiesofcare</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14350</permRelationshipId><permissionId>1-_publicitems_*_workflow_undelete-CRUDL</permissionId><resourceName>/publicitems/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13981</permRelationshipId><permissionId>1-_places_*_workflow_undelete-CRUDL</permissionId><resourceName>/places/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13945</permRelationshipId><permissionId>1-_acquisitions_*_workflow_undelete-CRUDL</permissionId><resourceName>/acquisitions/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6168</permRelationshipId><permissionId>1-loansin-CRUDL</permissionId><resourceName>loansin</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13846</permRelationshipId><permissionId>1-_loansout_*_workflow_delete-CRUDL</permissionId><resourceName>/loansout/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6221</permRelationshipId><permissionId>1-_dimensions_workflow_-CRUDL</permissionId><resourceName>/dimensions/workflow/</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17798</permRelationshipId><permissionId>1-_repatriationrequests_*_workflow_undelete-CRUDL</permissionId><resourceName>/repatriationrequests/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13369</permRelationshipId><permissionId>1-_uoc_*_workflow_undelete-CRUDL</permissionId><resourceName>/uoc/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17450</permRelationshipId><permissionId>1-_consultations_*_workflow_delete-CRUDL</permissionId><resourceName>/consultations/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14296</permRelationshipId><permissionId>1-_locations_*_workflow_delete-CRUDL</permissionId><resourceName>/locations/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14188</permRelationshipId><permissionId>1-_organizations_*_workflow_deprecate-CRUDL</permissionId><resourceName>/organizations/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14269</permRelationshipId><permissionId>1-_orgauthorities_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/orgauthorities/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6206</permRelationshipId><permissionId>1-publicitems-CRUDL</permissionId><resourceName>publicitems</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6186</permRelationshipId><permissionId>1-loansout-CRUDL</permissionId><resourceName>loansout</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13891</permRelationshipId><permissionId>1-_vocabularyitems_*_workflow_undelete-CRUDL</permissionId><resourceName>/vocabularyitems/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17531</permRelationshipId><permissionId>1-repatriationclaims-CRUDL</permissionId><resourceName>repatriationclaims</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17403</permRelationshipId><permissionId>1-summarydocumentations-CRUDL</permissionId><resourceName>summarydocumentations</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13738</permRelationshipId><permissionId>1-_concepts_*_workflow_deprecate-CRUDL</permissionId><resourceName>/concepts/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6169</permRelationshipId><permissionId>1-uoc-CRUDL</permissionId><resourceName>uoc</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14242</permRelationshipId><permissionId>1-_orgauthorities_*_workflow_deprecate-CRUDL</permissionId><resourceName>/orgauthorities/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14080</permRelationshipId><permissionId>1-_intakes_*_workflow_delete-CRUDL</permissionId><resourceName>/intakes/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17559</permRelationshipId><permissionId>1-_repatriationclaims_*_workflow_delete-CRUDL</permissionId><resourceName>/repatriationclaims/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13513</permRelationshipId><permissionId>1-_conditionchecks_*_workflow_undelete-CRUDL</permissionId><resourceName>/conditionchecks/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17326</permRelationshipId><permissionId>1-_dutyofcares_*_workflow_delete-CRUDL</permissionId><resourceName>/dutyofcares/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13459</permRelationshipId><permissionId>1-_vocabularies_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/vocabularies/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17807</permRelationshipId><permissionId>1-_repatriationrequests_*_workflow_delete-CRUDL</permissionId><resourceName>/repatriationrequests/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13999</permRelationshipId><permissionId>1-_places_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/places/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13594</permRelationshipId><permissionId>1-_persons_*_workflow_deprecate-CRUDL</permissionId><resourceName>/persons/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14035</permRelationshipId><permissionId>1-_placeauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/placeauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>18015</permRelationshipId><permissionId>1-_restrictedmedia_*_workflow_undelete-CRUDL</permissionId><resourceName>/restrictedmedia/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6226</permRelationshipId><permissionId>1-accounts_accountroles-CRUDL</permissionId><resourceName>accounts/accountroles</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13657</permRelationshipId><permissionId>1-_personauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/personauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13477</permRelationshipId><permissionId>1-_groups_*_workflow_undelete-CRUDL</permissionId><resourceName>/groups/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13387</permRelationshipId><permissionId>1-_chronologies_*_workflow_undelete-CRUDL</permissionId><resourceName>/chronologies/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6222</permRelationshipId><permissionId>1-contacts-CRUDL</permissionId><resourceName>contacts</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17744</permRelationshipId><permissionId>1-deaccessions-CRUDL</permissionId><resourceName>deaccessions</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17550</permRelationshipId><permissionId>1-_repatriationclaims_*_workflow_undelete-CRUDL</permissionId><resourceName>/repatriationclaims/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6184</permRelationshipId><permissionId>1-concepts-CRUDL</permissionId><resourceName>concepts</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13576</permRelationshipId><permissionId>1-_conservation_*_workflow_delete-CRUDL</permissionId><resourceName>/conservation/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6217</permRelationshipId><permissionId>1-reports_invoke-CRUDL</permissionId><resourceName>reports/invoke</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6174</permRelationshipId><permissionId>1-osteology-CRUDL</permissionId><resourceName>osteology</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6173</permRelationshipId><permissionId>1-groups-CRUDL</permissionId><resourceName>groups</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13828</permRelationshipId><permissionId>1-_conceptauthorities_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/conceptauthorities/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13810</permRelationshipId><permissionId>1-_conceptauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/conceptauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13567</permRelationshipId><permissionId>1-_conservation_*_workflow_undelete-CRUDL</permissionId><resourceName>/conservation/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13396</permRelationshipId><permissionId>1-_chronologies_*_workflow_delete-CRUDL</permissionId><resourceName>/chronologies/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14215</permRelationshipId><permissionId>1-_organizations_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/organizations/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6195</permRelationshipId><permissionId>1-citations-CRUDL</permissionId><resourceName>citations</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14026</permRelationshipId><permissionId>1-_placeauthorities_*_workflow_deprecate-CRUDL</permissionId><resourceName>/placeauthorities/*/workflow/deprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14305</permRelationshipId><permissionId>1-_locationauthorities_*_workflow_undelete-CRUDL</permissionId><resourceName>/locationauthorities/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14278</permRelationshipId><permissionId>1-_orgauthorities_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/orgauthorities/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6210</permRelationshipId><permissionId>1-blobs-CRUDL</permissionId><resourceName>blobs</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14134</permRelationshipId><permissionId>1-_citationauthorities_*_workflow_delete-CRUDL</permissionId><resourceName>/citationauthorities/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6225</permRelationshipId><permissionId>1-authorization_permissions_permroles-CRUDL</permissionId><resourceName>authorization/permissions/permroles</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13621</permRelationshipId><permissionId>1-_persons_*_workflow_undeprecate-CRUDL</permissionId><resourceName>/persons/*/workflow/undeprecate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13378</permRelationshipId><permissionId>1-_uoc_*_workflow_delete-CRUDL</permissionId><resourceName>/uoc/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14449</permRelationshipId><permissionId>1-_dimensions_*_workflow_undelete-CRUDL</permissionId><resourceName>/dimensions/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>14476</permRelationshipId><permissionId>1-_contacts_*_workflow_delete-CRUDL</permissionId><resourceName>/contacts/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>18024</permRelationshipId><permissionId>1-_restrictedmedia_*_workflow_delete-CRUDL</permissionId><resourceName>/restrictedmedia/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17357</permRelationshipId><permissionId>1-_nagpraclaims_*_workflow_delete-CRUDL</permissionId><resourceName>/nagpraclaims/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6185</permRelationshipId><permissionId>1-conceptauthorities-CRUDL</permissionId><resourceName>conceptauthorities</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13918</permRelationshipId><permissionId>1-_vocabularyitems_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/vocabularyitems/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17410</permRelationshipId><permissionId>1-_summarydocumentations_*_workflow_undelete-CRUDL</permissionId><resourceName>/summarydocumentations/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13873</permRelationshipId><permissionId>1-_vocabularyitems_*_workflow_replicate-CRUDL</permissionId><resourceName>/vocabularyitems/*/workflow/replicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6191</permRelationshipId><permissionId>1-places-CRUDL</permissionId><resourceName>places</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17419</permRelationshipId><permissionId>1-_summarydocumentations_*_workflow_delete-CRUDL</permissionId><resourceName>/summarydocumentations/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6215</permRelationshipId><permissionId>1-workflow-CRUDL</permissionId><resourceName>workflow</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13927</permRelationshipId><permissionId>1-_collectionobjects_*_workflow_undelete-CRUDL</permissionId><resourceName>/collectionobjects/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13900</permRelationshipId><permissionId>1-_vocabularyitems_*_workflow_delete-CRUDL</permissionId><resourceName>/vocabularyitems/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13468</permRelationshipId><permissionId>1-_vocabularies_*_workflow_unreplicate-CRUDL</permissionId><resourceName>/vocabularies/*/workflow/unreplicate</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17935</permRelationshipId><permissionId>1-_exits_*_workflow_undelete-CRUDL</permissionId><resourceName>/exits/*/workflow/undelete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>13864</permRelationshipId><permissionId>1-_media_*_workflow_delete-CRUDL</permissionId><resourceName>/media/*/workflow/delete</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>17789</permRelationshipId><permissionId>1-repatriationrequests-CRUDL</permissionId><resourceName>repatriationrequests</resourceName><actionGroup>CRUDL</actionGroup></permission><permission><permRelationshipId>6194</permRelationshipId><permissionId>1-exhibitions-CRUDL</permissionId><resourceName>exhibitions</resourceName><actionGroup>CRUDL</actionGroup></permission></ns2:account_permission>
+  recorded_at: Sun, 19 Jan 2025 02:14:18 GMT
+- request:
+    method: get
     uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27California%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
     body:
       encoding: US-ASCII
@@ -21,30 +75,39 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:17 GMT
+      - Sun, 19 Jan 2025 02:14:18 GMT
       Content-Type:
       - application/xml
       Content-Length:
-      - '908'
+      - '914'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=6E3B106C2036BC44ED93DF74C2EA4683; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>40adef7a-aadc-4743-b2ed</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/40adef7a-aadc-4743-b2ed</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(California3071184726)'California'</refName><updatedAt>2020-04-28T02:27:28.811Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>California3071184726</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>California</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:15 GMT
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>147c4944-fe0c-4e88-80b0</csid><uri>/placeauthorities/c1ec7062-1835-4dce-8340/items/147c4944-fe0c-4e88-80b0</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(California1737252475858)'California'</refName><updatedAt>2025-01-19T02:07:55.856Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>California1737252475858</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>California</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Sun, 19 Jan 2025 02:14:18 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27Death%20Valley%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -66,32 +129,41 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:17 GMT
+      - Sun, 19 Jan 2025 02:14:18 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '920'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=160C9A81AB14068902A7AFDD2DCDDFD8; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>e4f1148d-1790-417c-ab7a</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/e4f1148d-1790-417c-ab7a</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(DeathValley1592443356403)'Death
-        Valley'</refName><updatedAt>2021-09-03T03:40:33.530Z</updatedAt><workflowState>project</workflowState><rev>1</rev><shortIdentifier>DeathValley1592443356403</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Death
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>abf45754-f9d2-4588-bb64</csid><uri>/placeauthorities/c1ec7062-1835-4dce-8340/items/abf45754-f9d2-4588-bb64</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(DeathValley1737252490779)'Death
+        Valley'</refName><updatedAt>2025-01-19T02:08:10.779Z</updatedAt><workflowState>project</workflowState><rev>1</rev><shortIdentifier>DeathValley1737252490779</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Death
         Valley</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:16 GMT
+  recorded_at: Sun, 19 Jan 2025 02:14:18 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27Hamilton!,%20Ohio%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -113,32 +185,41 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:17 GMT
+      - Sun, 19 Jan 2025 02:14:18 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '928'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=FD588901885BC1A36D17D41161834A9A; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>c9d34920-1782-49ed-a0c3</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/c9d34920-1782-49ed-a0c3</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(HamiltonOhio1594238008012)'Hamilton!,
-        Ohio'</refName><updatedAt>2020-07-09T02:53:28.010Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>HamiltonOhio1594238008012</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Hamilton!,
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>d9bf40cf-841e-43b1-bbee</csid><uri>/placeauthorities/c1ec7062-1835-4dce-8340/items/d9bf40cf-841e-43b1-bbee</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(HamiltonOhio1737252568401)'Hamilton!,
+        Ohio'</refName><updatedAt>2025-01-19T02:09:28.401Z</updatedAt><workflowState>project</workflowState><rev>1</rev><shortIdentifier>HamiltonOhio1737252568401</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Hamilton!,
         Ohio</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:16 GMT
+  recorded_at: Sun, 19 Jan 2025 02:14:18 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27%E5%A7%AB%E8%B7%AF%E5%9F%8E%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -160,30 +241,58 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:18 GMT
+      - Sun, 19 Jan 2025 02:14:19 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '892'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=7E96727A217342C8E081B72A3680024A; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxuczI6YWJzdHJhY3QtY29tbW9uLWxpc3QgeG1sbnM6bnMyPSJodHRwOi8vY29sbGVjdGlvbnNwYWNlLm9yZy9zZXJ2aWNlcy9qYXhiIj48cGFnZU51bT4wPC9wYWdlTnVtPjxwYWdlU2l6ZT4yNTwvcGFnZVNpemU+PGl0ZW1zSW5QYWdlPjE8L2l0ZW1zSW5QYWdlPjx0b3RhbEl0ZW1zPjE8L3RvdGFsSXRlbXM+PGZpZWxkc1JldHVybmVkPmNzaWR8dXJpfHJlZk5hbWV8dXBkYXRlZEF0fHdvcmtmbG93U3RhdGV8cmV2fHNob3J0SWRlbnRpZmllcnxzYXN8cHJvcG9zZWR8ZGVwcmVjYXRlZHx0ZXJtU3RhdHVzfHRlcm1EaXNwbGF5TmFtZTwvZmllbGRzUmV0dXJuZWQ+PGxpc3QtaXRlbT48Y3NpZD40NzQ1YjdiMS1jYzdhLTQ1OGUtOTc0MjwvY3NpZD48dXJpPi9wbGFjZWF1dGhvcml0aWVzLzgzOGRiYzFjLTEyZjAtNDVmYS05YTI2L2l0ZW1zLzQ3NDViN2IxLWNjN2EtNDU4ZS05NzQyPC91cmk+PHJlZk5hbWU+dXJuOmNzcGFjZTpjb3JlLmNvbGxlY3Rpb25zcGFjZS5vcmc6cGxhY2VhdXRob3JpdGllczpuYW1lKHBsYWNlKTppdGVtOm5hbWUoMTU5NDIzODg0ODk3OCkn5aer6Lev5Z+OJzwvcmVmTmFtZT48dXBkYXRlZEF0PjIwMjAtMDctMDlUMDM6MDc6MjguOTc4WjwvdXBkYXRlZEF0Pjx3b3JrZmxvd1N0YXRlPnByb2plY3Q8L3dvcmtmbG93U3RhdGU+PHJldj4wPC9yZXY+PHNob3J0SWRlbnRpZmllcj4xNTk0MjM4ODQ4OTc4PC9zaG9ydElkZW50aWZpZXI+PHNhcz5mYWxzZTwvc2FzPjxwcm9wb3NlZD50cnVlPC9wcm9wb3NlZD48dGVybURpc3BsYXlOYW1lPuWnq+i3r+WfjjwvdGVybURpc3BsYXlOYW1lPjwvbGlzdC1pdGVtPjwvbnMyOmFic3RyYWN0LWNvbW1vbi1saXN0Pg==
-  recorded_at: Thu, 21 Jul 2022 16:17:16 GMT
+      base64_string: |
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxv
+        bmU9InllcyI/PjxuczI6YWJzdHJhY3QtY29tbW9uLWxpc3QgeG1sbnM6bnMy
+        PSJodHRwOi8vY29sbGVjdGlvbnNwYWNlLm9yZy9zZXJ2aWNlcy9qYXhiIj48
+        cGFnZU51bT4wPC9wYWdlTnVtPjxwYWdlU2l6ZT4yNTwvcGFnZVNpemU+PGl0
+        ZW1zSW5QYWdlPjE8L2l0ZW1zSW5QYWdlPjx0b3RhbEl0ZW1zPjE8L3RvdGFs
+        SXRlbXM+PGZpZWxkc1JldHVybmVkPmNzaWR8dXJpfHJlZk5hbWV8dXBkYXRl
+        ZEF0fHdvcmtmbG93U3RhdGV8cmV2fHNob3J0SWRlbnRpZmllcnxzYXN8cHJv
+        cG9zZWR8ZGVwcmVjYXRlZHx0ZXJtU3RhdHVzfHRlcm1EaXNwbGF5TmFtZTwv
+        ZmllbGRzUmV0dXJuZWQ+PGxpc3QtaXRlbT48Y3NpZD5lMDM2YjQwOS1hN2Y1
+        LTRlZmYtYTAzMDwvY3NpZD48dXJpPi9wbGFjZWF1dGhvcml0aWVzL2MxZWM3
+        MDYyLTE4MzUtNGRjZS04MzQwL2l0ZW1zL2UwMzZiNDA5LWE3ZjUtNGVmZi1h
+        MDMwPC91cmk+PHJlZk5hbWU+dXJuOmNzcGFjZTpjb3JlLmNvbGxlY3Rpb25z
+        cGFjZS5vcmc6cGxhY2VhdXRob3JpdGllczpuYW1lKHBsYWNlKTppdGVtOm5h
+        bWUoMTczNzI1MjYwMTQ4Nykn5aer6Lev5Z+OJzwvcmVmTmFtZT48dXBkYXRl
+        ZEF0PjIwMjUtMDEtMTlUMDI6MTA6MDEuNDg3WjwvdXBkYXRlZEF0Pjx3b3Jr
+        Zmxvd1N0YXRlPnByb2plY3Q8L3dvcmtmbG93U3RhdGU+PHJldj4yPC9yZXY+
+        PHNob3J0SWRlbnRpZmllcj4xNzM3MjUyNjAxNDg3PC9zaG9ydElkZW50aWZp
+        ZXI+PHNhcz5mYWxzZTwvc2FzPjxwcm9wb3NlZD50cnVlPC9wcm9wb3NlZD48
+        dGVybURpc3BsYXlOYW1lPuWnq+i3r+WfjjwvdGVybURpc3BsYXlOYW1lPjwv
+        bGlzdC1pdGVtPjwvbnMyOmFic3RyYWN0LWNvbW1vbi1saXN0Pg==
+  recorded_at: Sun, 19 Jan 2025 02:14:19 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/placeauthorities/urn:cspace:name(place)/items?as=places_common:placeTermGroupList/0/termDisplayName%20=%20%27No%5C%27Where%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -205,30 +314,39 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:18 GMT
+      - Sun, 19 Jan 2025 02:14:19 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '904'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=565EC25D03549935BF6B65A08C0822F6; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>a0f4ba2a-07cb-4647-a884</csid><uri>/placeauthorities/838dbc1c-12f0-45fa-9a26/items/a0f4ba2a-07cb-4647-a884</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(NoWhere1594238123131)'No'Where'</refName><updatedAt>2020-07-09T02:55:23.131Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>NoWhere1594238123131</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>No'Where</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>de602169-fe35-4093-865a</csid><uri>/placeauthorities/c1ec7062-1835-4dce-8340/items/de602169-fe35-4093-865a</uri><refName>urn:cspace:core.collectionspace.org:placeauthorities:name(place):item:name(NoWhere1737252635868)'No'Where'</refName><updatedAt>2025-01-19T02:11:08.249Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>NoWhere1737252635868</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>No'Where</termDisplayName></list-item></ns2:abstract-common-list>
+  recorded_at: Sun, 19 Jan 2025 02:14:19 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?as=persons_common:personTermGroupList/0/termDisplayName%20=%20%27Morris,%20Perry(Pete)%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -250,32 +368,41 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:18 GMT
+      - Sun, 19 Jan 2025 02:14:19 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '962'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=B51993BDED5F5D2E04490B60E8DCB922; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>2f050460-984b-49d7-b6df</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/2f050460-984b-49d7-b6df</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(MorrisPerryPete1594239937268)'Morris,
-        Perry(Pete)'</refName><updatedAt>2020-07-09T03:25:37.267Z</updatedAt><workflowState>project</workflowState><rev>0</rev><sas>false</sas><shortIdentifier>MorrisPerryPete1594239937268</shortIdentifier><proposed>true</proposed><termDisplayName>Morris,
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>dcc1969c-9340-4980-86e7</csid><uri>/personauthorities/4bea28cb-83be-4ca1-971b/items/dcc1969c-9340-4980-86e7</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(MorrisPerryPete1737252713197)'Morris,
+        Perry(Pete)'</refName><updatedAt>2025-01-19T02:11:53.197Z</updatedAt><workflowState>project</workflowState><rev>0</rev><sas>false</sas><shortIdentifier>MorrisPerryPete1737252713197</shortIdentifier><proposed>true</proposed><termDisplayName>Morris,
         Perry(Pete)</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+  recorded_at: Sun, 19 Jan 2025 02:14:19 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/personauthorities/urn:cspace:name(person)/items?as=persons_common:personTermGroupList/0/termDisplayName%20=%20%27Clark,%20H.%20Pol%20%26%20Mary%20Gambo%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -297,32 +424,41 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:19 GMT
+      - Sun, 19 Jan 2025 02:14:20 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '990'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=77D2399FA2834F576F2C6EBDC9AAD0DE; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>699abb7c-9a14-48cc-a975</csid><uri>/personauthorities/0f6cddfa-32ce-4c25-9b2f/items/699abb7c-9a14-48cc-a975</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(ClarkHPolMaryGambo1594240061769)'Clark,
-        H. Pol &amp; Mary Gambo'</refName><updatedAt>2020-07-09T03:27:41.769Z</updatedAt><workflowState>project</workflowState><rev>0</rev><sas>false</sas><shortIdentifier>ClarkHPolMaryGambo1594240061769</shortIdentifier><proposed>true</proposed><termDisplayName>Clark,
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|sas|surName|deprecated|foreName|shortIdentifier|proposed|termStatus|termDisplayName</fieldsReturned><list-item><csid>f4df08f5-5503-4d41-856c</csid><uri>/personauthorities/4bea28cb-83be-4ca1-971b/items/f4df08f5-5503-4d41-856c</uri><refName>urn:cspace:core.collectionspace.org:personauthorities:name(person):item:name(ClarkHPolMaryGambo1737252751879)'Clark,
+        H. Pol &amp; Mary Gambo'</refName><updatedAt>2025-01-19T02:12:31.878Z</updatedAt><workflowState>project</workflowState><rev>1</rev><sas>false</sas><shortIdentifier>ClarkHPolMaryGambo1737252751879</shortIdentifier><proposed>true</proposed><termDisplayName>Clark,
         H. Pol &amp; Mary Gambo</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+  recorded_at: Sun, 19 Jan 2025 02:14:20 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/orgauthorities/urn:cspace:name(organization)/items?as=organizations_common:orgTermGroupList/0/termDisplayName%20=%20%27Smith%5C%27s%20Appletree%20Garager%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -344,32 +480,41 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:19 GMT
+      - Sun, 19 Jan 2025 02:14:20 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '971'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=33576A5D03376BFF42D6AA15746F248C; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>02ed1508-9a29-451e-a08b</csid><uri>/orgauthorities/5225cf0b-d288-41ab-b2ea/items/02ed1508-9a29-451e-a08b</uri><refName>urn:cspace:core.collectionspace.org:orgauthorities:name(organization):item:name(SmithsAppletreeGarager1594847228862)'Smith's
-        Appletree Garager'</refName><updatedAt>2020-07-16T04:07:08.860Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>SmithsAppletreeGarager1594847228862</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Smith's
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>d2d0a377-b29c-4beb-aab4</csid><uri>/orgauthorities/9a10322b-804f-4e58-be1e/items/d2d0a377-b29c-4beb-aab4</uri><refName>urn:cspace:core.collectionspace.org:orgauthorities:name(organization):item:name(SmithsAppletreeGarager1737252792320)'Smith's
+        Appletree Garager'</refName><updatedAt>2025-01-19T02:13:12.320Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>SmithsAppletreeGarager1737252792320</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>Smith's
         Appletree Garager</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:17 GMT
+  recorded_at: Sun, 19 Jan 2025 02:14:20 GMT
 - request:
     method: get
     uri: https://core.dev.collectionspace.org/cspace-services/orgauthorities/urn:cspace:name(organization)/items?as=organizations_common:orgTermGroupList/0/termDisplayName%20=%20%27The%20%22Grand%22%20Canyon%27&pgSz=25&sortBy=collectionspace_core:updatedAt%20DESC&wf_deleted=false
@@ -391,30 +536,39 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 21 Jul 2022 16:17:19 GMT
+      - Sun, 19 Jan 2025 02:14:20 GMT
       Content-Type:
       - application/xml
       Content-Length:
       - '941'
       Connection:
       - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=796F30714A21BE80EC031F42749D9F12; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
       X-Frame-Options:
       - DENY
-      X-Content-Type-Options:
-      - nosniff
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
-        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>bf51a88c-2eae-48d6-9405</csid><uri>/orgauthorities/5225cf0b-d288-41ab-b2ea/items/bf51a88c-2eae-48d6-9405</uri><refName>urn:cspace:core.collectionspace.org:orgauthorities:name(organization):item:name(TheGrandCanyon1594847660775)'The
-        "Grand" Canyon'</refName><updatedAt>2020-07-16T04:14:20.775Z</updatedAt><workflowState>project</workflowState><rev>0</rev><shortIdentifier>TheGrandCanyon1594847660775</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>The
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>1</itemsInPage><totalItems>1</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|proposed|deprecated|termStatus|termDisplayName</fieldsReturned><list-item><csid>c96240b6-e294-4749-9e6c</csid><uri>/orgauthorities/9a10322b-804f-4e58-be1e/items/c96240b6-e294-4749-9e6c</uri><refName>urn:cspace:core.collectionspace.org:orgauthorities:name(organization):item:name(TheGrandCanyon1737252821930)'The
+        "Grand" Canyon'</refName><updatedAt>2025-01-19T02:13:41.930Z</updatedAt><workflowState>project</workflowState><rev>1</rev><shortIdentifier>TheGrandCanyon1737252821930</shortIdentifier><sas>false</sas><proposed>true</proposed><termDisplayName>The
         "Grand" Canyon</termDisplayName></list-item></ns2:abstract-common-list>
-  recorded_at: Thu, 21 Jul 2022 16:17:18 GMT
-recorded_with: VCR 6.1.0
+  recorded_at: Sun, 19 Jan 2025 02:14:20 GMT
+recorded_with: VCR 6.3.1

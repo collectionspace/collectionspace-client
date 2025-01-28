@@ -16,7 +16,7 @@ module CollectionSpace
 
     def from_hash(query)
       query.each do |property, value|
-        instance_variable_set("@#{property}", value)
+        instance_variable_set(:"@#{property}", value)
       end
       self
     end

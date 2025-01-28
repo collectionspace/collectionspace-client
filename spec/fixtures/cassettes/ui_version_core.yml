@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.collectionspace.org/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - core.collectionspace.org
+  response:
+    status:
+      code: 302
+      message: ''
+    headers:
+      Date:
+      - Tue, 21 Jan 2025 21:00:59 GMT
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=9D8AEC399FE9E99C584B297856C30C84; Path=/; Secure; HttpOnly
+      Location:
+      - "/cspace/core/login"
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 21 Jan 2025 21:00:59 GMT
+- request:
+    method: get
+    uri: https://core.collectionspace.org/cspace/core/login
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - core.collectionspace.org
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 21 Jan 2025 21:01:00 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '276'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=7200
+      Expires:
+      - Tue, 21 Jan 2025 23:01:00 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - W/"276-1729727062000"
+      Last-Modified:
+      - Wed, 23 Oct 2024 23:44:22 GMT
+    body:
+      encoding: UTF-8
+      string: "<html>\n\t<head>\n\t\t<meta charset=\"UTF-8\" />\n\t</head>\n\t<body>\n\t\t<div
+        id=\"cspace\"></div>\n\t\t<script src=\"/cspace-ui/cspaceUI@9.0.1.min.js\"></script>\n\t\t<script>\n\t\t\tcspaceUI({\n\t\t\t\tbasename:
+        '/cspace/core',\n\t\t\t\tprettyUrls: true,\n\t\t\t\ttenantId: '1',\n\t\t\t});\n\t\t</script>\n\t</body>\n</html>\n"
+  recorded_at: Tue, 21 Jan 2025 21:01:00 GMT
+recorded_with: VCR 6.3.1

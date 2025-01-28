@@ -21,7 +21,7 @@ module CollectionSpace
       settings.each do |property, value|
         next unless DEFAULTS.key?(property)
 
-        instance_variable_set("@#{property}", value)
+        instance_variable_set(:"@#{property}", value)
       end
     end
   end

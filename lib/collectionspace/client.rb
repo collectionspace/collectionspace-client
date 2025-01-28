@@ -8,6 +8,7 @@ require "uri"
 require "collectionspace/client/helpers"
 require "collectionspace/client/template"
 
+require "collectionspace/client/api_version"
 require "collectionspace/client/batch"
 require "collectionspace/client/client"
 require "collectionspace/client/configuration"
@@ -17,6 +18,7 @@ require "collectionspace/client/request"
 require "collectionspace/client/response"
 require "collectionspace/client/search"
 require "collectionspace/client/service"
+require "collectionspace/client/ui_version"
 require "collectionspace/client/version"
 
 module CollectionSpace
