@@ -20,7 +20,7 @@ describe CollectionSpace::UiVersion do
       it "returns version" do
         VCR.use_cassette("ui_version_core") do
           expect(result.success?).to be true
-          expect(result.joined).to eq("core_9-0-1")
+          expect(result.joined).to eq("core 9.0.1")
         end
       end
     end
@@ -42,7 +42,7 @@ describe CollectionSpace::UiVersion do
         VCR.use_cassette("ui_version_ccp") do
           expect(result.status).to eq(:success)
           expect(result.profile).to eq("fcart")
-          expect(result.version).to eq("7-0-0")
+          expect(result.version).to eq("7.0.0")
         end
       end
     end
@@ -53,7 +53,7 @@ describe CollectionSpace::UiVersion do
         VCR.use_cassette("ui_version_ohc") do
           expect(result.status).to eq(:success)
           expect(result.profile).to eq("ohc")
-          expect(result.version).to eq("2-0-1")
+          expect(result.version).to eq("2.0.1")
         end
       end
     end
@@ -64,7 +64,7 @@ describe CollectionSpace::UiVersion do
         VCR.use_cassette("ui_version_pahma") do
           expect(result.status).to eq(:success)
           expect(result.profile).to eq("pahma")
-          expect(result.version).to eq("4-0-0-rc-4")
+          expect(result.version).to eq("4.0.0-rc.4")
         end
       end
     end
