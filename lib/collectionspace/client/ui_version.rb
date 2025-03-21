@@ -16,7 +16,7 @@ module CollectionSpace
       def joined
         return if failure?
 
-        [profile, version].compact.join("_")
+        [profile, version].compact.join(" ")
       end
     end
 
@@ -46,7 +46,7 @@ module CollectionSpace
 
       Data.new(status: :success,
         profile: profile.downcase.tr(" ", "-"),
-        version: version.tr(".", "-"))
+        version: version)
     end
 
     private
