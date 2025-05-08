@@ -2,6 +2,6 @@
 
 module CollectionSpace
   class Client
-    VERSION = "0.15.1"
+    VERSION = "1.0.0"
   end
 end

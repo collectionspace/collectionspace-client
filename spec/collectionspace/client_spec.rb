@@ -136,7 +136,7 @@ describe CollectionSpace::Client do
         expect(result.api.success?).to be true
         expect(result.api.build).to eq("1a157a3")
         expect(result.api.joined).to eq("8.1")
-        expect(result.client).to eq("0.15.1")
+        expect(result.client).to eq("1.0.0")
         expect(result.ui.profile).to eq("core")
       end
     end
