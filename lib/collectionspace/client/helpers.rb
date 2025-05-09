@@ -18,10 +18,11 @@ module CollectionSpace
     end
 
     # add / update reports
-    def add_report(data = {}, params = {pgSz: 100})
-      payload = Template.process("report", data)
+    def add_report(payload_path, params = {pgSz: 100})
+      payload = File.read(File.expand_path(payload_path))
+      report_name = payload.match(/<name>(.*)<\/name>/)[1]
       response = get("reports", {query: params})
-      create_or_update(response, "reports", "name", data[:name], payload)
+      create_or_update(response, "reports", "name", report_name, payload)
     end
 
     # returns Array of authority doctypes for use in setting up batches

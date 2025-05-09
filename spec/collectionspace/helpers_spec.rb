@@ -268,6 +268,23 @@ describe CollectionSpace::Helpers do
     end
   end
 
+  describe "#add_report" do
+    let(:client) { default_client }
+    let(:result) { client.add_report(payload_path) }
+
+    context "with existing report" do
+      let(:payload_path) do
+        File.join("spec", "fixtures", "files", "Exhibition_List_Basic.xml")
+      end
+
+      it "will update report" do
+        VCR.use_cassette("helpers_add_report_existing") do
+          expect(result.result.success?).to be true
+        end
+      end
+    end
+  end
+
   describe "#reset_media_blob" do
     let(:client) { default_client }
     let(:result) { client.reset_media_blob(id: id, url: url) }

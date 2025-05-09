@@ -1,0 +1,161 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/reports?pgSz=100&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 08 May 2025 17:25:08 GMT
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=803F4CF57E21CBA695EA3B15114EEA98; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>100</pageSize><itemsInPage>33</itemsInPage><totalItems>33</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|name|filename</fieldsReturned><list-item><csid>e10ae665-0a62-4a09-bddf</csid><uri>/reports/e10ae665-0a62-4a09-bddf</uri><refName>urn:cspace:core.collectionspace.org:reports:id(e10ae665-0a62-4a09-bddf)</refName><updatedAt>2025-05-08T06:29:43.443Z</updatedAt><workflowState>project</workflowState><name>Systematic
+        Inventory</name><filename>systematicInventory.jrxml</filename></list-item><list-item><csid>9038c9bd-dbd0-4646-958f</csid><uri>/reports/9038c9bd-dbd0-4646-958f</uri><refName>urn:cspace:core.collectionspace.org:reports:id(9038c9bd-dbd0-4646-958f)</refName><updatedAt>2025-05-08T06:29:43.411Z</updatedAt><workflowState>project</workflowState><name>Group
+        Basic List</name><filename>Group_List_Basic.jrxml</filename></list-item><list-item><csid>76d1ca6b-e151-4096-b5f0</csid><uri>/reports/76d1ca6b-e151-4096-b5f0</uri><refName>urn:cspace:core.collectionspace.org:reports:id(76d1ca6b-e151-4096-b5f0)</refName><updatedAt>2025-05-08T06:29:43.377Z</updatedAt><workflowState>project</workflowState><name>Loan
+        In Basic List</name><filename>LoansIn_List_Basic.jrxml</filename></list-item><list-item><csid>862a5ed9-f9fc-462f-a967</csid><uri>/reports/862a5ed9-f9fc-462f-a967</uri><refName>urn:cspace:core.collectionspace.org:reports:id(862a5ed9-f9fc-462f-a967)</refName><updatedAt>2025-05-08T06:29:43.346Z</updatedAt><workflowState>project</workflowState><name>Loan
+        Out Ethnographic Object List</name><filename>coreLoanOut.jrxml</filename></list-item><list-item><csid>fd143f3e-0bdd-42fa-846b</csid><uri>/reports/fd143f3e-0bdd-42fa-846b</uri><refName>urn:cspace:core.collectionspace.org:reports:id(fd143f3e-0bdd-42fa-846b)</refName><updatedAt>2025-05-08T06:29:43.314Z</updatedAt><workflowState>project</workflowState><name>Accesssions</name><filename>accessions.jrxml</filename></list-item><list-item><csid>fa08ab06-d0f4-4666-9ca1</csid><uri>/reports/fa08ab06-d0f4-4666-9ca1</uri><refName>urn:cspace:core.collectionspace.org:reports:id(fa08ab06-d0f4-4666-9ca1)</refName><updatedAt>2025-05-08T06:29:43.281Z</updatedAt><workflowState>project</workflowState><name>Exhibition
+        Basic List</name><filename>Exhibition_List_Basic.jrxml</filename></list-item><list-item><csid>17528b7a-2adc-441b-a718</csid><uri>/reports/17528b7a-2adc-441b-a718</uri><refName>urn:cspace:core.collectionspace.org:reports:id(17528b7a-2adc-441b-a718)</refName><updatedAt>2025-05-08T06:29:43.203Z</updatedAt><workflowState>project</workflowState><name>Group
+        Object Ethnographic Object List</name><filename>coreGroupObject.jrxml</filename></list-item><list-item><csid>763771d5-2b25-4842-9bb7</csid><uri>/reports/763771d5-2b25-4842-9bb7</uri><refName>urn:cspace:core.collectionspace.org:reports:id(763771d5-2b25-4842-9bb7)</refName><updatedAt>2025-05-08T06:29:43.170Z</updatedAt><workflowState>project</workflowState><name>Referral</name><filename>referral.jrxml</filename></list-item><list-item><csid>91a7ad50-2cd2-4ace-96d7</csid><uri>/reports/91a7ad50-2cd2-4ace-96d7</uri><refName>urn:cspace:core.collectionspace.org:reports:id(91a7ad50-2cd2-4ace-96d7)</refName><updatedAt>2025-05-08T06:29:43.134Z</updatedAt><workflowState>project</workflowState><name>Condition</name><filename>condition.jrxml</filename></list-item><list-item><csid>a61728e7-13a0-4649-b19b</csid><uri>/reports/a61728e7-13a0-4649-b19b</uri><refName>urn:cspace:core.collectionspace.org:reports:id(a61728e7-13a0-4649-b19b)</refName><updatedAt>2025-05-08T06:29:43.104Z</updatedAt><workflowState>project</workflowState><name>Contact
+        - Organization</name><filename>contact_org.jrxml</filename></list-item><list-item><csid>0ccccf40-4c98-4547-a049</csid><uri>/reports/0ccccf40-4c98-4547-a049</uri><refName>urn:cspace:core.collectionspace.org:reports:id(0ccccf40-4c98-4547-a049)</refName><updatedAt>2025-05-08T06:29:43.072Z</updatedAt><workflowState>project</workflowState><name>Outgoing
+        Loan</name><filename>outgoing_loan.jrxml</filename></list-item><list-item><csid>d5f71979-2cdd-4f5d-8a91</csid><uri>/reports/d5f71979-2cdd-4f5d-8a91</uri><refName>urn:cspace:core.collectionspace.org:reports:id(d5f71979-2cdd-4f5d-8a91)</refName><updatedAt>2025-05-08T06:29:43.040Z</updatedAt><workflowState>project</workflowState><name>Object
+        Exit Ethnographic Object List</name><filename>coreObjectExit.jrxml</filename></list-item><list-item><csid>04aae082-9d02-459d-9e0d</csid><uri>/reports/04aae082-9d02-459d-9e0d</uri><refName>urn:cspace:core.collectionspace.org:reports:id(04aae082-9d02-459d-9e0d)</refName><updatedAt>2025-05-08T06:29:43.005Z</updatedAt><workflowState>project</workflowState><name>Intake
+        Ethnographic Object List</name><filename>coreIntake.jrxml</filename></list-item><list-item><csid>1b5151d6-d41a-422e-8078</csid><uri>/reports/1b5151d6-d41a-422e-8078</uri><refName>urn:cspace:core.collectionspace.org:reports:id(1b5151d6-d41a-422e-8078)</refName><updatedAt>2025-05-08T06:29:42.970Z</updatedAt><workflowState>project</workflowState><name>Acquisition
+        Summary</name><filename>acq_basic.jrxml</filename></list-item><list-item><csid>1514fd47-aa9a-425e-9fbf</csid><uri>/reports/1514fd47-aa9a-425e-9fbf</uri><refName>urn:cspace:core.collectionspace.org:reports:id(1514fd47-aa9a-425e-9fbf)</refName><updatedAt>2025-05-08T06:29:42.929Z</updatedAt><workflowState>project</workflowState><name>Outgoing
+        Loan Letter</name><filename>outgoing_loan_letter.jrxml</filename></list-item><list-item><csid>addeb567-7b72-4175-8fbd</csid><uri>/reports/addeb567-7b72-4175-8fbd</uri><refName>urn:cspace:core.collectionspace.org:reports:id(addeb567-7b72-4175-8fbd)</refName><updatedAt>2025-05-08T06:29:42.896Z</updatedAt><workflowState>project</workflowState><name>Inventory
+        Consultation</name><filename>inventory_consultation.jrxml</filename></list-item><list-item><csid>9df26427-aa94-4582-9b2b</csid><uri>/reports/9df26427-aa94-4582-9b2b</uri><refName>urn:cspace:core.collectionspace.org:reports:id(9df26427-aa94-4582-9b2b)</refName><updatedAt>2025-05-08T06:29:42.864Z</updatedAt><workflowState>project</workflowState><name>Box
+        List</name><filename>box_list.jrxml</filename></list-item><list-item><csid>81eebe53-6351-4efe-8220</csid><uri>/reports/81eebe53-6351-4efe-8220</uri><refName>urn:cspace:core.collectionspace.org:reports:id(81eebe53-6351-4efe-8220)</refName><updatedAt>2025-05-08T06:29:42.834Z</updatedAt><workflowState>project</workflowState><name>Contact
+        - Person</name><filename>contact_person.jrxml</filename></list-item><list-item><csid>a4fec09a-617d-4045-aa01</csid><uri>/reports/a4fec09a-617d-4045-aa01</uri><refName>urn:cspace:core.collectionspace.org:reports:id(a4fec09a-617d-4045-aa01)</refName><updatedAt>2025-05-08T06:29:42.801Z</updatedAt><workflowState>project</workflowState><name>Exhibition
+        Checklist</name><filename>exhibition_checklist.jrxml</filename></list-item><list-item><csid>9352e539-dcc8-40a5-82a1</csid><uri>/reports/9352e539-dcc8-40a5-82a1</uri><refName>urn:cspace:core.collectionspace.org:reports:id(9352e539-dcc8-40a5-82a1)</refName><updatedAt>2025-05-08T06:29:42.769Z</updatedAt><workflowState>project</workflowState><name>Condition
+        Check Basic List</name><filename>CC_List_Basic.jrxml</filename></list-item><list-item><csid>3e3da015-69d1-483c-b6f5</csid><uri>/reports/3e3da015-69d1-483c-b6f5</uri><refName>urn:cspace:core.collectionspace.org:reports:id(3e3da015-69d1-483c-b6f5)</refName><updatedAt>2025-05-08T06:29:42.732Z</updatedAt><workflowState>project</workflowState><name>Borrowing
+        Receipt</name><filename>borrowing_receipt.jrxml</filename></list-item><list-item><csid>f5624429-ca35-4a5b-a5b3</csid><uri>/reports/f5624429-ca35-4a5b-a5b3</uri><refName>urn:cspace:core.collectionspace.org:reports:id(f5624429-ca35-4a5b-a5b3)</refName><updatedAt>2025-05-08T06:29:42.695Z</updatedAt><workflowState>project</workflowState><name>Acquisition
+        Ethnographic Object List</name><filename>coreAcquisition.jrxml</filename></list-item><list-item><csid>27b2faa3-50cd-4b53-82bf</csid><uri>/reports/27b2faa3-50cd-4b53-82bf</uri><refName>urn:cspace:core.collectionspace.org:reports:id(27b2faa3-50cd-4b53-82bf)</refName><updatedAt>2025-05-08T06:29:42.616Z</updatedAt><workflowState>project</workflowState><name>Loan
+        In Ethnographic Object List</name><filename>coreLoanIn.jrxml</filename></list-item><list-item><csid>7451c3c1-d092-475d-abb9</csid><uri>/reports/7451c3c1-d092-475d-abb9</uri><refName>urn:cspace:core.collectionspace.org:reports:id(7451c3c1-d092-475d-abb9)</refName><updatedAt>2025-05-08T06:29:42.577Z</updatedAt><workflowState>project</workflowState><name>Acquisition
+        Basic List</name><filename>Acq_List_Basic.jrxml</filename></list-item><list-item><csid>30120d80-a19c-495b-ae52</csid><uri>/reports/30120d80-a19c-495b-ae52</uri><refName>urn:cspace:core.collectionspace.org:reports:id(30120d80-a19c-495b-ae52)</refName><updatedAt>2025-05-08T06:29:42.546Z</updatedAt><workflowState>project</workflowState><name>Incoming
+        Loan</name><filename>incoming_loan.jrxml</filename></list-item><list-item><csid>55957c32-aa7b-4a5f-8aca</csid><uri>/reports/55957c32-aa7b-4a5f-8aca</uri><refName>urn:cspace:core.collectionspace.org:reports:id(55957c32-aa7b-4a5f-8aca)</refName><updatedAt>2025-05-08T06:29:42.510Z</updatedAt><workflowState>project</workflowState><name>Object
+        Valuation</name><filename>object_valuation.jrxml</filename></list-item><list-item><csid>c8bfaa59-9361-4750-986f</csid><uri>/reports/c8bfaa59-9361-4750-986f</uri><refName>urn:cspace:core.collectionspace.org:reports:id(c8bfaa59-9361-4750-986f)</refName><updatedAt>2025-05-08T06:29:42.472Z</updatedAt><workflowState>project</workflowState><name>Incoming
+        Loan Letter</name><filename>incoming_loan_letter.jrxml</filename></list-item><list-item><csid>7a20fcb4-f2ac-4651-9b2f</csid><uri>/reports/7a20fcb4-f2ac-4651-9b2f</uri><refName>urn:cspace:core.collectionspace.org:reports:id(7a20fcb4-f2ac-4651-9b2f)</refName><updatedAt>2025-05-08T06:29:42.439Z</updatedAt><workflowState>project</workflowState><name>Deed
+        of Gift</name><filename>deed_of_gift.jrxml</filename></list-item><list-item><csid>3aa40393-fadb-477a-9b47</csid><uri>/reports/3aa40393-fadb-477a-9b47</uri><refName>urn:cspace:core.collectionspace.org:reports:id(3aa40393-fadb-477a-9b47)</refName><updatedAt>2025-05-08T06:29:42.408Z</updatedAt><workflowState>project</workflowState><name>Repatriation
+        Request Consultation</name><filename>repatriation_request_consultation.jrxml</filename></list-item><list-item><csid>1dd55537-8151-4fb2-a483</csid><uri>/reports/1dd55537-8151-4fb2-a483</uri><refName>urn:cspace:core.collectionspace.org:reports:id(1dd55537-8151-4fb2-a483)</refName><updatedAt>2025-05-08T06:29:42.373Z</updatedAt><workflowState>project</workflowState><name>Summary
+        Documentation Consultation</name><filename>summary_documentation_consultation.jrxml</filename></list-item><list-item><csid>f4e345a4-2dff-426e-bcbb</csid><uri>/reports/f4e345a4-2dff-426e-bcbb</uri><refName>urn:cspace:core.collectionspace.org:reports:id(f4e345a4-2dff-426e-bcbb)</refName><updatedAt>2025-05-08T06:29:42.340Z</updatedAt><workflowState>project</workflowState><name>Loan
+        Out Basic List</name><filename>LoansOut_List_Basic.jrxml</filename></list-item><list-item><csid>0c28b7a9-0d06-4300-aa88</csid><uri>/reports/0c28b7a9-0d06-4300-aa88</uri><refName>urn:cspace:core.collectionspace.org:reports:id(0c28b7a9-0d06-4300-aa88)</refName><updatedAt>2025-05-08T06:29:42.307Z</updatedAt><workflowState>project</workflowState><name>Deaccessions</name><filename>deaccessions.jrxml</filename></list-item><list-item><csid>909f715f-d716-449d-8e19</csid><uri>/reports/909f715f-d716-449d-8e19</uri><refName>urn:cspace:core.collectionspace.org:reports:id(909f715f-d716-449d-8e19)</refName><updatedAt>2025-05-08T06:29:42.254Z</updatedAt><workflowState>project</workflowState><name>Basic
+        Object with Current Location</name><filename>obj_computed_location.jrxml</filename></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 08 May 2025 17:25:08 GMT
+- request:
+    method: put
+    uri: https://core.dev.collectionspace.org/cspace-services/reports/fa08ab06-d0f4-4666-9ca1?pgSz=25&wf_deleted=false
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <document name="report">
+          <ns2:reports_common xmlns:ns2="http://collectionspace.org/services/report">
+            <name>Exhibition Basic List</name>
+            <notes>Catalog info for objects related to a exhibition record. Runs on a single record only.</notes>
+            <forDocTypes>
+              <forDocType>Exhibition</forDocType>
+            </forDocTypes>
+            <supportsSingleDoc>true</supportsSingleDoc>
+            <supportsDocList>false</supportsDocList>
+            <supportsGroup>false</supportsGroup>
+            <supportsNoContext>false</supportsNoContext>
+            <outputMIME>application/pdf</outputMIME>
+            <filename>Exhibition_List_Basic.jrxml</filename>
+          </ns2:reports_common>
+        </document>
+    headers:
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - nnnn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 08 May 2025 17:25:09 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '1278'
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=4EA247CDBD7DD274AC323D1755F019A5; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <document name="reports"><ns2:collectionspace_core xmlns:ns2="http://collectionspace.org/collectionspace_core/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><createdAt>2025-03-04T19:49:01.196Z</createdAt><updatedBy>admin@core.collectionspace.org</updatedBy><createdBy>SPRING_ADMIN</createdBy><workflowState>project</workflowState><tenantId>1</tenantId><refName>urn:cspace:core.collectionspace.org:reports:id(fa08ab06-d0f4-4666-9ca1)</refName><uri>/reports/fa08ab06-d0f4-4666-9ca1</uri><updatedAt>2025-05-08T17:25:09.272Z</updatedAt></ns2:collectionspace_core><ns2:reports_common xmlns:ns2="http://collectionspace.org/services/report" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><notes>Catalog info for objects related to a exhibition record. Runs on a single record only.</notes><filename>Exhibition_List_Basic.jrxml</filename><forDocTypes><forDocType>Exhibition</forDocType></forDocTypes><supportsGroup>false</supportsGroup><name>Exhibition Basic List</name><supportsOutputMIMEList/><supportsSingleDoc>true</supportsSingleDoc><outputMIME>application/pdf</outputMIME><supportsDocList>false</supportsDocList><supportsNoContext>false</supportsNoContext><forRoles/><resourceActionGroupList/></ns2:reports_common></document>
+  recorded_at: Thu, 08 May 2025 17:25:09 GMT
+recorded_with: VCR 6.3.1
