@@ -1,0 +1,281 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.dev.collectionspace.org/cspace-services/vocabularies?pgSz=25&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 04 Sep 2025 23:30:50 GMT
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=0387EB35CE349F74E61D3C3F2067247F; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:abstract-common-list
+        xmlns:ns2="http://collectionspace.org/services/jaxb"><pageNum>0</pageNum><pageSize>25</pageSize><itemsInPage>25</itemsInPage><totalItems>177</totalItems><fieldsReturned>csid|uri|refName|updatedAt|workflowState|rev|shortIdentifier|sas|displayName|vocabType</fieldsReturned><list-item><csid>b5d7a52a-6bf3-407e-b719</csid><uri>/vocabularies/b5d7a52a-6bf3-407e-b719</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(apparelsizes)'Apparel
+        sizes'</refName><updatedAt>2025-03-04T19:46:23.970Z</updatedAt><workflowState>project</workflowState><rev>37</rev><shortIdentifier>apparelsizes</shortIdentifier><displayName>Apparel
+        sizes</displayName><vocabType>enum</vocabType></list-item><list-item><csid>f7e65a10-d4ab-44de-90aa</csid><uri>/vocabularies/f7e65a10-d4ab-44de-90aa</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(descriptionlevel)'Description
+        level'</refName><updatedAt>2025-03-04T19:46:24.753Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>descriptionlevel</shortIdentifier><displayName>Description
+        level</displayName><vocabType>enum</vocabType></list-item><list-item><csid>b8b323c9-bcd6-41e6-976f</csid><uri>/vocabularies/b8b323c9-bcd6-41e6-976f</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(objectcounttypes)'Object
+        Count Types'</refName><updatedAt>2025-03-04T19:46:25.001Z</updatedAt><workflowState>project</workflowState><rev>2</rev><shortIdentifier>objectcounttypes</shortIdentifier><displayName>Object
+        Count Types</displayName><vocabType>enum</vocabType></list-item><list-item><csid>77a114ae-5c05-460c-bf0d</csid><uri>/vocabularies/77a114ae-5c05-460c-bf0d</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(assocauthorityrelationtype)'Associated
+        Authority Relation Types'</refName><updatedAt>2025-03-04T19:46:25.178Z</updatedAt><workflowState>project</workflowState><rev>14</rev><shortIdentifier>assocauthorityrelationtype</shortIdentifier><displayName>Associated
+        Authority Relation Types</displayName><vocabType>enum</vocabType></list-item><list-item><csid>c0a3e373-1a4d-4747-b314</csid><uri>/vocabularies/c0a3e373-1a4d-4747-b314</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(nagprainvolvedrole)'NAGPRA
+        Involved Role'</refName><updatedAt>2025-03-04T19:46:25.958Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>nagprainvolvedrole</shortIdentifier><displayName>NAGPRA
+        Involved Role</displayName><vocabType>enum</vocabType></list-item><list-item><csid>93822f33-3350-4893-a151</csid><uri>/vocabularies/93822f33-3350-4893-a151</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(nagpratype)'NAGPRA
+        Type'</refName><updatedAt>2025-03-04T19:46:26.201Z</updatedAt><workflowState>project</workflowState><rev>9</rev><shortIdentifier>nagpratype</shortIdentifier><displayName>NAGPRA
+        Type</displayName><vocabType>enum</vocabType></list-item><list-item><csid>f50ebbae-10d1-489f-94db</csid><uri>/vocabularies/f50ebbae-10d1-489f-94db</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(nagpralevel)'NAGPRA
+        Level'</refName><updatedAt>2025-03-04T19:46:26.716Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>nagpralevel</shortIdentifier><displayName>NAGPRA
+        Level</displayName><vocabType>enum</vocabType></list-item><list-item><csid>e67f1b78-ed63-4558-be0e</csid><uri>/vocabularies/e67f1b78-ed63-4558-be0e</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(nagpradocumentationstatus)'NAGPRA
+        Documentation Status'</refName><updatedAt>2025-03-04T19:46:26.990Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>nagpradocumentationstatus</shortIdentifier><displayName>NAGPRA
+        Documentation Status</displayName><vocabType>enum</vocabType></list-item><list-item><csid>5094fb03-968a-4397-85cf</csid><uri>/vocabularies/5094fb03-968a-4397-85cf</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(documentationgroup)'Documentation
+        Group'</refName><updatedAt>2025-03-04T19:46:27.264Z</updatedAt><workflowState>project</workflowState><rev>3</rev><shortIdentifier>documentationgroup</shortIdentifier><displayName>Documentation
+        Group</displayName><vocabType>enum</vocabType></list-item><list-item><csid>282b8980-93ee-4f79-b610</csid><uri>/vocabularies/282b8980-93ee-4f79-b610</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(nagpranoticetype)'NAGPRA
+        Notice Types'</refName><updatedAt>2025-03-04T19:46:27.457Z</updatedAt><workflowState>project</workflowState><rev>2</rev><shortIdentifier>nagpranoticetype</shortIdentifier><displayName>NAGPRA
+        Notice Types</displayName><vocabType>enum</vocabType></list-item><list-item><csid>d32091d3-ecd0-4e3f-abf2</csid><uri>/vocabularies/d32091d3-ecd0-4e3f-abf2</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(nagpranotice)'NAGPRA
+        Notice'</refName><updatedAt>2025-03-04T19:46:27.633Z</updatedAt><workflowState>project</workflowState><rev>3</rev><shortIdentifier>nagpranotice</shortIdentifier><displayName>NAGPRA
+        Notice</displayName><vocabType>enum</vocabType></list-item><list-item><csid>28d4daf4-f2db-49aa-8d47</csid><uri>/vocabularies/28d4daf4-f2db-49aa-8d47</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(summarydocumentationtype)'NAGPRA
+        Summary Documentation Type'</refName><updatedAt>2025-03-04T19:46:27.829Z</updatedAt><workflowState>project</workflowState><rev>3</rev><shortIdentifier>summarydocumentationtype</shortIdentifier><displayName>NAGPRA
+        Summary Documentation Type</displayName><vocabType>enum</vocabType></list-item><list-item><csid>deb5f8ed-834d-4124-826c</csid><uri>/vocabularies/deb5f8ed-834d-4124-826c</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(correspondencetype)'Correspondence
+        Type'</refName><updatedAt>2025-03-04T19:46:28.246Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>correspondencetype</shortIdentifier><displayName>Correspondence
+        Type</displayName><vocabType>enum</vocabType></list-item><list-item><csid>664af0d9-e685-4f4c-a309</csid><uri>/vocabularies/664af0d9-e685-4f4c-a309</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(heldintrusttype)'HeldInTrust
+        Type'</refName><updatedAt>2025-03-04T19:46:28.053Z</updatedAt><workflowState>project</workflowState><rev>3</rev><shortIdentifier>heldintrusttype</shortIdentifier><displayName>HeldInTrust
+        Type</displayName><vocabType>enum</vocabType></list-item><list-item><csid>7983a46d-f2ec-4be7-8e1d</csid><uri>/vocabularies/7983a46d-f2ec-4be7-8e1d</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(objexitmethod)'Object
+        Exit Methods'</refName><updatedAt>2025-03-04T19:46:32.368Z</updatedAt><workflowState>project</workflowState><rev>6</rev><shortIdentifier>objexitmethod</shortIdentifier><displayName>Object
+        Exit Methods</displayName><vocabType>enum</vocabType></list-item><list-item><csid>0c5f09fd-03ee-4e5f-ace0</csid><uri>/vocabularies/0c5f09fd-03ee-4e5f-ace0</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(inventorystatus)'Inventory
+        Status'</refName><updatedAt>2025-03-04T19:40:42.552Z</updatedAt><workflowState>project</workflowState><rev>27</rev><shortIdentifier>inventorystatus</shortIdentifier><displayName>Inventory
+        Status</displayName><vocabType>enum</vocabType></list-item><list-item><csid>a805c5b3-7f0d-479e-8b56</csid><uri>/vocabularies/a805c5b3-7f0d-479e-8b56</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(acousticalproperties)'Acoustical
+        Properties'</refName><updatedAt>2025-03-04T19:45:46.523Z</updatedAt><workflowState>project</workflowState><rev>6</rev><shortIdentifier>acousticalproperties</shortIdentifier><displayName>Acoustical
+        Properties</displayName><vocabType>enum</vocabType></list-item><list-item><csid>a2a50815-d89f-495b-b3de</csid><uri>/vocabularies/a2a50815-d89f-495b-b3de</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(uocmethods)'Use
+        of Collections Methods'</refName><updatedAt>2025-03-04T19:40:44.414Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>uocmethods</shortIdentifier><displayName>Use
+        of Collections Methods</displayName><vocabType>enum</vocabType></list-item><list-item><csid>9fd529b9-6209-454d-a928</csid><uri>/vocabularies/9fd529b9-6209-454d-a928</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(uocusertypes)'Use
+        of Collections User Types'</refName><updatedAt>2025-03-04T19:40:44.702Z</updatedAt><workflowState>project</workflowState><rev>6</rev><shortIdentifier>uocusertypes</shortIdentifier><displayName>Use
+        of Collections User Types</displayName><vocabType>enum</vocabType></list-item><list-item><csid>9f4bb786-55db-47a3-9104</csid><uri>/vocabularies/9f4bb786-55db-47a3-9104</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(uocuserroles)'Use
+        of Collections User Roles'</refName><updatedAt>2025-03-04T19:40:45.230Z</updatedAt><workflowState>project</workflowState><rev>4</rev><shortIdentifier>uocuserroles</shortIdentifier><displayName>Use
+        of Collections User Roles</displayName><vocabType>enum</vocabType></list-item><list-item><csid>d09a00a4-d4df-4276-920b</csid><uri>/vocabularies/d09a00a4-d4df-4276-920b</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(uocauthorizationstatuses)'Use
+        of Collections Authorization Statuses'</refName><updatedAt>2025-03-04T19:40:45.574Z</updatedAt><workflowState>project</workflowState><rev>3</rev><shortIdentifier>uocauthorizationstatuses</shortIdentifier><displayName>Use
+        of Collections Authorization Statuses</displayName><vocabType>enum</vocabType></list-item><list-item><csid>e991a26e-6fe8-4310-8b92</csid><uri>/vocabularies/e991a26e-6fe8-4310-8b92</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(publishto)'Publishing
+        Destination'</refName><updatedAt>2025-03-04T19:40:45.812Z</updatedAt><workflowState>project</workflowState><rev>6</rev><shortIdentifier>publishto</shortIdentifier><displayName>Publishing
+        Destination</displayName><vocabType>enum</vocabType></list-item><list-item><csid>6b3dd69a-5b6b-4952-b46f</csid><uri>/vocabularies/6b3dd69a-5b6b-4952-b46f</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(languages)'Languages'</refName><updatedAt>2025-03-04T19:40:46.267Z</updatedAt><workflowState>project</workflowState><rev>24</rev><shortIdentifier>languages</shortIdentifier><displayName>Languages</displayName><vocabType>enum</vocabType></list-item><list-item><csid>96a56bc7-1dcc-4198-b9c5</csid><uri>/vocabularies/96a56bc7-1dcc-4198-b9c5</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(loanoutstatus)'Loaned
+        Object Status'</refName><updatedAt>2025-03-04T19:40:47.938Z</updatedAt><workflowState>project</workflowState><rev>9</rev><shortIdentifier>loanoutstatus</shortIdentifier><displayName>Loaned
+        Object Status</displayName><vocabType>enum</vocabType></list-item><list-item><csid>dd0cf7f6-e9b4-4df8-8589</csid><uri>/vocabularies/dd0cf7f6-e9b4-4df8-8589</uri><refName>urn:cspace:core.collectionspace.org:vocabularies:name(currency)'Standard
+        Currency'</refName><updatedAt>2025-03-04T19:40:48.574Z</updatedAt><workflowState>project</workflowState><rev>7</rev><shortIdentifier>currency</shortIdentifier><displayName>Standard
+        Currency</displayName><vocabType>enum</vocabType></list-item></ns2:abstract-common-list>
+  recorded_at: Thu, 04 Sep 2025 23:30:49 GMT
+- request:
+    method: post
+    uri: https://core.dev.collectionspace.org/cspace-services/vocabularies/b5d7a52a-6bf3-407e-b719/items?pgSz=25&wf_deleted=false
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+        <document name="vocabularyitems">
+            <ns2:vocabularyitems_common
+               xmlns:ns2="http://collectionspace.org/services/vocabulary"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <shortIdentifier>TERMID</shortIdentifier>
+               <displayName>TERM</displayName>
+            </ns2:vocabularyitems_common>
+        </document>
+    headers:
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - nnnn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      Date:
+      - Thu, 04 Sep 2025 23:30:50 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=89D4786DB58985008EC30308B0421074; Path=/cspace-services; Secure;
+        HttpOnly
+      Location:
+      - https://core.dev.collectionspace.org/cspace-services/vocabularies/b5d7a52a-6bf3-407e-b719/items/48a0b4db-5f3d-4540-8b8d
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 04 Sep 2025 23:30:50 GMT
+- request:
+    method: put
+    uri: https://core.dev.collectionspace.org/cspace-services/vocabularies/b5d7a52a-6bf3-407e-b719/items/48a0b4db-5f3d-4540-8b8d/workflow/delete?pgSz=25&wf_deleted=false
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - nnnn
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 04 Sep 2025 23:30:50 GMT
+      Content-Type:
+      - application/xml
+      Content-Length:
+      - '333'
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=34EB01A8AF9E4C037FC903F379FA6865; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <document name="workflow"><ns2:workflow_common xmlns:ns2="http://collectionspace.org/services/workflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><currentLifeCycleState>deleted</currentLifeCycleState><lifeCyclePolicy>cs_replicating</lifeCyclePolicy></ns2:workflow_common></document>
+  recorded_at: Thu, 04 Sep 2025 23:30:50 GMT
+- request:
+    method: delete
+    uri: https://core.dev.collectionspace.org/cspace-services/vocabularies/b5d7a52a-6bf3-407e-b719/items/48a0b4db-5f3d-4540-8b8d?pgSz=25&wf_deleted=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic YWRtaW5AY29yZS5jb2xsZWN0aW9uc3BhY2Uub3JnOkFkbWluaXN0cmF0b3I=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 04 Sep 2025 23:30:51 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      Set-Cookie:
+      - JSESSIONID=FBB4AEA42D2F441E8F5993E1B7868583; Path=/cspace-services; Secure;
+        HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 04 Sep 2025 23:30:51 GMT
+recorded_with: VCR 6.3.1
