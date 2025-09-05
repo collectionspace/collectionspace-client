@@ -88,6 +88,54 @@ describe CollectionSpace::Client do
     end
   end
 
+  describe "#put" do
+    let(:client) { default_client }
+
+    it "can perform payloadless put" do
+      VCR.use_cassette("client_put_payloadless") do
+        vocabrec = client.get("vocabularies")
+          .parsed
+          .dig("abstract_common_list", "list_item")
+          .first
+        r = client.post("#{vocabrec["uri"]}/items", fixture("vocab_term.xml"))
+        instance_variable_set(
+          :@termpath,
+          r.result
+            .headers["location"]
+            .sub(/^(.*\/cspace-services\/)/, "")
+        )
+
+        response = client.put("#{@termpath}/workflow/delete")
+        expect(response.status_code).to eq(200)
+
+        client.delete(@termpath)
+        remove_instance_variable(:@termpath)
+      end
+    end
+
+    it "can perform put with payload" do
+      VCR.use_cassette("client_put_payload") do
+        vocabrec = client.get("vocabularies")
+          .parsed
+          .dig("abstract_common_list", "list_item")
+          .first
+        r = client.post("#{vocabrec["uri"]}/items", fixture("vocab_term.xml"))
+        instance_variable_set(
+          :@termpath,
+          r.result
+            .headers["location"]
+            .sub(/^(.*\/cspace-services\/)/, "")
+        )
+
+        response = client.put(@termpath, fixture("vocab_term_update.xml"))
+        expect(response.status_code).to eq(200)
+
+        client.delete(@termpath)
+        remove_instance_variable(:@termpath)
+      end
+    end
+  end
+
   describe "#count" do
     let(:client) { default_client }
 
@@ -136,7 +184,7 @@ describe CollectionSpace::Client do
         expect(result.api.success?).to be true
         expect(result.api.build).to eq("1a157a3")
         expect(result.api.joined).to eq("8.1")
-        expect(result.client).to eq("1.0.0")
+        expect(result.client).to eq(CollectionSpace::Client::VERSION)
         expect(result.ui.profile).to eq("core")
       end
     end

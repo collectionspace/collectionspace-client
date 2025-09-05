@@ -49,9 +49,13 @@ module CollectionSpace
       }.merge(options)
     end
 
-    def put(path, payload, options = {})
-      check_payload(payload)
-      request "PUT", path, {body: payload}.merge(options)
+    def put(path, payload = nil, options = {})
+      if payload
+        check_payload(payload)
+        request "PUT", path, {body: payload}.merge(options)
+      else
+        request "PUT", path, options
+      end
     end
 
     def delete(path)
