@@ -4,6 +4,7 @@ module CollectionSpace
   # CollectionSpace client
   class Client
     include Helpers
+
     attr_reader :config
 
     def initialize(config = Configuration.new)
