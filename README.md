@@ -34,16 +34,7 @@ bundle exec rake
 
 ## Releasing
 
-```bash
-gem install gem-release
-# https://github.com/svenfuchs/gem-release#gem-bump
-gem bump --version $VERSION
-# i.e.
-gem bump --version minor --pretend # dryrun
-gem bump --version minor # do it for real
-bundle # update gem version in Gemfile.lock
-# PR and merge will publish new version
-```
+Create a pull request that updates `./lib/collectionspace/client/version.rb`. After it is merged a release will be built and published in RubyGems and a tag will be created and pushed to GitHub.
 
 ## Contributing
 

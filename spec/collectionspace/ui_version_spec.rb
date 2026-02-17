@@ -76,7 +76,7 @@ describe CollectionSpace::UiVersion do
           expect(result.failure?).to be true
           expect(result.message).to start_with(
             "Failed to open TCP connection to " \
-              "anthor.collectionspace.org:443 (getaddrinfo: "
+              "anthor.collectionspace.org:443 (getaddrinfo"
           )
           expect(result.joined).to be_nil
         end
