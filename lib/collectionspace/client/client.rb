@@ -7,6 +7,8 @@ module CollectionSpace
 
     attr_reader :config
 
+    NAME = "CollectionSpaceClient"
+
     def initialize(config = Configuration.new)
       unless config.is_a? CollectionSpace::Configuration
         raise CollectionSpace::ArgumentError, "Invalid configuration object"

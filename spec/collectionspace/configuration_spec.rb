@@ -13,6 +13,7 @@ describe CollectionSpace::Configuration do
     expect(config.page_size).to eq 25
     expect(config.include_deleted).to eq false
     expect(config.throttle).to eq 0
+    expect(config.timeout).to eq 60
     expect(config.verbose).to eq false
     expect(config.verify_ssl).to eq true
   end
