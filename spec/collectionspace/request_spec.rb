@@ -17,6 +17,13 @@ describe CollectionSpace::Request do
     }
   end
 
+  it "does not mutate the caller's options hash" do
+    opts = {query: {foo: "bar"}, headers: {"X-Custom" => "1"}}
+    caller_opts = Marshal.load(Marshal.dump(opts))
+    CollectionSpace::Request.new(default_config, "GET", "collectionobjects", opts)
+    expect(opts).to eq(caller_opts)
+  end
+
   it "can create a collectionobject" do
     VCR.use_cassette("request_collectionobjects_create") do
       response = client.post("collectionobjects", post_payload)

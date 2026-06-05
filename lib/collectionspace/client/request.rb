@@ -7,38 +7,22 @@ module CollectionSpace
 
     attr_reader :config, :headers, :method, :path, :options
 
-    def default_headers(method = :get)
-      headers = {
-        delete: {},
-        get: {},
-        post: {
-          "Content-Type" => "application/xml",
-          "Content-Length" => "nnnn"
-        },
-        put: {
-          "Content-Type" => "application/xml",
-          "Content-Length" => "nnnn"
-        }
-      }
-      headers[method]
-    end
+    DEFAULT_HEADERS = {"Content-Type" => "application/xml"}.freeze
 
     def initialize(config, method = "GET", path = "", options = {})
       @config = config
       @method = method.downcase.to_sym
-      @path = path.gsub(%r{^/}, "")
+      @path = path.gsub(%r{^/+}, "")
 
-      @auth = {
-        username: config.username,
-        password: config.password
-      }
+      @options = options.dup
+      @options[:basic_auth] = {username: config.username, password: config.password}
 
-      headers = default_headers(@method).merge(options.fetch(:headers, {}))
-      @options = options
-      @options[:basic_auth] = @auth
-      @options[:headers] = headers
+      @options[:headers] = DEFAULT_HEADERS.merge(@options.fetch(:headers, {}))
+      @options[:headers]["User-Agent"] = "#{Client::NAME}/#{Client::VERSION}"
+
+      @options[:query] = @options.fetch(:query, {})
+      @options[:timeout] = config.timeout
       @options[:verify] = config.verify_ssl
-      @options[:query] = options.fetch(:query, {})
 
       self.class.base_uri config.base_uri
       self.class.debug_output $stdout if config.verbose
